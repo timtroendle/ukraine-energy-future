@@ -1,0 +1,33 @@
+---
+title: Ukraine's Energy Future
+author:
+    - Tim Tröndle
+institute: ETH Zürich
+tags:
+    - reproducible-research
+abstract: |
+    Analysing options for Ukraine's future energy supply.
+bibliography: literature.yaml
+csl: apa.csl
+link-citations: True
+css:
+    - https://timtroendle.github.io/signature-layout/layout/reset.css
+    - https://timtroendle.github.io/signature-layout/layout/article.css
+lang: en-GB
+figureTemplate: <span>$$figureTitle$$ $$i$$$$titleDelim$$</span> $$t$$
+tableTemplate: <span>$$tableTitle$$ $$i$$$$titleDelim$$</span> $$t$$
+figPrefix:
+    - "Figure"
+    - "Figures"
+tblPrefix:
+    - "Table"
+    - "Tables"
+eqnPrefix:
+    - "Equation"
+    - "Equations"
+secPrefix:
+    - "Section"
+    - "Sections"
+linkReferences: True
+date: 2023-05-26
+---

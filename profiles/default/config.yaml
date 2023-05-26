@@ -1,0 +1,4 @@
+use-conda: True
+conda-frontend: mamba
+conda-prefix: ../envs/snakemake/ukraine-energy-future
+cores: 1
