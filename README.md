@@ -6,9 +6,17 @@ This repository contains the entire scientific project, including code and repor
 
 ## Getting ready
 
-You need [mamba](https://mamba.readthedocs.io/en/latest/) to run the analysis. Using mamba, you can create an environment from within you can run it:
+1. Clone the repo. Because [PyPSA-Eur](https://github.com/PyPSA/pypsa-eur) is added as a git submodule, you may want to clone in a way that initialises the submodule:
 
+```bash
+    git clone --recurse-submodules <link-to-this-repo>
+```
+
+2. You need [mamba](https://mamba.readthedocs.io/en/latest/) to run the analysis. Using mamba, you can create an environment from within you can run it:
+
+```bash
     mamba env create -f environment.yaml --no-default-packages
+```
 
 ## Run the analysis
 
