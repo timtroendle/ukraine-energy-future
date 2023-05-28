@@ -1,44 +1,33 @@
 ---
 references:
-- id: 'Trondle:2019'
-  author:
-    - family: Tröndle
-      given: Tim
-    - family: Pfenninger
-      given: Stefan
-    - family: Lilliestam
-      given: Johan
-  container-title: Energy Strategy Reviews
-  DOI: 10.1016/j.esr.2019.100388
-  issued:
-    - year: 2019
-      month: 8
-      day: 13
-  title: >-
-    Home-made or imported: on the possibility for renewable electricity autarky
-    on all scales in Europe
-  type: article-journal
-  volume: '26'
-
-- id: 'Trondle:2020'
+- id: Horsch:2018
   accessed:
     - year: 2020
-      month: 2
-      day: 22
+      month: 4
+      day: 4
   author:
-    - family: Tröndle
-      given: Tim
-  DOI: 10.5281/zenodo.3949794
-  event-place: Potsdam
-  genre: Python
+    - family: Hörsch
+      given: Jonas
+    - family: Hofmann
+      given: Fabian
+    - family: Schlachtberger
+      given: David
+    - family: Brown
+      given: Tom
+  citation-key: Horsch:2018
+  container-title: Energy Strategy Reviews
+  container-title-short: Energy Strategy Reviews
+  DOI: 10.1016/j.esr.2018.08.012
+  ISSN: 2211467X
   issued:
-    - year: 2020
-      month: 7
-      day: 17
-  publisher: Institute for Advanced Sustainability Studies
-  publisher-place: Potsdam
-  title: euro-calliope
-  type: book
-  URL: 'https://github.com/calliope-project/euro-calliope/releases/tag/v1.0'
-  version: v1.0
+    - year: 2018
+      month: 11
+  language: en
+  page: 207-215
+  source: DOI.org (Crossref)
+  title: 'PyPSA-Eur: An open optimisation model of the European transmission system'
+  title-short: PyPSA-Eur
+  type: article-journal
+  URL: https://linkinghub.elsevier.com/retrieve/pii/S2211467X18300804
+  volume: '22'
 ...
