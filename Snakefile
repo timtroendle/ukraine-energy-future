@@ -4,6 +4,7 @@ PANDOC = "pandoc --filter pantable --filter pandoc-crossref --citeproc"
 configfile: "config/default.yaml"
 include: "./rules/sync.smk"
 include: "./rules/pypsa.smk"
+include: "./rules/analyse.smk"
 localrules: all, report, clean
 min_version("7.8")
 
@@ -45,6 +46,7 @@ rule report:
         "report/report.md",
         "report/pandoc-metadata.yaml",
         "report/apa.csl",
+        "build/results/lcoe.csv",
     params: options = pandoc_options
     output: "build/report.{suffix}"
     wildcard_constraints:

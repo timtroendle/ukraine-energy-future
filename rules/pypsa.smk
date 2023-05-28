@@ -47,8 +47,8 @@ rule run_scenarios:
         s1 = "pypsa-eur/results/networks/nuclear-and-renewables/elec_s_6_ec_lvopt_24H.nc",
         s2 = "pypsa-eur/results/networks/only-renewables/elec_s_6_ec_lvopt_24H.nc"
     output:
-        s1 = "build/results/nuclear-and-renewables/elec_s_6_ec_lvopt_24H.nc",
-        s2 = "build/results/only-renewables/elec_s_6_ec_lvopt_24H.nc"
+        s1 = "build/results/scenarios/nuclear-and-renewables.nc",
+        s2 = "build/results/scenarios/only-renewables.nc"
     shell:
         """
         ln {input.s1} {output.s1}
