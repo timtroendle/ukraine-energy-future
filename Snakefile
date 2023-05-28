@@ -3,6 +3,7 @@ PANDOC = "pandoc --filter pantable --filter pandoc-crossref --citeproc"
 
 configfile: "config/default.yaml"
 include: "./rules/sync.smk"
+include: "./rules/pypsa.smk"
 localrules: all, report, clean
 min_version("7.8")
 
@@ -15,11 +16,14 @@ onerror:
     if "email" in config.keys():
         shell("echo "" | mail -s 'ukraine-energy-future failed' {config[email]}")
 
+
 rule all:
     message: "Run entire analysis and compile report."
     input:
         "build/report.html",
-        "build/test-report.html"
+        "build/test-report.html",
+        "build/results/nuclear-and-renewables/elec_s_6_ec_lvopt_24H.nc",
+        "build/results/only-renewables/elec_s_6_ec_lvopt_24H.nc"
 
 
 def pandoc_options(wildcards):
@@ -73,6 +77,7 @@ rule clean: # removes all generated results
 
          shutil.rmtree("build")
          print("Data downloaded to data/ has not been cleaned.")
+         print("PyPSA-Eur data has not been cleaned.") # FIXME clean PyPSA data
 
 
 rule test:
