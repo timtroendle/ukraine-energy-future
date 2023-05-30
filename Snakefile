@@ -46,6 +46,7 @@ rule report:
         "report/report.md",
         "report/pandoc-metadata.yaml",
         "report/apa.csl",
+        "build/assumptions.csv",
         "build/results/lcoe.csv",
         "build/results/capacities-power.csv",
         "build/results/capacities-energy.csv",

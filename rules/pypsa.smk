@@ -1,5 +1,5 @@
 import copy
-from shutil import copyfile, move
+from shutil import copyfile
 
 from snakemake.io import load_configfile
 from snakemake.utils import update_config
@@ -49,8 +49,6 @@ rule run_scenarios:
     output:
         s1 = "build/results/scenarios/nuclear-and-renewables.nc",
         s2 = "build/results/scenarios/only-renewables.nc"
-    shell:
-        """
-        ln {input.s1} {output.s1}
-        ln {input.s2} {output.s2}
-        """
+    run:
+        copyfile(input.s1, output.s1)
+        copyfile(input.s2, output.s2)
