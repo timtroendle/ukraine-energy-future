@@ -28,6 +28,12 @@ width:
 ---
 ```
 
+The main remaining issues are:
+
+1. Make nuclear work and replace coal with nuclear.
+2. Add a resource constraint on biomass.
+3. Update load time series (the current is preliminary).
+
 # Results
 
 @tbl:lcoe shows the levelised cost of electricity (including cost of the transmission system), @tbl:capacities-power shows the installed generation capacities in the scenarios, and @tbl:capacities-energy shows the installed storage capacities in the scenarios.

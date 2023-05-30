@@ -35,8 +35,16 @@ module pypsa_scenario2:
         scenario2_config
 
 
-use rule * from pypsa_scenario1 as pypsa1_*
-use rule * from pypsa_scenario2 exclude retrieve_databundle, retrieve_cutout, download_copernicus_land_cover, retrieve_load_data as pypsa2_*
+use rule * from pypsa_scenario1 exclude build_load_data as pypsa1_*
+use rule * from pypsa_scenario2 exclude retrieve_databundle, retrieve_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data as pypsa2_*
+
+
+rule build_load_data:
+    message: "Use externally defined load time series in all scenarios."
+    input: "data/electricity-demand-fully-electrified.csv"
+    output: "pypsa-eur/resources/{scenario}/load.csv"
+    run:
+        copyfile(input[0], output[0])
 
 
 ####################
