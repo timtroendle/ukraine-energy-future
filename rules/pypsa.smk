@@ -11,7 +11,9 @@ SCENARIO_NAME_2 = "only-renewables"
 
 scenario1_config = copy.deepcopy(base_pypsa_config)
 scenario2_config = copy.deepcopy(base_pypsa_config)
+update_config(scenario1_config, config["pypsa-eur"])
 update_config(scenario1_config, config["scenarios"][SCENARIO_NAME_1])
+update_config(scenario2_config, config["pypsa-eur"])
 update_config(scenario2_config, config["scenarios"][SCENARIO_NAME_2])
 
 

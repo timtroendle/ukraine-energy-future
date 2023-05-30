@@ -23,8 +23,6 @@ rule all:
     input:
         "build/report.html",
         "build/test-report.html",
-        "build/results/nuclear-and-renewables/elec_s_6_ec_lvopt_24H.nc",
-        "build/results/only-renewables/elec_s_6_ec_lvopt_24H.nc"
 
 
 def pandoc_options(wildcards):

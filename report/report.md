@@ -4,7 +4,7 @@ We are analysing different options for Ukraine's future electricity supply.
 
 # Methods
 
-I am using PyPSA-Eur [@Horsch:2018] to model Ukraine's electrictiy supply. Its main assumptions about individual technologies are shown in @tbl:assumptions.
+I am using PyPSA-Eur [@Horsch:2018] to model Ukraine's electrictiy supply. Its main assumptions about individual technologies are shown in @tbl:assumptions. The depreciation rate is set to 7%.
 
 For now, I am using historic electricity demand from 2013.
 

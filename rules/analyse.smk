@@ -30,11 +30,12 @@ rule assumptions:
         cost = "pypsa-eur/resources/only-renewables/costs.csv"
     params:
         technologies = [
-            "onwind", "solar", "coal", "nuclear", "hydro", "PHS",
+            "onwind", "solar", "coal", "nuclear", "hydro", "PHS", "biomass",
             "battery inverter", "battery storage", "electrolysis", "fuel cell"
         ],
         parameters = ["FOM", "VOM", "investment", "lifetime"],
-        parameter_to_format_string = {"FOM": ".1f", "investment": ".0f", "lifetime": ".0f"}
+        parameter_to_format_string = {"FOM": ".1f", "investment": ".0f", "lifetime": ".0f"},
+        biomass_parameters = config["pypsa-eur"]["biomass"]
     output:
         "build/assumptions.csv"
     conda: "../envs/default.yaml"

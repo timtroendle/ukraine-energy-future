@@ -5,72 +5,61 @@ cluster-sync:
     receive-ignore: .syncignore-receive
     cluster-base-dir: ~/Develop/ukraine-energy-future
     local-results-dir: build/cluster
+pypsa-eur:
+    biomass:
+        potential: 1e9 # TODO update
+        FOM: 4.1 # from Euro-Calliope
+        VOM: 3.1 # from Euro-Calliope
+        fuel: 18.47 # from Euro-Calliope
+        investment: 2300 # from Euro-Calliope
+        lifetime: 20 # from Euro-Calliope
+        efficiency: 0.45 # from Euro-Calliope
+        "discount rate": 0.07 # also defined in `costs`
+    costs:
+        "discount rate": 0.07 # also defined in `biomass`
+    run:
+        shared_cutouts: true
+    scenario:
+        simpl: ['']
+        ll: [vopt]
+        clusters: [6]
+        opts: [24H]
+
+    countries:
+        - UA
+
+    electricity:
+        renewable_carriers: [solar, onwind, hydro]
+        estimate_renewable_capacities:
+            enable: false
+
+    renewable:
+        solar:
+            cutout: europe-2013-era5
+
+    conventional:
+        nuclear:
+            p_max_pu: pypsa-eur/data/nuclear_p_max_pu.csv
+
+    solving:
+        options:
+            load_shedding: true
+        solver:
+            options: gurobi-numeric-focus
 scenarios:
     nuclear-and-renewables:
         run:
             name: "nuclear-and-renewables"
-            shared_cutouts: true
-        scenario:
-            simpl: ['']
-            ll: [vopt]
-            clusters: [6]
-            opts: [24H]
-
-        countries:
-            - UA
 
         electricity:
             conventional_carriers: [biomass, coal] # FIXME replace coal with nuclear
             extendable_carriers:
                 Generator: [solar, onwind, biomass]
-            renewable_carriers: [solar, onwind, hydro]
-            estimate_renewable_capacities:
-                enable: false
-
-        renewable:
-            solar:
-                cutout: europe-2013-era5
-
-        conventional:
-            nuclear:
-                p_max_pu: pypsa-eur/data/nuclear_p_max_pu.csv
-
-        solving:
-            options:
-                load_shedding: true
-            solver:
-                options: gurobi-numeric-focus
     only-renewables:
         run:
             name: "only-renewables"
-            shared_cutouts: true
-        scenario:
-            simpl: ['']
-            ll: [vopt]
-            clusters: [6]
-            opts: [24H]
-
-        countries:
-            - UA
 
         electricity:
             conventional_carriers: [biomass]
             extendable_carriers:
                 Generator: [solar, onwind, biomass]
-            renewable_carriers: [solar, onwind, hydro]
-            estimate_renewable_capacities:
-                enable: false
-
-        renewable:
-            solar:
-                cutout: europe-2013-era5
-
-        conventional:
-            nuclear:
-                p_max_pu: pypsa-eur/data/nuclear_p_max_pu.csv
-
-        solving:
-            options:
-                load_shedding: true
-            solver:
-                options: gurobi-numeric-focus

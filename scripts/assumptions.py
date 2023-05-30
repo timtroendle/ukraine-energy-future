@@ -2,7 +2,12 @@ import pandas as pd
 
 
 def assumption_table(costs: pd.DataFrame, technologies: list[str], parameters: list[str],
-                     parameter_to_format_string: dict[str, str] = None) -> pd.DataFrame:
+                     biomass_params: dict[str, str], parameter_to_format_string: dict[str, str]) -> pd.DataFrame:
+    for parameter, value in biomass_params.items():
+        try:
+            costs.loc[("biomass", parameter), "value"] = value
+        except KeyError:
+            pass # This means the parameter is not in the costs df and that's fine.
     return (
         costs
         .to_xarray()
@@ -28,6 +33,7 @@ if __name__ == "__main__":
         costs=pd.read_csv(snakemake.input.cost, index_col=[0, 1]),
         technologies=snakemake.params.technologies,
         parameters=snakemake.params.parameters,
-        parameter_to_format_string=snakemake.params.parameter_to_format_string
+        parameter_to_format_string=snakemake.params.parameter_to_format_string,
+        biomass_params=snakemake.params.biomass_parameters
     )
     table.to_csv(snakemake.output[0], index=True, header=True)
