@@ -11,3 +11,4 @@ dependencies:
     - xarray=2023.2.0
     - libnetcdf=4.9.1
     - netcdf4=1.6.3
+    - altair=5.0.1

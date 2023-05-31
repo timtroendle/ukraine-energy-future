@@ -30,4 +30,67 @@ references:
   type: article-journal
   URL: https://linkinghub.elsevier.com/retrieve/pii/S2211467X18300804
   volume: '22'
+
+- id: Oreggioni:2022
+  abstract: >-
+    Reaching climate stabilisation targets requires strengthening the efforts to
+    decrease greenhouse gas (GHG) emissions across all final energy uses. The
+    European Union (EU) and United Kingdom (UK) have decided to become the first
+    climate neutral economic bloc by 2050, with ambitious 2030’s GHG emission
+    reduction objectives. National energy and climate plans are currently being
+    updated to account for these new targets, considering the role of emerging
+    technologies and behavioural changes on emission reductions.Here, the
+    DESSTINEE model is used to develop nationally representative energy demand
+    scenarios compatible with the transition to net-zero economies. We show that
+    country-level final energy consumption per unit of GDP must decrease by
+    31–59% across the European Union and the UK by 2050. The wide spread between
+    countries stems from different penetration rates for electricity and other
+    low carbon vectors within heating, transport, and heavy industries, in
+    addition to different paces for efficiency improvement. Outcomes of this
+    research are foreseen to contribute to translating emission reduction
+    objectives into concrete, sectorial, and geographically disaggregated
+    measures and policies; providing significant insights for the design,
+    evaluation, and monitoring of climate change mitigation policies.
+  accessed:
+    - year: 2023
+      month: 5
+      day: 31
+  author:
+    - family: Oreggioni
+      given: Gabriel David
+    - family: Staffell
+      given: Iain
+  citation-key: Oreggioni:2022
+  DOI: 10.2139/ssrn.4005084
+  event-place: Rochester, NY
+  genre: SSRN Scholarly Paper
+  issued:
+    - year: 2022
+      month: 2
+      day: 15
+  language: en
+  number: '4005084'
+  publisher-place: Rochester, NY
+  source: Social Science Research Network
+  title: >-
+    Modelling Country-Level Energy Demand for Europe's 2030 and 2050
+    Decarbonisation Targets
+  type: article
+  URL: https://papers.ssrn.com/abstract=4005084
+
+- id: Staffell:2023
+  author:
+    - family: Staffell
+      given: Iain
+    - family: Pfenninger
+      given: Stefan
+    - family: Johnson
+      given: Nathan
+  citation-key: Staffell:2023
+  issued:
+    - year: 2023
+  title: >-
+    A Global Model of Hourly Space Heating and Cooling Demand at Multiple
+    Spatial Scales
+  type: manuscript
 ...

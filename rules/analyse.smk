@@ -40,3 +40,13 @@ rule assumptions:
         "build/assumptions.csv"
     conda: "../envs/default.yaml"
     script: "../scripts/assumptions.py"
+
+
+rule plot_load:
+    message: "Plot load time series."
+    input:
+        load = "data/electricity-demand-fully-electrified.csv"
+    output:
+        "build/results/load.vega.json"
+    conda: "../envs/default.yaml"
+    script: "../scripts/load.py"

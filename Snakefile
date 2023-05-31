@@ -5,6 +5,7 @@ configfile: "config/default.yaml"
 include: "./rules/sync.smk"
 include: "./rules/pypsa.smk"
 include: "./rules/analyse.smk"
+include: "./rules/utils.smk"
 localrules: all, report, clean
 min_version("7.8")
 
@@ -45,6 +46,7 @@ rule report:
         "report/pandoc-metadata.yaml",
         "report/apa.csl",
         "build/assumptions.csv",
+        "build/results/load.png",
         "build/results/lcoe.csv",
         "build/results/capacities-power.csv",
         "build/results/capacities-energy.csv",

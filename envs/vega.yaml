@@ -1,0 +1,11 @@
+# This env is necessary to use the latest version of vega-lite-cli which,
+# as of 2023-01-17, is the only one working on ARM.
+name: vega
+channels:
+    - conda-forge
+    - timtroendle # necessary for vega-lite-cli on arm as of 2023-01-17
+                  # remove blocked by https://github.com/conda-forge/vega-lite-cli-feedstock/pull/11
+dependencies:
+    - vega-cli=5.22.1
+    - vega-lite-cli=5.6.0
+
