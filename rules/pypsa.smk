@@ -54,7 +54,7 @@ rule build_load_data:
 
 rule run_scenarios:
     input:
-        s1 = "pypsa-eur/results/networks/nuclear-and-renewables/elec_s_6_ec_lvopt_24H.nc",
+        s1 = "pypsa-eur/results/networks/nuclear-and-renewables/elec_s_6_ec_lvopt_24H-BAU.nc",
         s2 = "pypsa-eur/results/networks/only-renewables/elec_s_6_ec_lvopt_24H.nc"
     output:
         s1 = "build/results/scenarios/nuclear-and-renewables.nc",

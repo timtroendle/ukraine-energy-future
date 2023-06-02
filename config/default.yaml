@@ -54,7 +54,12 @@ scenarios:
         electricity:
             conventional_carriers: [biomass, coal] # FIXME replace coal with nuclear
             extendable_carriers:
-                Generator: [solar, onwind, biomass]
+                Generator: [solar, onwind, biomass, coal]
+            BAU_mincapacities:
+                coal: 60000 # TODO update to pre-war share (~50%)
+                biomass: 0
+                solar: 0
+                onwind: 0
     only-renewables:
         run:
             name: "only-renewables"
