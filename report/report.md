@@ -55,6 +55,8 @@ Meeting future electricity demand requires a substantial expansion of generation
 
 A fully-autarkic energy system requires substantial amounts of storage capacities, especially in the renewables only scenario (@tbl:capacities-energy).
 
+A fully-renewable energy system uses large amounts of biomass (@tbl:generation).
+
 ```table
 ---
 caption: 'Levelised cost of electricity. {#tbl:lcoe}'
@@ -87,6 +89,20 @@ width:
 caption: 'Installed storage capacities (GWh). {#tbl:capacities-energy}'
 alignment: LRR
 include: build/results/capacities-energy.csv
+include-encoding: UTF-8
+markdown: True
+width:
+    - 0.3
+    - 0.35
+    - 0.35
+---
+```
+
+```table
+---
+caption: 'Generation (TWh). {#tbl:generation}'
+alignment: LRR
+include: build/results/generation.csv
 include-encoding: UTF-8
 markdown: True
 width:

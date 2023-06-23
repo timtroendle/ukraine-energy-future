@@ -24,6 +24,16 @@ rule capacities:
     script: "../scripts/capacities.py"
 
 
+rule generation:
+    message: "Calculate carrier generation in all scenarios."
+    input:
+        scenarios = all_scenarios
+    output:
+        energy = "build/results/generation.csv",
+    conda: "../envs/default.yaml"
+    script: "../scripts/generation.py"
+
+
 rule assumptions:
     message: "Generate table of assumptions."
     input:

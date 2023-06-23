@@ -50,6 +50,7 @@ rule report:
         "build/results/lcoe.csv",
         "build/results/capacities-power.csv",
         "build/results/capacities-energy.csv",
+        "build/results/generation.csv",
     params: options = pandoc_options
     output: "build/report.{suffix}"
     wildcard_constraints:
