@@ -13,7 +13,7 @@ def all_generation_per_carrier(scenarios: list[pypsa.Network], aggregator: calla
 
 
 def generation_per_carrier(n: pypsa.Network) -> pd.Series:
-    return (
+    generation = (
         n
         .generators_t
         .p
@@ -23,6 +23,23 @@ def generation_per_carrier(n: pypsa.Network) -> pd.Series:
         .drop(index="load")
         .mul(8760)
         .mul(MW_TO_TW)
+    )
+    generation["biomass"] = biomass_generation(n) # biomass is link, not generator hence special treatment
+    return generation
+
+
+def biomass_generation(n: pypsa.Network) -> float:
+    return (
+        n
+        .links_t
+        .p1
+        .groupby(n.links.carrier, axis=1)
+        .sum() # across locations
+        .mean() # across time
+        .mul(8760)
+        .mul(MW_TO_TW)
+        .mul(-1)
+        .loc["biomass"]
     )
 
 

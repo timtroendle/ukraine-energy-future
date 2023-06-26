@@ -54,7 +54,7 @@ Meeting future electricity demand requires a substantial expansion of generation
 
 A fully-autarkic energy system requires substantial amounts of storage capacities, especially in the renewables only scenario (@tbl:capacities-energy).
 
-A fully-renewable energy system uses large amounts of biomass (@tbl:generation).
+In both scenarios, all available biomass is used (@tbl:generation).
 
 ```table
 ---
