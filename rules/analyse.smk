@@ -40,7 +40,7 @@ rule assumptions:
         cost = "pypsa-eur/resources/only-renewables/costs.csv"
     params:
         technologies = [
-            "onwind", "solar", "coal", "nuclear", "hydro", "PHS", "biomass",
+            "onwind", "solar", "nuclear", "hydro", "PHS", "biomass",
             "battery inverter", "battery storage", "electrolysis", "fuel cell"
         ],
         parameters = ["FOM", "VOM", "investment", "lifetime"],

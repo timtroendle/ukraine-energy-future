@@ -39,7 +39,7 @@ pypsa-eur:
 
     conventional:
         nuclear:
-            p_max_pu: pypsa-eur/data/nuclear_p_max_pu.csv
+            p_max_pu: 1 # TODO update
 
     solving:
         options:
@@ -52,11 +52,11 @@ scenarios:
             name: "nuclear-and-renewables"
 
         electricity:
-            conventional_carriers: [biomass, coal] # FIXME replace coal with nuclear
+            conventional_carriers: [biomass, nuclear]
             extendable_carriers:
-                Generator: [solar, onwind, biomass, coal]
+                Generator: [solar, onwind, biomass, nuclear]
             BAU_mincapacities:
-                coal: 60000 # TODO update to pre-war share (~50%)
+                nuclear: 60000 # TODO update to pre-war share (~50%)
                 biomass: 0
                 solar: 0
                 onwind: 0
