@@ -22,11 +22,12 @@ For now, we run two scenarios. In the first scenario, `only-renewables`, electri
 
 In the second scenario, `nuclear-and-renewables`, in addition to renewables, electricity can be generated from nuclear. We set the minimal level of nuclear to its pre-war level (~50%).
 
+The bioenergy potential is set to 513 TWh (44.14 Mtoe) according to [@Geletukha:2020]. Thats 438 TWh (37.69 Mtoe) solid biomass and 75 TWh (6.45 Mtoe) biogas. It includes energy crops but excludes liquid fuels. The energy crops will require ~6.6% of total land.
+
 The main remaining issues are:
 
-1. Add a resource constraint on biomass.
-2. Update load time series (the current is preliminary).
-3. If possible: Add an uncertainty analysis.
+1. Update load time series (the current is preliminary).
+2. If possible: Add a sensitivity and uncertainty analysis.
 
 ![**Electricity load projection used in the model (preliminary).** Load is project for the year 2050 and it is assumed that heat and transport are fully electrified.](build/results/load.png){#fig:load}
 

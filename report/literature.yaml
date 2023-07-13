@@ -1,5 +1,89 @@
 ---
 references:
+- id: ':y'
+  accessed:
+    - year: 2023
+      month: 7
+      day: 4
+  citation-key: ':y'
+  container-title: UNDP
+  language: en
+  title: Ukraine Energy Damage Assessment | United Nations Development Programme
+  type: webpage
+  URL: https://www.undp.org/ukraine/publications/ukraine-energy-damage-assessment
+
+- id: Andersson:2020
+  accessed:
+    - year: 2023
+      month: 7
+      day: 13
+  author:
+    - family: Andersson
+      given: Jan
+  citation-key: Andersson:2020
+  issued:
+    - year: 2020
+      month: 3
+      day: 2
+  publisher: Wärtsilä
+  title: Final Ukrainian path to 100 percent renewables
+  type: report
+  URL: >-
+    https://uabio.org/wp-content/uploads/2020/05/Final_UA_Path_to_100_percent_renewables_Ukraine.pdf
+
+- id: Geletukha:2020
+  abstract: >-
+    The purpose of the work is to elaborate a concept of Roadmap for bioenergy
+    development of Ukraine, which outlines the goals and prospects of the
+    bioenergy sector until 2050. The proposed Roadmap is an essential document
+    for the country for several factors. First, it determines the contribution
+    of bioenergy to meeting Ukraine’s international commitments to reduce
+    greenhouse gas emissions under the Paris Climate Agreement of 2015. Second,
+    the Roadmap shows ways to achieve existing bioenergy development goals until
+    2035. Third, the Roadmap can be used to elaborate the National Renewable
+    Energy Action Plan until 2030 and the Concept of state policy on energy and
+    environment, as well as to revise the Ukraine’s current Energy Strategy with
+    an extension until 2050. The baseline approaches of Roadmap for bioenergy
+    development of Ukraine until 2050 are in line with the basic principles of
+    the Ukrainian Green Deal until 2050 and additionally take into account two
+    promising segments of the bioenergy sector such as the development of
+    production and consumption of first- and second-generation biofuels and
+    biomethane. The structure of consumption of biofuels by their types and by
+    types of produced energy carriers is proposed. It is estimated that in 2050,
+    about half of the total biofuels consumption will come from solid biofuels
+    used for heat production. The rest in comparable proportions will be split
+    between solid biofuels for power production, biogas, biomethane, and liquid
+    biofuels. Further, the Roadmap needs to be detailed, refined and expanded to
+    the level of the Strategy for bioenergy development in Ukraine until 2050.
+  accessed:
+    - year: 2023
+      month: 7
+      day: 13
+  author:
+    - family: Geletukha
+      given: G.G.
+    - family: Zheliezna
+      given: T.A.
+    - family: Bashtovyi
+      given: A.I.
+  citation-key: Geletukha:2020
+  container-title: Thermophysics and Thermal Power Engineering
+  container-title-short: ttpe
+  DOI: 10.31472/ttpe.2.2020.6
+  ISSN: 2663-7235
+  issue: '2'
+  issued:
+    - year: 2020
+      month: 8
+      day: 25
+  language: en
+  page: 60-67
+  source: DOI.org (Crossref)
+  title: Roadmap for bioenergy development in Ukraine until 2050
+  type: article-journal
+  URL: http://ihe.nas.gov.ua/index.php/journal/article/view/396
+  volume: '42'
+
 - id: Horsch:2018
   accessed:
     - year: 2020
@@ -78,6 +162,52 @@ references:
   type: article
   URL: https://papers.ssrn.com/abstract=4005084
 
+- id: Sandbu:2023
+  accessed:
+    - year: 2023
+      month: 6
+      day: 22
+  author:
+    - family: Sandbu
+      given: Martin
+  citation-key: Sandbu:2023
+  container-title: Financial Times
+  issued:
+    - year: 2023
+      month: 6
+      day: 4
+  title: Ukraine’s rapid reconstruction will be in Europe’s own interest
+  type: article-newspaper
+  URL: https://archive.is/wPMxn
+
+- id: Schaudwet:2023
+  abstract: >-
+    Um ihr großes Erneuerbaren-Potenzial zu heben, müsste die Ukraine den von
+    Russland besetzten Süden zurückerobern. Dort herrschen die besten
+    Windkraftbedingungen. Auf ukrainisch kontrolliertem Terrain bei Odessa plant
+    ein deutsches Unternehmen bereits 300 Megawatt. Die Ukraine setzt auf eine
+    Einbindung ins EU-Energiesystem.
+  accessed:
+    - year: 2023
+      month: 6
+      day: 22
+  author:
+    - family: Schaudwet
+      given: Christian
+  citation-key: Schaudwet:2023
+  container-title: Tagesspiegel Background Energie & Klima
+  issued:
+    - year: 2023
+      month: 6
+      day: 6
+  language: de
+  publisher: Verlag Der Tagesspiegel GmbH
+  source: background.tagesspiegel.de
+  title: Windkraft-Eldorado der Ukraine vor der Offensive
+  type: article-newspaper
+  URL: >-
+    https://background.tagesspiegel.de/energie-klima/windkraft-eldorado-der-ukraine-vor-der-offensive
+
 - id: Staffell:2023
   author:
     - family: Staffell
@@ -93,4 +223,70 @@ references:
     A Global Model of Hourly Space Heating and Cooling Demand at Multiple
     Spatial Scales
   type: manuscript
+
+- id: Sukurova:2023
+  author:
+    - family: Sukurova
+      given: Natalia
+    - family: Wietschel
+      given: Martin
+    - family: Garcia
+      given: Joshua Fragoso
+    - family: Müller
+      given: Viktor Paul
+    - family: Franke
+      given: Katja
+    - family: Kantel
+      given: Anne
+    - family: Graf
+      given: Marieke
+    - family: Jalbout
+      given: Eddy
+    - family: Pieton
+      given: Natalia
+    - family: Abdel-Khalek
+      given: Hazem
+    - family: Bergup
+      given: Emily
+    - family: Weise
+      given: Friedrich
+  citation-key: Sukurova:2023
+  issued:
+    - year: 2023
+      month: 4
+  language: en
+  publisher: Fraunhofer ISI
+  source: Zotero
+  title: >-
+    HYPAT Working Paper 04/2023. Ukrainian Hydrogen Export Potential:
+    Oppor-tunities and Challenges in the Light of the Ongoing War
+  type: report
+
+- id: Varenikova:2023
+  abstract: >-
+    Bombarding the power grid has been an essential part of Russia’s invasion,
+    but officials say it would take many more missile strikes to badly damage a
+    wind farm than a power plant.
+  accessed:
+    - year: 2023
+      month: 6
+      day: 1
+  author:
+    - family: Varenikova
+      given: Maria
+  citation-key: Varenikova:2023
+  container-title: The New York Times
+  ISSN: 0362-4331
+  issued:
+    - year: 2023
+      month: 5
+      day: 29
+  language: en-US
+  section: World
+  source: NYTimes.com
+  title: 'Ukraine Sees New Virtue in Wind Power: It’s Harder to Destroy'
+  title-short: Ukraine Sees New Virtue in Wind Power
+  type: article-newspaper
+  URL: >-
+    https://www.nytimes.com/2023/05/29/world/europe/ukraine-russia-wind-power.html
 ...

@@ -7,7 +7,7 @@ cluster-sync:
     local-results-dir: build/cluster
 pypsa-eur:
     biomass:
-        potential: 172000000 # TODO add source
+        potential: 513000000 # [@Geletukha:2020]
         FOM: 4.1 # from Euro-Calliope
         VOM: 3.1 # from Euro-Calliope
         fuel: 18.47 # from Euro-Calliope
