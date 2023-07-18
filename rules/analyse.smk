@@ -8,7 +8,8 @@ rule lcoe:
     output:
         "build/results/lcoe.csv"
     params:
-        ignore_existing = False
+        ignore_existing = False,
+        opts_out = False
     conda: "../envs/default.yaml"
     script: "../scripts/lcoe.py"
 

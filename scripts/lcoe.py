@@ -1,29 +1,43 @@
+from dataclasses import dataclass, field
+
 import pandas as pd
 import pypsa
 
 
-def lcoe_all(scenarios: list[pypsa.Network], ignore_existing: bool) -> pd.Series:
+@dataclass
+class Scenario:
+    n: pypsa.Network
+    opt_in_name: bool
+    name: str = field(init=False)
+
+    def __post_init__(self):
+        self.name = self.n._meta["run"]["name"]
+        if self.opt_in_name:
+            self.name = self.name + "--" + self.n._meta["wildcards"]["opts"]
+
+
+def lcoe_all(scenarios: list[Scenario], ignore_existing: bool) -> pd.Series:
     demand = demand_all(scenarios)
     total_cost = total_cost_all(scenarios, ignore_existing)
     return (total_cost / demand).rename("LCOE (€/MWh)")
 
 
-def demand_all(scenarios: list[pypsa.Network]) -> pd.Series:
+def demand_all(scenarios: list[Scenario]) -> pd.Series:
     return pd.Series(
-        index=[s._meta["run"]["name"] for s in scenarios],
+        index=[s.name for s in scenarios],
         data=[
-            n.statistics.withdrawal(aggregate_time="sum").xs(("Load", "-")) * (-1)
-            for n in scenarios
+            s.n.statistics.withdrawal(aggregate_time="sum").xs(("Load", "-")) * (-1)
+            for s in scenarios
         ],
         name="demand"
 
     )
 
 
-def total_cost_all(scenarios: list[pypsa.Network], ignore_existing: bool) -> pd.Series:
+def total_cost_all(scenarios: list[Scenario], ignore_existing: bool) -> pd.Series:
     return pd.Series(
-        index=[s._meta["run"]["name"] for s in scenarios],
-        data=[total_cost_network(s, ignore_existing) for s in scenarios],
+        index=[s.name for s in scenarios],
+        data=[total_cost_network(s.n, ignore_existing) for s in scenarios],
         name="levelised cost of electricity"
 
     )
@@ -71,7 +85,8 @@ def cost_links(n: pypsa.Network, ignore_existing: bool = False) -> float:
 
 if __name__ == "__main__":
     lcoes = lcoe_all(
-        scenarios=[pypsa.Network(path_to_n) for path_to_n in snakemake.input.scenarios],
+        scenarios=[Scenario(n=pypsa.Network(path_to_n), opt_in_name=snakemake.params.opts_out)
+                   for path_to_n in snakemake.input.scenarios],
         ignore_existing=snakemake.params.ignore_existing
     )
     lcoes.to_csv(snakemake.output[0], index=True, header=True, float_format="%0.1f")

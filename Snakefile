@@ -24,6 +24,7 @@ rule all:
     input:
         "build/report.html",
         "build/test-report.html",
+        "build/results/gsa/sensitivities.csv"
 
 
 def pandoc_options(wildcards):

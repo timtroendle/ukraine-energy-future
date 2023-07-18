@@ -5,6 +5,9 @@ cluster-sync:
     receive-ignore: .syncignore-receive
     cluster-base-dir: ~/Develop/ukraine-energy-future
     local-results-dir: build/cluster
+resolution:
+    space: 6 # number of nodes in the model
+    time: 24H
 pypsa-eur:
     biomass:
         potential: 513000000 # [@Geletukha:2020]
@@ -32,6 +35,10 @@ pypsa-eur:
         renewable_carriers: [solar, onwind, hydro]
         estimate_renewable_capacities:
             enable: false
+        BAU_mincapacities:
+            biomass: 0
+            solar: 0
+            onwind: 0
 
     renewable:
         solar:
@@ -57,9 +64,6 @@ scenarios:
                 Generator: [solar, onwind, biomass, nuclear]
             BAU_mincapacities:
                 nuclear: 60000 # TODO update to pre-war share (~50%)
-                biomass: 0
-                solar: 0
-                onwind: 0
     only-renewables:
         run:
             name: "only-renewables"
@@ -68,3 +72,13 @@ scenarios:
             conventional_carriers: [biomass]
             extendable_carriers:
                 Generator: [solar, onwind, biomass]
+global-sensitivity-analysis:
+    parameters:
+        nuclear+c:
+            min: 0.25
+            max: 2
+        solar+c:
+            min: 0.25
+            max: 2
+    seed: 5839
+    number-trajectories: 15

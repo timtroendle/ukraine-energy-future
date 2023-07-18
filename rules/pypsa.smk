@@ -1,13 +1,17 @@
 import copy
+from itertools import chain
 from shutil import copyfile
+from pathlib import Path
 
 from snakemake.io import load_configfile
 from snakemake.utils import update_config
+import pandas as pd
 
 base_pypsa_config = load_configfile("pypsa-eur/config.default.yaml")
 
 SCENARIO_NAME_1 = "nuclear-and-renewables"
 SCENARIO_NAME_2 = "only-renewables"
+RESULT_PATH = "pypsa-eur/results/networks/{scenario}/elec_s_{spatial_res}_ec_lvopt_{temporal_res}-BAU{opts}.nc"
 
 scenario1_config = copy.deepcopy(base_pypsa_config)
 scenario2_config = copy.deepcopy(base_pypsa_config)
@@ -54,11 +58,82 @@ rule build_load_data:
 
 rule run_scenarios:
     input:
-        s1 = "pypsa-eur/results/networks/nuclear-and-renewables/elec_s_6_ec_lvopt_24H-BAU.nc",
-        s2 = "pypsa-eur/results/networks/only-renewables/elec_s_6_ec_lvopt_24H.nc"
+        s1 = RESULT_PATH.format(
+            scenario=SCENARIO_NAME_1,
+            spatial_res=config["resolution"]["space"],
+            temporal_res=config["resolution"]["time"],
+            opts=""),
+        s2 = RESULT_PATH.format(
+            scenario=SCENARIO_NAME_2,
+            spatial_res=config["resolution"]["space"],
+            temporal_res=config["resolution"]["time"],
+            opts=""),
     output:
-        s1 = "build/results/scenarios/nuclear-and-renewables.nc",
-        s2 = "build/results/scenarios/only-renewables.nc"
+        s1 = f"build/results/scenarios/{SCENARIO_NAME_1}.nc",
+        s2 = f"build/results/scenarios/{SCENARIO_NAME_2}.nc"
     run:
         copyfile(input.s1, output.s1)
         copyfile(input.s2, output.s2)
+
+
+checkpoint gsa_input:
+    message: "Create input samples for GSA."
+    params:
+        parameters = config["global-sensitivity-analysis"]["parameters"],
+        number_trajectories = config["global-sensitivity-analysis"]["number-trajectories"],
+        seed = config["global-sensitivity-analysis"]["seed"]
+    output:
+        x = "build/results/gsa/input.csv"
+    conda: "../envs/gsa.yaml"
+    script: "../scripts/gsa_input.py"
+
+
+def gsa_runs(wildcards) -> list[str]:
+    """Returns list with pathnames of all necessary runs for GSA."""
+    x = pd.read_csv(checkpoints.gsa_input.get().output[0], index_col=0)
+    pypsa_opts = {
+        run_id: "-".join(f"{param_name}{x.loc[run_id, param_name]:.2f}" for param_name in x.keys())
+        for run_id in x.index
+    }
+    runs = [
+        (
+            RESULT_PATH.format(
+                scenario=SCENARIO_NAME_1,
+                spatial_res=config["resolution"]["space"],
+                temporal_res=config["resolution"]["time"],
+                opts="-" + opts),
+            RESULT_PATH.format(
+                scenario=SCENARIO_NAME_2,
+                spatial_res=config["resolution"]["space"],
+                temporal_res=config["resolution"]["time"],
+                opts="-" + opts),
+        )
+        for run_id, opts in pypsa_opts.items()
+    ]
+    return list(chain.from_iterable(runs))
+
+
+rule gsa_lcoe:
+    message: "Calculate LCOE of all GSA scenarios."
+    input:
+        scenarios = gsa_runs
+    output: "build/results/gsa/lcoe.csv"
+    params:
+        ignore_existing = False,
+        opts_out = True
+    conda: "../envs/default.yaml"
+    script: "../scripts/lcoe.py"
+
+
+rule gsa_output:
+    message: "Analyse sensitivities of GSA."
+    input:
+        x = "build/results/gsa/input.csv",
+        lcoe = rules.gsa_lcoe.output[0]
+    params:
+        parameters = config["global-sensitivity-analysis"]["parameters"],
+        seed = config["global-sensitivity-analysis"]["seed"]
+    output:
+        xy = "build/results/gsa/sensitivities.csv"
+    conda: "../envs/gsa.yaml"
+    script: "../scripts/gsa_output.py"

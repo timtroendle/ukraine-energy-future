@@ -9,7 +9,7 @@ dependencies:
     - snakemake-minimal=7.19.1
 
     # all the following are pypsa-eur dependencies
-    - pypsa>=0.21.3
+    - pypsa=0.23.0
     - atlite>=0.2.9
     - dask
     - jupyter
