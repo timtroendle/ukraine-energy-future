@@ -85,7 +85,7 @@ checkpoint gsa_input:
     output:
         x = "build/results/gsa/input.csv"
     conda: "../envs/gsa.yaml"
-    script: "../scripts/gsa_input.py"
+    script: "../scripts/gsa/input.py"
 
 
 def gsa_runs(wildcards) -> list[str]:
@@ -136,4 +136,13 @@ rule gsa_output:
     output:
         xy = "build/results/gsa/sensitivities.csv"
     conda: "../envs/gsa.yaml"
-    script: "../scripts/gsa_output.py"
+    script: "../scripts/gsa/output.py"
+
+
+rule gsa_vis:
+    message: "Visualise sensitivities."
+    input:
+        sensitivities = rules.gsa_output.output[0]
+    output: "build/results/gsa/sensitivities.vega.json"
+    conda: "../envs/default.yaml"
+    script: "../scripts/gsa/vis.py"

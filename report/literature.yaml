@@ -84,6 +84,34 @@ references:
   URL: http://ihe.nas.gov.ua/index.php/journal/article/view/396
   volume: '42'
 
+- id: Herman:2017
+  accessed:
+    - year: 2020
+      month: 2
+      day: 4
+  author:
+    - family: Herman
+      given: Jon
+    - family: Usher
+      given: Will
+  citation-key: Herman:2017
+  container-title: The Journal of Open Source Software
+  container-title-short: JOSS
+  DOI: 10.21105/joss.00097
+  ISSN: 2475-9066
+  issue: '9'
+  issued:
+    - year: 2017
+      month: 1
+      day: 10
+  page: '97'
+  source: DOI.org (Crossref)
+  title: 'SALib: An open-source Python library for Sensitivity Analysis'
+  title-short: SALib
+  type: article-journal
+  URL: http://joss.theoj.org/papers/10.21105/joss.00097
+  volume: '2'
+
 - id: Horsch:2018
   accessed:
     - year: 2020
@@ -114,6 +142,29 @@ references:
   type: article-journal
   URL: https://linkinghub.elsevier.com/retrieve/pii/S2211467X18300804
   volume: '22'
+
+- id: Kristensen:2016
+  author:
+    - family: Kristensen
+      given: Martin Heine
+    - family: Petersen
+      given: Steffen
+  citation-key: Kristensen:2016
+  container-title: Energy and Buildings
+  container-title-short: Energy and Buildings
+  DOI: 10.1016/j.enbuild.2016.08.038
+  issued:
+    - year: 2016
+      month: 10
+      day: 1
+  page: 166-176
+  publisher: Elsevier B.V.
+  title: >-
+    Choosing the appropriate sensitivity analysis method for building energy
+    model-based investigations
+  type: article-journal
+  URL: http://linkinghub.elsevier.com/retrieve/pii/S0378778816307344
+  volume: '130'
 
 - id: Oreggioni:2022
   abstract: >-
@@ -208,6 +259,54 @@ references:
   URL: >-
     https://background.tagesspiegel.de/energie-klima/windkraft-eldorado-der-ukraine-vor-der-offensive
 
+- id: Sin:2009
+  abstract: >-
+    The parameter importance ranking in the Morris method is based on elementary
+    effects calculated at some randomly selected points in the input space. When
+    applying this method to a complex dynamic fermentation model, the parameter
+    significance ranking was observed to be dependent on the units of the
+    factors used in the model hence leading to erroneous ranking results. To
+    overcome this problem, this study argues to rank the factors' importance on
+    the scaled elementary effects. This solution was shown to correctly identify
+    the important factors, thereby improving the resilience of the Morris method
+    to type I error (the error committed when the statistical method identifies
+    an input parameter as significant when in fact it is not). Overall we
+    strongly suggest the use of a non-dimensional measure of elementary effects
+    when using the Morris method to ensure a reliable screening of important
+    factors in complex models.
+  accessed:
+    - year: 2023
+      month: 7
+      day: 19
+  author:
+    - family: Sin
+      given: Gürkan
+    - family: Gernaey
+      given: Krist V.
+  citation-key: Sin:2009
+  collection-title: 19 European Symposium on Computer Aided Process Engineering
+  container-title: Computer Aided Chemical Engineering
+  DOI: 10.1016/S1570-7946(09)70154-3
+  editor:
+    - family: Jeżowski
+      given: Jacek
+    - family: Thullie
+      given: Jan
+  issued:
+    - year: 2009
+      month: 1
+      day: 1
+  language: en
+  page: 925-930
+  publisher: Elsevier
+  source: ScienceDirect
+  title: >-
+    Improving the Morris method for sensitivity analysis by scaling the
+    elementary effects
+  type: chapter
+  URL: https://www.sciencedirect.com/science/article/pii/S1570794609701543
+  volume: '26'
+
 - id: Staffell:2023
   author:
     - family: Staffell
@@ -261,6 +360,63 @@ references:
     HYPAT Working Paper 04/2023. Ukrainian Hydrogen Export Potential:
     Oppor-tunities and Challenges in the Light of the Ongoing War
   type: report
+
+- id: Usher:2023
+  abstract: >-
+    Background: Energy system optimisation models (ESOMs) are commonly used to
+    support long-term planning at national, regional, or continental scales. The
+    importance of recognising uncertainty in energy system modelling is
+    regularly commented on but there is little practical guidance on how to best
+    incorporate existing techniques, such as global sensitivity analysis,
+    despite some good applications in the literature.
+
+    Methods: In this paper, we provide comprehensive guidelines for conducting a
+    global sensitivity analysis of an ESOM, aiming to remove barriers to
+    adopting this approach. With a pedagogical intent, we begin by exploring why
+    you should conduct a global sensitivity analysis. We then describe how to
+    implement a global sensitivity analysis using the Morris method in an ESOM
+    using a sequence of simple illustrative models built using the Open Source
+    energy Modelling System (OSeMOSYS) framework, followed by a realistic
+    example.
+
+    Results: Results show that the global sensitivity analysis identifies
+    influential parameters that drive results in the simple and realistic
+    models, and identifies uninfluential parameters which can be ignored or
+    fixed. We show that global sensitivity analysis can be applied to ESOMs with
+    relative ease using freely available open-source tools. The results
+    replicate the findings of best-practice studies from the field demonstrating
+    the importance of including all parameters in the analysis and avoiding a
+    narrow focus on particular parameters such as technology costs.
+
+    Conclusions: The results highlight the benefits of performing a global
+    sensitivity analysis for the design of energy system optimisation scenarios.
+    We discuss how the results can be interpreted and used to enhance the
+    transparency and rigour of energy system modelling studies.
+  accessed:
+    - year: 2023
+      month: 5
+      day: 22
+  author:
+    - family: Usher
+      given: William
+    - family: Barnes
+      given: Trevor
+    - family: Moksnes
+      given: Nandi
+    - family: Niet
+      given: Taco
+  citation-key: Usher:2023
+  issued:
+    - year: 2023
+      month: 2
+      day: 13
+  language: en
+  source: DOI.org (Crossref)
+  title: >-
+    Global sensitivity analysis to enhance the transparency and rigour of energy
+    system optimisation modelling
+  type: article-journal
+  URL: https://open-research-europe.ec.europa.eu/articles/3-30/v1
 
 - id: Varenikova:2023
   abstract: >-

@@ -45,7 +45,7 @@ def gsa_opts(opts: str):
 
 
 def lcoe_diff(lcoes: xr.DataArray) -> float:
-    return (lcoes.sel(scenario="only-renewables") - lcoes.sel(scenario="nuclear-and-renewables")).item()
+    return (lcoes.sel(scenario="nuclear-and-renewables") - lcoes.sel(scenario="only-renewables")).item()
 
 
 def create_problem(parameters: dict[str: dict[str: float]]) -> dict:
@@ -63,4 +63,4 @@ if __name__ == "__main__":
         x=pd.read_csv(snakemake.input.x, index_col=0),
         path_to_lcoe=snakemake.input.lcoe
     )
-    sensitivities.to_csv(snakemake.output[0], index=True, header=True)
+    sensitivities.to_csv(snakemake.output[0], index=False, header=True)

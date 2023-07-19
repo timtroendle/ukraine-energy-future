@@ -73,12 +73,30 @@ scenarios:
             extendable_carriers:
                 Generator: [solar, onwind, biomass]
 global-sensitivity-analysis:
-    parameters:
+    parameters: # TODO biomass-potential if possible
         nuclear+c:
-            min: 0.25
-            max: 2
+            min: 0.25 # TODO update
+            max: 2 # TODO update
         solar+c:
-            min: 0.25
-            max: 2
+            min: 0.25 # TODO update
+            max: 2 # TODO update
+        onwind+c:
+            min: 0.25 # TODO update
+            max: 2 # TODO update
+        biomass+c:
+            min: 0.25 # TODO update
+            max: 2 # TODO update
+        H2+c:
+            min: 0.25 # TODO update
+            max: 2 # TODO update
+        battery+c:
+            min: 0.25 # TODO update
+            max: 2 # TODO update
+        nuclear+m:
+            min: 0.25 # TODO update
+            max: 2 # TODO update
+        biomass+m:
+            min: 0.25 # TODO update
+            max: 2 # TODO update
     seed: 5839
     number-trajectories: 15

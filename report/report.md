@@ -24,10 +24,14 @@ In the second scenario, `nuclear-and-renewables`, in addition to renewables, ele
 
 The bioenergy potential is set to 513 TWh (44.14 Mtoe) according to [@Geletukha:2020]. Thats 438 TWh (37.69 Mtoe) solid biomass and 75 TWh (6.45 Mtoe) biogas. It includes energy crops but excludes liquid fuels. The energy crops will require ~6.6% of total land.
 
+We perform a global sensitivity analysis to understand the impact of model parameters. We apply the Morris Method, an efficient method that estimates sensitivities accurately requiring only few runs [@Kristensen:2016; @Usher:2023]. We use the method to understand which model parameters impact the LCOE difference between the two scenarios the most.
+
+The sampling of the Morris Method works in the following way: Given eight model parameters, the method chooses a random start value within the 8-dimensional space spanned by the model parameters. The method follows a one-step-at-a-time approach, in which each iteration of the method changes the value of a single parameter only. This approach leads to a trajectory of (8 + 1) points in the parameter space. To explore this space more comprehensively, we generate 15 such trajectories, creating 135 different combinations of parameter values. We run both scenarios for all combinations allowing us to attribute LCOE differences to parameter values. For each parameter, we observe its impact on LCOE difference once for each trajectory, a total of 15 times. We use the open-source Python library SALib to perform the global sensitivity analysis [@Herman:2017].
+
 The main remaining issues are:
 
 1. Update load time series (the current is preliminary).
-2. If possible: Add a sensitivity and uncertainty analysis.
+2. If possible: Add an uncertainty analysis.
 
 ![**Electricity load projection used in the model (preliminary).** Load is project for the year 2050 and it is assumed that heat and transport are fully electrified.](build/results/load.png){#fig:load}
 
@@ -56,6 +60,8 @@ Meeting future electricity demand requires a substantial expansion of generation
 A fully-autarkic energy system requires substantial amounts of storage capacities, especially in the renewables only scenario (@tbl:capacities-energy).
 
 In both scenarios, all available biomass is used (@tbl:generation).
+
+The cost of nuclear have the greatest impact on LCOE difference between the two scenarios (@fig:sensitivities). When Nuclear capital cost is doubled, the nuclear-and-renewables scenario becomes on average more than 70 €/MWh more expensive compared with the only-renewables scenario. Doubling the capital cost of solar, wind, and biomass increases the relative cost of the only-renewables scenario, but to a lower degree (20--30 €/MWh). Capital cost of storage technologies and marginal cost have low or almost no impact.
 
 ```table
 ---
@@ -111,6 +117,8 @@ width:
     - 0.35
 ---
 ```
+
+![**Sensitivities of LCOE difference between scenarios to model parameters (preliminary).** Thick bars show the average increase in LCOE of the nuclear-and-renewables compared with the only-renewables scenario, given a doubling of parameter values. Thin bars show the standard deviation of these effects and are therefore a proxy for the interactivity of the parameters: the larger the standard deviation, the more does the impact of the parameter depend on other parameter values.](build/results/gsa/sensitivities.png){#fig:sensitivities}
 
 # Discussion
 

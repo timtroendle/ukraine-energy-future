@@ -24,7 +24,6 @@ rule all:
     input:
         "build/report.html",
         "build/test-report.html",
-        "build/results/gsa/sensitivities.csv"
 
 
 def pandoc_options(wildcards):
@@ -52,6 +51,7 @@ rule report:
         "build/results/capacities-power.csv",
         "build/results/capacities-energy.csv",
         "build/results/generation.csv",
+        "build/results/gsa/sensitivities.png",
     params: options = pandoc_options
     output: "build/report.{suffix}"
     wildcard_constraints:
