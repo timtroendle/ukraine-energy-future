@@ -6,7 +6,7 @@ channels:
 dependencies:
     - python=3.10
     - flake8=3.8.3
-    - snakemake-minimal=7.19.1
+    - snakemake-minimal=7.22.0
 
     # all the following are pypsa-eur dependencies
     - pypsa=0.23.0

@@ -53,7 +53,7 @@ width:
 
 # Results (preliminary)
 
-System cost of renewable only scenario is low (<70 €/MWh, @tbl:lcoe). Keeping nuclear at pre-war's levels shows roughly the same cost (@tbl:lcoe).
+System cost of renewable only scenario is low (<80 €/MWh, @tbl:lcoe). Keeping nuclear at pre-war's levels shows roughly the same cost (@tbl:lcoe).
 
 Meeting future electricity demand requires a substantial expansion of generation capacities in both scenarios (@tbl:capacities-power).
 
@@ -61,7 +61,7 @@ A fully-autarkic energy system requires substantial amounts of storage capacitie
 
 In both scenarios, all available biomass is used (@tbl:generation).
 
-The cost of nuclear have the greatest impact on LCOE difference between the two scenarios (@fig:sensitivities). When Nuclear capital cost is doubled, the nuclear-and-renewables scenario becomes on average more than 70 €/MWh more expensive compared with the only-renewables scenario. Doubling the capital cost of solar, wind, and biomass increases the relative cost of the only-renewables scenario, but to a lower degree (20--30 €/MWh). Capital cost of storage technologies and marginal cost have low or almost no impact.
+The cost of nuclear has the greatest impact on LCOE difference between the two scenarios (@fig:sensitivities). When Nuclear capital cost is doubled, the nuclear-and-renewables scenario becomes on average more than 70 €/MWh more expensive compared with the only-renewables scenario. Doubling the capital cost of solar, wind, and biomass increases the relative cost of the only-renewables scenario, but to a lower degree (20--35 €/MWh). Capital costs of storage technologies and marginal costs have low or almost no impact.
 
 ```table
 ---

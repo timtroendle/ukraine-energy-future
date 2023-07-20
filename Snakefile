@@ -23,6 +23,7 @@ rule all:
     message: "Run entire analysis and compile report."
     input:
         "build/report.html",
+        "build/report.pdf",
         "build/test-report.html",
 
 

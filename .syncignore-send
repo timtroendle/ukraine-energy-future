@@ -8,3 +8,12 @@ __pycache__
 .DS_Store
 build
 notebooks
+
+pypsa-eur/benchmarks
+pypsa-eur/logs
+pypsa-eur/resources*
+pypsa-eur/results
+pypsa-eur/networks*
+pypsa-eur/cutouts
+pypsa-eur/data/bundle
+pypsa-eur/doc

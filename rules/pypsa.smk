@@ -43,6 +43,11 @@ use rule * from pypsa_scenario1 exclude build_load_data as pypsa1_*
 use rule * from pypsa_scenario2 exclude retrieve_databundle, retrieve_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data as pypsa2_*
 
 
+localrules: pypsa1_retrieve_cost_data, pypsa1_retrieve_cutout, pypsa1_retrieve_databundle
+localrules: pypsa1_retrieve_natura_raster, pypsa2_retrieve_cost_data, pypsa2_retrieve_natura_raster
+localrules: pypsa1_download_copernicus_land_cover, pypsa1_build_powerplants, pypsa2_build_powerplants
+
+
 rule build_load_data:
     message: "Use externally defined load time series in all scenarios."
     input: "data/electricity-demand-fully-electrified.csv"

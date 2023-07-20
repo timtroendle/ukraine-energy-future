@@ -1,4 +1,4 @@
-cluster: bsub -oo build/logs/{rule}.{wildcards}.log -W {resources.runtime} -n {threads} -R "rusage[mem={resources.memory}]" -J {rule}.{wildcards} <
+slurm: True # TODO add resource use to logs
 jobs: 999
 local-cores: 1
 cores: 10
@@ -7,7 +7,11 @@ use-envmodules: True
 use-conda: True
 conda-frontend: mamba
 conda-prefix: ../envs/snakemake/ukraine-energy-future
-default-resources: [
-    "runtime=10",
-    "memory=16000"
-]
+configfile: config/full.yaml
+max-jobs-per-second: 10
+max-status-checks-per-second: 1
+default-resources:
+    - runtime=10
+    - mem_mb_per_cpu=16000
+    - mem_mb=16000
+    - slurm_account=es_apatt # TODO keep out of repository
