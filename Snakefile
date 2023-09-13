@@ -64,6 +64,7 @@ rule report:
         cd report
         ln -s ../build .
         {PANDOC} report.md  --metadata-file=pandoc-metadata.yaml {params.options} \
+        -f markdown+mark \
         -o ../build/report.{wildcards.suffix}
         """
 
