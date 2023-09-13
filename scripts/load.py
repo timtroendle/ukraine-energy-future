@@ -11,7 +11,10 @@ def plot_load(load: pd.Series) -> alt.Chart:
     return (
         alt
         .Chart(daily.reset_index(), width=WIDTH)
-        .encode(x=alt.X("utc_timestamp", title="Time"), y=alt.Y("UA", title="Mean daily electricity demand (GW)"))
+        .encode(
+            x=alt.X("utc_timestamp:T", title="Time").axis(format='%B'),
+            y=alt.Y("UA", title="Mean daily electricity demand (GW)")
+        )
         .mark_line()
         .configure(font="Lato")
         .configure_title(anchor='start', fontSize=12, color=DARK_GREY)
