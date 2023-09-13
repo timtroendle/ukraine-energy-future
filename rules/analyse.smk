@@ -53,6 +53,16 @@ rule assumptions:
     script: "../scripts/assumptions.py"
 
 
+rule gsa_parameters:
+    message: "Generate table of global sensitivity analysis parameters."
+    params:
+        parameters = config["global-sensitivity-analysis"]["parameters"]
+    output:
+        "build/gsa-parameters.csv"
+    conda: "../envs/default.yaml"
+    script: "../scripts/gsa/parameters.py"
+
+
 rule plot_load:
     message: "Plot load time series."
     input:

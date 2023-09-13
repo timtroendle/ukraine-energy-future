@@ -143,6 +143,35 @@ references:
   URL: https://linkinghub.elsevier.com/retrieve/pii/S2211467X18300804
   volume: '22'
 
+- id: Koster:2012
+  accessed:
+    - year: 2019
+      month: 10
+      day: 19
+  author:
+    - family: Koster
+      given: J.
+    - family: Rahmann
+      given: S.
+  citation-key: Koster:2012
+  container-title: Bioinformatics
+  container-title-short: Bioinformatics
+  DOI: 10.1093/bioinformatics/bts480
+  ISSN: 1367-4803, 1460-2059
+  issue: '19'
+  issued:
+    - year: 2012
+      month: 10
+      day: 1
+  language: en
+  page: 2520-2522
+  source: DOI.org (Crossref)
+  title: Snakemake--a scalable bioinformatics workflow engine
+  type: article-journal
+  URL: >-
+    https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/bts480
+  volume: '28'
+
 - id: Kristensen:2016
   author:
     - family: Kristensen
