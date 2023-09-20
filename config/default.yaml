@@ -46,8 +46,8 @@ pypsa-eur:
         offwind:
             cutout: europe-2013-era5
             resource:
-            method: wind
-            turbine: NREL_ReferenceTurbine_5MW_offshore
+                method: wind
+                turbine: NREL_ReferenceTurbine_5MW_offshore
             capacity_per_sqkm: 2
             correction_factor: 0.8855
             max_depth: 50
