@@ -32,7 +32,7 @@ pypsa-eur:
         - UA
 
     electricity:
-        renewable_carriers: [solar, onwind, hydro]
+        renewable_carriers: [solar, onwind, offwind-ac, offwind-dc, hydro]
         estimate_renewable_capacities:
             enable: false
         BAU_mincapacities:
@@ -61,7 +61,7 @@ scenarios:
         electricity:
             conventional_carriers: [biomass, nuclear]
             extendable_carriers:
-                Generator: [solar, onwind, biomass, nuclear]
+                Generator: [solar, onwind, offwind-ac, offwind-dc, biomass, nuclear]
             BAU_mincapacities:
                 nuclear: 60000 # TODO update to pre-war share (~50%)
     only-renewables:
@@ -71,7 +71,7 @@ scenarios:
         electricity:
             conventional_carriers: [biomass]
             extendable_carriers:
-                Generator: [solar, onwind, biomass]
+                Generator: [solar, onwind, offwind-ac, offwind-dc, biomass]
 global-sensitivity-analysis:
     parameters: # TODO biomass-potential if possible
         nuclear+c:
