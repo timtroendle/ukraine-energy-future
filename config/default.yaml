@@ -39,6 +39,8 @@ pypsa-eur:
             biomass: 0
             solar: 0
             onwind: 0
+            offwind-ac: 0
+            offwind-dc: 0
 
     renewable:
         solar:
