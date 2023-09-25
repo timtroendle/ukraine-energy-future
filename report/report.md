@@ -8,11 +8,17 @@
 
 # Introduction
 
-* Ukraine’s electricity system needs to be rebuilt and expanded to cover future demand.
-* Situation before the war...
-* Current plans of the government...
-* Opportunities for renewables including in cooperation with EU...
-* Systems approach is necessary which we do here: We are analysing different options for Ukraine's future, fully-electrified energy supply.
+Russia's invasion of Ukraine has led to massive damages to the national energy supply. Among the entire energy system, electricity supply has suffered the most: About two thirds of pre-war generation capacity is today either damaged, completely destroyed, or temporarily occupied [@UNDP:2023]. Even if sufficient generation capacity was available, it could not supply Ukraine's population and industry as almost half of transmission grid substations in government-controlled areas are out of operation following missile and drone attacks [@UNDP:2023].
+
+Post-war recovery will require substantial investments into rebuilding Ukraine's energy supply. Apart from restoring energy access for the population as fast as possible, recovery should take energy security and climate objectives into consideration. Both require a reduction of the dependence of fossil fuels, a shift to low-carbon technologies, and large-scale electrification of the heat, mobility, and industrial sectors. Recovery of the electricity supply will therefore include not only rebuilding generation capacities to pre-war levels but an expansion to meet increased future demands.
+
+Before the 2022 invasion, Ukraine's energy system was characterised by its natural resources and geopolitical situation. About 30% of its energy came from natural gas of which the country has vast domestic reserves. Another roughly equally sized share came from low-carbon sources with nuclear being the largest contributor. Renewable energy played a minor role in Ukraine's energy mix but its importance was increasing. In particular solar photovoltaics was thriving, with a growth of about 1\ GW per year on average. (==something about attractiveness to foreign investors?==)
+
+It its 2021 nationally determined contributions, Ukraine committed to reaching carbon-neutrality in 2060 and to decreased greenhouse gas emissions by 65% by 2030 [@Ukraine:2021]. During war-time, the Ukraine government has declared its intention to adhere to these commitments (==correct?==) and provided further goals and instruments to reach these goals. By 2030, renewable energy should make up 27% of electricity generated in Ukraine, requiring an expansion of wind generation capacity of 10\ GW, up from ~1\ GW pre-war. A set of policy instruments is in preparation to enable this, including contracts for difference, and the facilitation of own consumption [@Ukraine:2023]. Natural gas is foreseen to be replaced by biomethane and hydrogen [@Directorate-GeneralforEnergy:2023], and the generation of nuclear power is intended to increase with the construction of 20 small modular nuclear reactors with a total capacity of 3.2\ GW [@AmericanNuclearSociety:2023] (==better source?==).
+
+Renewable energy may prosper in the future: With strong winds and solar irradiation and with high availability of eligible land, generation potentials of wind and solar power are high [@Kudria:2021;@Sukurova:2023]. Through the 2021 synchronisation of the European continental transmission grid and initiatives to foster trade with the European Union [@Directorate-GeneralforEnergy:2023], Ukraine may even become an exporter of renewable energy.
+
+Here, we assess options for Ukraine to decarbonise its energy system by 2060. We apply a systems approach using a model that is highly resolved in space and time and that includes all energy sectors.
 
 # Results (preliminary)
 

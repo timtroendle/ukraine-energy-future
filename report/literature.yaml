@@ -12,6 +12,24 @@ references:
   type: webpage
   URL: https://www.undp.org/ukraine/publications/ukraine-energy-damage-assessment
 
+- id: AmericanNuclearSociety:2023
+  accessed:
+    - year: 2023
+      month: 9
+      day: 25
+  author:
+    - literal: American Nuclear Society
+  citation-key: AmericanNuclearSociety:2023
+  issued:
+    - year: 2023
+      month: 4
+      day: 25
+  language: en
+  title: Holtec inks agreement for up to 20 SMRs in Ukraine
+  type: article-magazine
+  URL: >-
+    https://www.ans.org/news/article-4951/holtec-inks-agreement-for-up-to-20-smrs-in-ukraine/
+
 - id: Andersson:2020
   accessed:
     - year: 2023
@@ -30,6 +48,30 @@ references:
   type: report
   URL: >-
     https://uabio.org/wp-content/uploads/2020/05/Final_UA_Path_to_100_percent_renewables_Ukraine.pdf
+
+- id: Directorate-GeneralforEnergy:2023
+  abstract: >-
+    Memorandum of understanding between the European Union and Ukraine on a
+    Strategic Partnership on Biomethane, Hydrogen and other Synthetic Gases
+  accessed:
+    - year: 2023
+      month: 9
+      day: 25
+  author:
+    - literal: Directorate-General for Energy
+  authority: European Union
+  citation-key: Directorate-GeneralforEnergy:2023
+  issued:
+    - year: 2023
+      month: 2
+      day: 2
+  language: en
+  title: >-
+    Memorandum of understanding between the European Union and Ukraine on a
+    Strategic Partnership on Biomethane, Hydrogen and other Synthetic Gases
+  type: bill
+  URL: >-
+    https://energy.ec.europa.eu/publications/memorandum-understanding-between-european-union-and-ukraine-strategic-partnership-biomethane_en
 
 - id: Geletukha:2020
   abstract: >-
@@ -195,6 +237,42 @@ references:
   URL: http://linkinghub.elsevier.com/retrieve/pii/S0378778816307344
   volume: '130'
 
+- id: Kudria:2021
+  abstract: "The paper provides an assessment of the current wind energy potential in Ukraine, and discusses developmental prospects for wind-hydrogen power generation in the country. Hydrogen utilization is a highly promising option for Ukraine's energy system, environment, and business. In Ukraine, an optimal way towards clean zero-carbon energy production is through the development of the wind-hydrogen sector. In order to make it possible, the energy potential of industrial hydrogen production and use has to be studied thoroughly. Ukraine possesses huge resources for wind energy supply. At the beginning of 2020, the total installed capacity of Ukrainian wind farms was 1.17\_GW. Wind power generation in Ukraine has significant advantages in comparison to the use of traditional sources such as thermal and nuclear energy. In this work, an assessment of the wind resource potential in Ukraine is made via the geographical approach suggested by the authors, and according to the «Methodical guidelines for the assessment of average annual power generation by a wind turbine based on the long-term wind speed observation data». The paper analyses the long-term dynamics of average annual wind speed at 40 Ukrainian weather stations that provide valid data. The parameter for the vertical wind profile model is calculated based on the data reanalysis for 10\_m and 50\_m altitudes. The capacity factor (CF) for modern wind turbine generators is determined. The CF spatial distribution for an average 3\_MW wind turbine and the power generation potential for the wind power plants across the territory of Ukraine are mapped. Based on the wind energy potential assessment, the equivalent possible production of water electrolysis-derived green hydrogen is estimated. The potential average annual production of green hydrogen across the territory of Ukraine is mapped. It is concluded that Ukraine can potentially establish wind power plants with a total capacity of 688\_GW on its territory. The average annual electricity production of this system is supposed to reach up to 2174 bln kWh. Thus, it can provide an average annual production of 483 billion Nm3 (43 million tons) of green hydrogen by electrolysis. The social efficiency of investments in wind-hydrogen electricity is presented."
+  accessed:
+    - year: 2023
+      month: 9
+      day: 25
+  author:
+    - family: Kudria
+      given: Stepan
+    - family: Ivanchenko
+      given: Iryna
+    - family: Tuchynskyi
+      given: Borys
+    - family: Petrenko
+      given: Kateryna
+    - family: Karmazin
+      given: Oleksii
+    - family: Riepkin
+      given: Oleksandr
+  citation-key: Kudria:2021
+  container-title: International Journal of Hydrogen Energy
+  container-title-short: International Journal of Hydrogen Energy
+  DOI: 10.1016/j.ijhydene.2020.09.211
+  ISSN: 0360-3199
+  issue: '1'
+  issued:
+    - year: 2021
+      month: 1
+      day: 1
+  page: 157-168
+  source: ScienceDirect
+  title: Resource potential for wind-hydrogen power in Ukraine
+  type: article-journal
+  URL: https://www.sciencedirect.com/science/article/pii/S0360319920336818
+  volume: '46'
+
 - id: Oreggioni:2022
   abstract: >-
     Reaching climate stabilisation targets requires strengthening the efforts to
@@ -241,6 +319,42 @@ references:
     Decarbonisation Targets
   type: article
   URL: https://papers.ssrn.com/abstract=4005084
+
+- id: Pieton:2023
+  author:
+    - family: Pieton
+      given: Natalia
+    - family: Abdel-Khalek
+      given: Hazem
+    - family: Graf
+      given: Marieke
+    - family: Drechsler
+      given: Björn
+    - family: Lenivova
+      given: Veronika
+    - family: Nolden
+      given: Christoph
+    - family: Bergup
+      given: Emily
+    - family: Sinha
+      given: Mohammad Fuhad Anwar
+    - family: Ieg
+      given: Fraunhofer
+    - family: Fragoso
+      given: Joshua
+  citation-key: Pieton:2023
+  event-place: Karlsruhe
+  issued:
+    - year: 2023
+      month: 2
+  language: en
+  publisher: Fraunhofer ISI
+  publisher-place: Karlsruhe
+  source: Zotero
+  title: >-
+    HYPAT Working Paper 02/2023, Export Potentials of Green Hydrogen –
+    Methodology for a Techno-Economic Assessment
+  type: report
 
 - id: Sandbu:2023
   accessed:
@@ -390,6 +504,61 @@ references:
     Oppor-tunities and Challenges in the Light of the Ongoing War
   type: report
 
+- id: Ukraine:2021
+  accessed:
+    - year: 2023
+      month: 9
+      day: 25
+  author:
+    - literal: Ukraine
+  citation-key: Ukraine:2021
+  issued:
+    - year: 2021
+      month: 7
+      day: 31
+  language: en
+  title: Updated Nationally Determined Contribution of Ukraine to the Paris Agreement
+  type: legislation
+  URL: >-
+    https://unfccc.int/sites/default/files/NDC/2022-06/Ukraine%20NDC_July%2031.pdf
+
+- id: Ukraine:2023
+  accessed:
+    - year: 2023
+      month: 9
+      day: 25
+  author:
+    - literal: Ukraine
+  citation-key: Ukraine:2023
+  issued:
+    - year: 2023
+      month: 9
+      day: 5
+  title: >-
+    Картка законопроекту - Законотворчість (Draft Law on Amendments to Certain
+    Laws of Ukraine on the Introduction of the Register of Issuance, Use and
+    Termination of the Guarantee of Origin of Electric Energy Produced from
+    Renewable Energy Sources)
+  type: bill
+  URL: https://itd.rada.gov.ua/billInfo/Bills/Card/41361
+
+- id: UNDP:2023
+  accessed:
+    - year: 2023
+      month: 9
+      day: 23
+  author:
+    - literal: UNDP
+    - literal: World Bank
+  citation-key: UNDP:2023
+  issued:
+    - year: 2023
+      month: 3
+  language: en
+  title: Ukraine Energy Damage Assessment
+  type: report
+  URL: https://www.undp.org/ukraine/publications/ukraine-energy-damage-assessment
+
 - id: Usher:2023
   abstract: >-
     Background: Energy system optimisation models (ESOMs) are commonly used to
@@ -474,4 +643,23 @@ references:
   type: article-newspaper
   URL: >-
     https://www.nytimes.com/2023/05/29/world/europe/ukraine-russia-wind-power.html
+
+- id: Worldbank:2023
+  accessed:
+    - year: 2023
+      month: 9
+      day: 23
+  author:
+    - literal: Worldbank
+  citation-key: Worldbank:2023
+  event-place: Washington, D.C.
+  issued:
+    - year: 2023
+      month: 2
+  publisher: World Bank Group
+  publisher-place: Washington, D.C.
+  title: Ukraine Rapid Damage and Needs Assessment
+  type: report
+  URL: >-
+    http://documents.worldbank.org/curated/en/099445209072239810/P17884304837910630b9c6040ac12428d5c
 ...
