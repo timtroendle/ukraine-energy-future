@@ -33,6 +33,7 @@ pypsa-eur:
 
     enable:
         build_cutout: true
+        retrieve_cutout: false
 
     snapshots:
         start: "2013-01-01"
