@@ -65,7 +65,7 @@ scenarios:
             extendable_carriers:
                 Generator: [solar, onwind, offwind-ac, offwind-dc, biomass, nuclear]
             BAU_mincapacities:
-                nuclear: 60000 # TODO update to pre-war share (~50%)
+                nuclear: 52000 # to reach pre-war electricity share (~55%)
     only-renewables:
         run:
             name: "only-renewables"

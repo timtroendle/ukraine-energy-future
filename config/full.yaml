@@ -1,3 +1,3 @@
 resolution:
     space: 6 # number of nodes in the model
-    time: 4H
+    time: 1H
