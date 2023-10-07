@@ -39,8 +39,14 @@ module pypsa_scenario2:
         scenario2_config
 
 
-use rule * from pypsa_scenario1 exclude build_load_data as pypsa1_*
-use rule * from pypsa_scenario2 exclude retrieve_databundle, retrieve_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, build_ship_raster as pypsa2_*
+use rule * from pypsa_scenario1 exclude build_load_data, solve_network as pypsa1_*
+use rule * from pypsa_scenario2 exclude retrieve_databundle, retrieve_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, solve_network as pypsa2_*
+use rule solve_network from pypsa_scenario1 as pypsa1_solve_network with:
+    resources:
+        runtime = 240
+use rule solve_network from pypsa_scenario2 as pypsa2_solve_network with:
+    resources:
+        runtime = 240
 
 
 localrules: pypsa1_retrieve_cost_data, pypsa1_retrieve_cutout, pypsa1_retrieve_databundle, pypsa1_retrieve_ship_raster
