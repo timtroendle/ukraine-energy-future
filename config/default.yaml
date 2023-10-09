@@ -114,10 +114,18 @@ report:
             "battery discharger": "Battery discharger"
             PHS: "Pumped hydro"
             fossil: "Fossil"
-    pre-war-capacities:
-        nuclear: 13.9 # https://en.wikipedia.org/wiki/Nuclear_power_in_Ukraine
-        solar: 8.1 # IRENA
-        hydro: 6.6 # IRENA
-        onwind: 1.7 # IRENA
-        biomass: 0.3 # IRENA
-        fossil: 21.5 # TODO add Olena's source
+    pre-war:
+        capacities:
+            nuclear: 13.9 # https://en.wikipedia.org/wiki/Nuclear_power_in_Ukraine
+            solar: 8.1 # IRENA
+            hydro: 6.6 # IRENA
+            onwind: 1.7 # IRENA
+            biomass: 0.3 # IRENA
+            fossil: 21.5 # TODO add Olena's source
+        electricity-mix: # 2021 https://ourworldindata.org/energy/country/ukraine
+            nuclear: 0.55
+            solar: 0.04
+            hydro: 0.07
+            onwind: 0.03
+            biomass: 0.005
+            fossil: 0.30

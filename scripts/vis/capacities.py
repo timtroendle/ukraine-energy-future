@@ -8,7 +8,7 @@ STORAGE_TECH_ORDER = ["PHS", "H2 electrolysis", "H2 fuel cell", "battery charger
 DARK_GREY = "#424242"
 
 
-def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: pd.DataFrame,
+def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
                     nice_tech_names: dict[str: str]) -> alt.Chart:
     capacities = preprocess_capacities(capacities, pre_war_capacities, nice_tech_names)
 
@@ -24,7 +24,13 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: pd.DataFrame,
         .encode(
             x=alt.X("carrier:N").title("Carrier").sort(nice_generation_tech_order),
             y=alt.Y("capacity:Q").title("Capacity (GW)"),
-            color=alt.Color("scenario:N").title("Scenario").sort(SCENARIO_ORDER).scale(domain=SCENARIO_ORDER, range=SCENARIO_COLORS),
+            color=(
+                alt
+                .Color("scenario:N")
+                .title("Scenario")
+                .sort(SCENARIO_ORDER)
+                .scale(domain=SCENARIO_ORDER, range=SCENARIO_COLORS)
+            ),
             xOffset=alt.XOffset("scenario:N").sort(SCENARIO_ORDER)
         )
         .mark_bar()
@@ -37,7 +43,13 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: pd.DataFrame,
         .encode(
             x=alt.X("carrier:N").title("Carrier").sort(nice_storage_tech_order),
             y=alt.Y("capacity:Q").title("Capacity (GW)"),
-            color=alt.Color("scenario:N").title("Scenario").sort(SCENARIO_ORDER).scale(domain=SCENARIO_ORDER, range=SCENARIO_COLORS),
+            color=(
+                alt
+                .Color("scenario:N")
+                .title("Scenario")
+                .sort(SCENARIO_ORDER)
+                .scale(domain=SCENARIO_ORDER, range=SCENARIO_COLORS)
+            ),
             xOffset=alt.XOffset("scenario:N").sort(SCENARIO_ORDER)
         )
         .mark_bar()
@@ -53,7 +65,7 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: pd.DataFrame,
     )
 
 
-def preprocess_capacities(sim_capacities: pd.DataFrame, pre_war_capacities: pd.DataFrame,
+def preprocess_capacities(sim_capacities: pd.DataFrame, pre_war_capacities: dict,
                           nice_tech_names: dict[str: str]) -> pd.DataFrame:
     pre_war = (
         pd.

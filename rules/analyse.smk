@@ -78,9 +78,22 @@ rule plot_generation_capacities:
     input:
         capacities = rules.capacities.output.power
     params:
-        pre_war = config["report"]["pre-war-capacities"],
+        pre_war = config["report"]["pre-war"]["capacities"],
         nice_tech_names = config["report"]["nice-names"]["technology"]
     output:
         "build/results/capacities-power.vega.json"
     conda: "../envs/default.yaml"
     script: "../scripts/vis/capacities.py"
+
+
+rule plot_generation:
+    message: "Plot generation shares."
+    input:
+        generation = rules.generation.output.energy
+    params:
+        pre_war = config["report"]["pre-war"]["electricity-mix"],
+        nice_tech_names = config["report"]["nice-names"]["technology"]
+    output:
+        "build/results/generation.vega.json"
+    conda: "../envs/default.yaml"
+    script: "../scripts/vis/generation.py"
