@@ -102,3 +102,22 @@ global-sensitivity-analysis:
             max: 2 # TODO update
     seed: 5839
     number-trajectories: 15
+report:
+    nice-names:
+        technology:
+            biomass: "Biomass"
+            nuclear: "Nuclear"
+            onwind: "Wind"
+            solar: "Solar"
+            hydro: "Hydro"
+            "battery charger": "Battery charger"
+            "battery discharger": "Battery discharger"
+            PHS: "Pumped hydro"
+            fossil: "Fossil"
+    pre-war-capacities:
+        nuclear: 13.9 # https://en.wikipedia.org/wiki/Nuclear_power_in_Ukraine
+        solar: 8.1 # IRENA
+        hydro: 6.6 # IRENA
+        onwind: 1.7 # IRENA
+        biomass: 0.3 # IRENA
+        fossil: 21.5 # TODO add Olena's source

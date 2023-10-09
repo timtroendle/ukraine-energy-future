@@ -70,4 +70,17 @@ rule plot_load:
     output:
         "build/results/load.vega.json"
     conda: "../envs/default.yaml"
-    script: "../scripts/load.py"
+    script: "../scripts/vis/load.py"
+
+
+rule plot_generation_capacities:
+    message: "Plot generation capacities."
+    input:
+        capacities = rules.capacities.output.power
+    params:
+        pre_war = config["report"]["pre-war-capacities"],
+        nice_tech_names = config["report"]["nice-names"]["technology"]
+    output:
+        "build/results/capacities-power.vega.json"
+    conda: "../envs/default.yaml"
+    script: "../scripts/vis/capacities.py"
