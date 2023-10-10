@@ -22,7 +22,7 @@ onerror:
 rule all:
     message: "Run entire analysis and compile report."
     input:
-        "build/report.html",
+        "build/report.docx",
         "build/report.pdf",
         "build/test-report.html",
 
@@ -50,9 +50,9 @@ rule report:
         "build/gsa-parameters.csv",
         "build/results/load.png",
         "build/results/lcoe.csv",
-        "build/results/capacities-power.csv",
+        "build/results/capacities-power.png",
         "build/results/capacities-energy.csv",
-        "build/results/generation.csv",
+        "build/results/generation.png",
         "build/results/gsa/sensitivities.png",
     params: options = pandoc_options
     output: "build/report.{suffix}"
