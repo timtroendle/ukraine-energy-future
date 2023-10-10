@@ -20,17 +20,9 @@ Renewable energy may prosper in the future: With strong winds and solar irradiat
 
 Here, we assess options for Ukraine to decarbonise its energy system by 2060. We apply a systems approach using a model that is highly resolved in space and time and that includes all energy sectors.
 
-# Results (preliminary)
+# Results
 
-System cost of renewable only scenario is low (<80 €/MWh, @tbl:lcoe). Keeping nuclear at pre-war's levels shows roughly the same cost (@tbl:lcoe).
-
-Meeting future electricity demand requires a substantial expansion of generation capacities in both scenarios (@tbl:capacities-power).
-
-A fully-autarkic energy system requires substantial amounts of storage capacities, especially in the renewables only scenario (@tbl:capacities-energy).
-
-In both scenarios, all available biomass is used (@tbl:generation).
-
-The cost of nuclear has the greatest impact on LCOE difference between the two scenarios (@fig:sensitivities). When Nuclear capital cost is doubled, the nuclear-and-renewables scenario becomes on average more than 70 €/MWh more expensive compared with the only-renewables scenario. Doubling the capital cost of solar, wind, and biomass increases the relative cost of the only-renewables scenario, but to a lower degree (20--35 €/MWh). Capital costs of storage technologies and marginal costs have low or almost no impact.
+System cost of renewable only scenario with fully-electrified heat and transport sectors and with average cost and medium-high economic growth assumption is low (<70\ €/MWh, @tbl:lcoe). Keeping nuclear at pre-war's levels shows 18% (12.2\ €/MWh) higher cost (@tbl:lcoe). System cost includes generation, transmission, and storage capacities.
 
 ```table
 ---
@@ -45,19 +37,11 @@ width:
 ---
 ```
 
-```table
----
-caption: 'Installed generation capacities (GW). {#tbl:capacities-power}'
-alignment: LRR
-include: build/results/capacities-power.csv
-include-encoding: UTF-8
-markdown: True
-width:
-    - 0.3
-    - 0.35
-    - 0.35
----
-```
+Meeting future electricity demand requires a substantial expansion of pre-war generation capacities in both scenarios (@fig:capacities-power), but especially in the renewables only scenario. This is explained by a switch to technologies with lower capacity factors (wind and solar), growing final energy demand based on population and economic growth, and an electrification of the heat and transport sectors (==can we compare final energy demand pre-war and scenarios?==).
+
+![**Installed capacities.** Installed **(A)** generation and **(B)** storage capacities of the pre-war electricity system and for scenarios with fully-electrified heat and transport sectors and with average cost assumptions and medium-high economic growth assumption.](build/results/capacities-power.png){#fig:capacities-power}
+
+A fully-autarkic energy system requires substantial amounts of storage capacities in both scenarios, but slightly more in the renewables only scenario (@tbl:capacities-energy).
 
 ```table
 ---
@@ -73,21 +57,13 @@ width:
 ---
 ```
 
-```table
----
-caption: 'Generation (TWh). {#tbl:generation}'
-alignment: LRR
-include: build/results/generation.csv
-include-encoding: UTF-8
-markdown: True
-width:
-    - 0.3
-    - 0.35
-    - 0.35
----
-```
+In the only renewables scenario, biomass plays an important role (@fig:generation). Like onshore wind and solar, biomass generates roughly a third of the country's fully-electrified demand. In fact, all available biomass (513\ GWh) is used.
 
-![**Sensitivities of LCOE difference between scenarios to model parameters (preliminary).** Thick bars show the average increase in LCOE of the nuclear-and-renewables compared with the only-renewables scenario, given a doubling of parameter values. Thin bars show the standard deviation of these effects and are therefore a proxy for the interactivity of the parameters: the larger the standard deviation, the more does the impact of the parameter depend on other parameter values.](build/results/gsa/sensitivities.png){#fig:sensitivities}
+![**Electricity mix.** Electricity mix of the pre-war electricity system and for scenarios with fully-electrified heat and transport sectors and with average cost assumptions and medium-high economic growth assumption.](build/results/generation.png){#fig:generation}
+
+The cost of nuclear has the greatest impact on LCOE difference between the two scenarios (@fig:sensitivities). When Nuclear capital cost is doubled, the nuclear-and-renewables scenario becomes on average more than 90\ €/MWh more expensive compared with the only-renewables scenario. Doubling the capital cost of solar, wind, and biomass increases the relative cost of the only-renewables scenario, but to a lower degree (20--30\ €/MWh on average). Capital costs of storage technologies and marginal costs have low or almost no impact.
+
+![**Sensitivities of LCOE difference between scenarios to model parameters.** Thick bars show the average increase in LCOE of the nuclear-and-renewables compared with the only-renewables scenario, given a doubling of parameter values. Thin bars show the standard deviation of these effects and are therefore a proxy for the interactivity of the parameters: the larger the standard deviation, the more does the impact of the parameter depend on other parameter values.](build/results/gsa/sensitivities.png){#fig:sensitivities}
 
 # Discussion
 

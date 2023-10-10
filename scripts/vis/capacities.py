@@ -6,6 +6,7 @@ SCENARIO_COLORS = ["#424242", "#FABC3C", "#679436"]
 GENERATION_TECH_ORDER = ["fossil", "hydro", "nuclear", "biomass", "onwind", "solar"]
 STORAGE_TECH_ORDER = ["PHS", "H2 electrolysis", "H2 fuel cell", "battery charger", "battery discharger"]
 DARK_GREY = "#424242"
+WIDTH_PER_DISPLAY = 185
 
 
 def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
@@ -14,7 +15,7 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
 
     base = (
         alt
-        .Chart(capacities.reset_index())
+        .Chart(capacities.reset_index(), width=WIDTH_PER_DISPLAY)
     )
 
     nice_generation_tech_order = [nice_tech_names.get(t, t) for t in GENERATION_TECH_ORDER]
@@ -22,8 +23,8 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
         base
         .transform_filter(alt.FieldOneOfPredicate(field='carrier', oneOf=nice_generation_tech_order))
         .encode(
-            x=alt.X("carrier:N").title("Carrier").sort(nice_generation_tech_order),
-            y=alt.Y("capacity:Q").title("Capacity (GW)"),
+            y=alt.Y("carrier:N").title("Carrier").sort(nice_generation_tech_order),
+            x=alt.X("capacity:Q").title("Capacity (GW)"),
             color=(
                 alt
                 .Color("scenario:N")
@@ -31,9 +32,10 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
                 .sort(SCENARIO_ORDER)
                 .scale(domain=SCENARIO_ORDER, range=SCENARIO_COLORS)
             ),
-            xOffset=alt.XOffset("scenario:N").sort(SCENARIO_ORDER)
+            yOffset=alt.YOffset("scenario:N").sort(SCENARIO_ORDER)
         )
         .mark_bar()
+        .properties(title="A")
     )
 
     nice_storage_tech_order = [nice_tech_names.get(t, t) for t in STORAGE_TECH_ORDER]
@@ -41,8 +43,8 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
         base
         .transform_filter(alt.FieldOneOfPredicate(field='carrier', oneOf=nice_storage_tech_order))
         .encode(
-            x=alt.X("carrier:N").title("Carrier").sort(nice_storage_tech_order),
-            y=alt.Y("capacity:Q").title("Capacity (GW)"),
+            y=alt.Y("carrier:N").title(None).sort(nice_storage_tech_order),
+            x=alt.X("capacity:Q").title("Capacity (GW)"),
             color=(
                 alt
                 .Color("scenario:N")
@@ -50,9 +52,10 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
                 .sort(SCENARIO_ORDER)
                 .scale(domain=SCENARIO_ORDER, range=SCENARIO_COLORS)
             ),
-            xOffset=alt.XOffset("scenario:N").sort(SCENARIO_ORDER)
+            yOffset=alt.YOffset("scenario:N").sort(SCENARIO_ORDER)
         )
         .mark_bar()
+        .properties(title="B")
     )
 
     return (
@@ -61,7 +64,7 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
         .configure_title(anchor='start', fontSize=12, color=DARK_GREY)
         .configure_axis(titleColor=DARK_GREY, labelColor=DARK_GREY)
         .configure_header(titleColor=DARK_GREY, labelColor=DARK_GREY)
-        .configure_legend(titleColor=DARK_GREY, labelColor=DARK_GREY)
+        .configure_legend(titleColor=DARK_GREY, labelColor=DARK_GREY, orient="bottom")
     )
 
 
