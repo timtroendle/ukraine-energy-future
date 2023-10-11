@@ -1,3 +1,7 @@
 resolution:
     space: 6 # number of nodes in the model
     time: 1H
+global-sensitivity-analysis:
+    resolution:
+        space: 6
+        time: 6H # TODO move to 1H once ready

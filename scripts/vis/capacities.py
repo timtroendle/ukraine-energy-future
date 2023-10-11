@@ -1,8 +1,7 @@
 import pandas as pd
 import altair as alt
 
-SCENARIO_ORDER = ["pre-war", "nuclear-and-renewables", "only-renewables"]
-SCENARIO_COLORS = ["#424242", "#FABC3C", "#679436"]
+
 GENERATION_TECH_ORDER = ["fossil", "hydro", "nuclear", "biomass", "onwind", "solar"]
 STORAGE_TECH_ORDER = ["PHS", "H2 electrolysis", "H2 fuel cell", "battery charger", "battery discharger"]
 DARK_GREY = "#424242"
@@ -10,7 +9,8 @@ WIDTH_PER_DISPLAY = 185
 
 
 def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
-                    nice_tech_names: dict[str: str]) -> alt.Chart:
+                    nice_tech_names: dict[str: str], scenarios: list[str],
+                    scenario_colors: dict[str: str]) -> alt.Chart:
     capacities = preprocess_capacities(capacities, pre_war_capacities, nice_tech_names)
 
     base = (
@@ -22,6 +22,7 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
     generation = (
         base
         .transform_filter(alt.FieldOneOfPredicate(field='carrier', oneOf=nice_generation_tech_order))
+        .transform_filter(alt.FieldOneOfPredicate(field='scenario', oneOf=scenarios))
         .encode(
             y=alt.Y("carrier:N").title("Carrier").sort(nice_generation_tech_order),
             x=alt.X("capacity:Q").title("Capacity (GW)"),
@@ -29,10 +30,10 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
                 alt
                 .Color("scenario:N")
                 .title("Scenario")
-                .sort(SCENARIO_ORDER)
-                .scale(domain=SCENARIO_ORDER, range=SCENARIO_COLORS)
+                .sort(scenarios)
+                .scale(domain=scenarios, range=[scenario_colors[s] for s in scenarios])
             ),
-            yOffset=alt.YOffset("scenario:N").sort(SCENARIO_ORDER)
+            yOffset=alt.YOffset("scenario:N").sort(scenarios)
         )
         .mark_bar()
         .properties(title="A")
@@ -42,6 +43,7 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
     storage = (
         base
         .transform_filter(alt.FieldOneOfPredicate(field='carrier', oneOf=nice_storage_tech_order))
+        .transform_filter(alt.FieldOneOfPredicate(field='scenario', oneOf=scenarios))
         .encode(
             y=alt.Y("carrier:N").title(None).sort(nice_storage_tech_order),
             x=alt.X("capacity:Q").title("Capacity (GW)"),
@@ -49,10 +51,10 @@ def plot_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
                 alt
                 .Color("scenario:N")
                 .title("Scenario")
-                .sort(SCENARIO_ORDER)
-                .scale(domain=SCENARIO_ORDER, range=SCENARIO_COLORS)
+                .sort(scenarios)
+                .scale(domain=scenarios, range=[scenario_colors[s] for s in scenarios])
             ),
-            yOffset=alt.YOffset("scenario:N").sort(SCENARIO_ORDER)
+            yOffset=alt.YOffset("scenario:N").sort(scenarios)
         )
         .mark_bar()
         .properties(title="B")
@@ -95,6 +97,8 @@ if __name__ == "__main__":
     chart = plot_capacities(
         capacities=pd.read_csv(snakemake.input.capacities, index_col=0),
         pre_war_capacities=snakemake.params.pre_war,
-        nice_tech_names=snakemake.params.nice_tech_names
+        nice_tech_names=snakemake.params.nice_tech_names,
+        scenarios=snakemake.params.scenarios,
+        scenario_colors=snakemake.params.scenario_colors
     )
     chart.save(snakemake.output[0])

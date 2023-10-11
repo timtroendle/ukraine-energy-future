@@ -38,7 +38,7 @@ rule generation:
 rule assumptions:
     message: "Generate table of assumptions."
     input:
-        cost = "pypsa-eur/resources/only-renewables/costs.csv"
+        cost = "pypsa-eur/resources/only-renewables-high/costs.csv"
     params:
         technologies = [
             "onwind", "offwind", "solar", "nuclear", "hydro", "PHS", "biomass",
@@ -66,7 +66,8 @@ rule gsa_parameters:
 rule plot_load:
     message: "Plot load time series."
     input:
-        load = "data/electricity-demand-fully-electrified.csv"
+        load_low = "data/electricity-demand-fully-electrified-low.csv",
+        load_high = "data/electricity-demand-fully-electrified-high.csv",
     output:
         "build/results/load.vega.json"
     conda: "../envs/default.yaml"
@@ -79,9 +80,11 @@ rule plot_generation_capacities:
         capacities = rules.capacities.output.power
     params:
         pre_war = config["report"]["pre-war"]["capacities"],
-        nice_tech_names = config["report"]["nice-names"]["technology"]
+        nice_tech_names = config["report"]["nice-names"]["technology"],
+        scenarios = lambda wildcards, output: config["report"]["scenario-sets"][wildcards.scenario_set],
+        scenario_colors = config["report"]["scenario-colors"]
     output:
-        "build/results/capacities-power.vega.json"
+        "build/results/capacities-power-{scenario_set}.vega.json"
     conda: "../envs/default.yaml"
     script: "../scripts/vis/capacities.py"
 
@@ -92,8 +95,9 @@ rule plot_generation:
         generation = rules.generation.output.energy
     params:
         pre_war = config["report"]["pre-war"]["electricity-mix"],
-        nice_tech_names = config["report"]["nice-names"]["technology"]
+        nice_tech_names = config["report"]["nice-names"]["technology"],
+        scenarios = lambda wildcards, output: config["report"]["scenario-sets"][wildcards.scenario_set]
     output:
-        "build/results/generation.vega.json"
+        "build/results/generation-{scenario_set}.vega.json"
     conda: "../envs/default.yaml"
     script: "../scripts/vis/generation.py"

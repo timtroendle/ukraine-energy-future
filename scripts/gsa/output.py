@@ -45,7 +45,7 @@ def gsa_opts(opts: str):
 
 
 def lcoe_diff(lcoes: xr.DataArray) -> float:
-    return (lcoes.sel(scenario="nuclear-and-renewables") - lcoes.sel(scenario="only-renewables")).item()
+    return (lcoes.sel(scenario="nuclear-and-renewables-high") - lcoes.sel(scenario="only-renewables-high")).item()
 
 
 def create_problem(parameters: dict[str: dict[str: float]]) -> dict:

@@ -24,6 +24,7 @@ rule all:
     input:
         "build/report.docx",
         "build/report.pdf",
+        "build/supplementary.pdf",
         "build/test-report.html",
 
 
@@ -50,9 +51,9 @@ rule report:
         "build/gsa-parameters.csv",
         "build/results/load.png",
         "build/results/lcoe.csv",
-        "build/results/capacities-power.png",
+        "build/results/capacities-power-main.png",
         "build/results/capacities-energy.csv",
-        "build/results/generation.png",
+        "build/results/generation-main.png",
         "build/results/gsa/sensitivities.png",
     params: options = pandoc_options
     output: "build/report.{suffix}"
@@ -64,9 +65,34 @@ rule report:
         """
         cd report
         ln -s ../build .
-        {PANDOC} report.md  --metadata-file=pandoc-metadata.yaml {params.options} \
+        {PANDOC} report.md --metadata-file=pandoc-metadata.yaml {params.options} \
         -f markdown+mark \
         -o ../build/report.{wildcards.suffix}
+        """
+
+
+rule supplementary:
+    message: "Compile supplementary.{wildcards.suffix}."
+    input:
+        "report/literature.yaml",
+        "report/supplementary.md",
+        "report/pandoc-metadata.yaml",
+        "report/apa.csl",
+        "report/supplementary.css",
+        "build/results/capacities-power-all.png",
+        "build/results/generation-all.png",
+    params: options = pandoc_options
+    output: "build/supplementary.{suffix}"
+    wildcard_constraints:
+        suffix = "((html)|(pdf)|(docx))"
+    conda: "envs/report.yaml"
+    shadow: "minimal"
+    shell:
+        """
+        cd report
+        ln -s ../build .
+        {PANDOC} supplementary.md --metadata-file=pandoc-metadata.yaml {params.options} \
+        -o ../build/supplementary.{wildcards.suffix}
         """
 
 

@@ -56,9 +56,27 @@ pypsa-eur:
         solver:
             options: gurobi-numeric-focus
 scenarios:
-    nuclear-and-renewables:
+    nuclear-and-renewables-low:
         run:
-            name: "nuclear-and-renewables"
+            name: "nuclear-and-renewables-low"
+
+        electricity:
+            conventional_carriers: [biomass, nuclear]
+            extendable_carriers:
+                Generator: [solar, onwind, offwind-ac, offwind-dc, biomass, nuclear]
+            BAU_mincapacities:
+                nuclear: 24500 # to reach pre-war electricity share (~55%)
+    only-renewables-low:
+        run:
+            name: "only-renewables-low"
+
+        electricity:
+            conventional_carriers: [biomass]
+            extendable_carriers:
+                Generator: [solar, onwind, offwind-ac, offwind-dc, biomass]
+    nuclear-and-renewables-high:
+        run:
+            name: "nuclear-and-renewables-high"
 
         electricity:
             conventional_carriers: [biomass, nuclear]
@@ -66,15 +84,18 @@ scenarios:
                 Generator: [solar, onwind, offwind-ac, offwind-dc, biomass, nuclear]
             BAU_mincapacities:
                 nuclear: 52000 # to reach pre-war electricity share (~55%)
-    only-renewables:
+    only-renewables-high:
         run:
-            name: "only-renewables"
+            name: "only-renewables-high"
 
         electricity:
             conventional_carriers: [biomass]
             extendable_carriers:
                 Generator: [solar, onwind, offwind-ac, offwind-dc, biomass]
 global-sensitivity-analysis:
+    resolution:
+        space: 2
+        time: 168H
     parameters: # TODO biomass-potential if possible
         nuclear+c:
             min: 0.25 # TODO update
@@ -114,6 +135,23 @@ report:
             "battery discharger": "Battery discharger"
             PHS: "Pumped hydro"
             fossil: "Fossil"
+    scenario-sets:
+        main:
+            - pre-war
+            - nuclear-and-renewables-high
+            - only-renewables-high
+        all:
+            - pre-war
+            - nuclear-and-renewables-low
+            - nuclear-and-renewables-high
+            - only-renewables-low
+            - only-renewables-high
+    scenario-colors:
+        pre-war: "#424242"
+        nuclear-and-renewables-low: "#FCDC98"
+        nuclear-and-renewables-high: "#FABC3C"
+        only-renewables-low: "#A0CB71"
+        only-renewables-high: "#679436"
     pre-war:
         capacities:
             nuclear: 13.9 # https://en.wikipedia.org/wiki/Nuclear_power_in_Ukraine

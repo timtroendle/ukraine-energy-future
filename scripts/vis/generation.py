@@ -1,14 +1,14 @@
 import pandas as pd
 import altair as alt
 
-SCENARIO_ORDER = ["pre-war", "nuclear-and-renewables", "only-renewables"]
+
 GENERATION_TECH_ORDER = ["nuclear", "fossil", "hydro", "biomass", "onwind", "solar"]
 TECH_COLORS = ["#A01914", "#424242", "#4F6DB8", "#679436", "#9483C1", "#FABC3C"]
 DARK_GREY = "#424242"
 
 
 def plot_generation(generation: pd.DataFrame, pre_war_generation: dict,
-                    nice_tech_names: dict[str: str]) -> alt.Chart:
+                    nice_tech_names: dict[str: str], scenarios: list[str]) -> alt.Chart:
     generation = preprocess_generation(generation, pre_war_generation, nice_tech_names)
 
     base = (
@@ -20,6 +20,7 @@ def plot_generation(generation: pd.DataFrame, pre_war_generation: dict,
     return (
         base
         .transform_filter(alt.FieldOneOfPredicate(field='carrier', oneOf=nice_generation_tech_order))
+        .transform_filter(alt.FieldOneOfPredicate(field='scenario', oneOf=scenarios))
         .encode(
             color=(
                 alt
@@ -29,7 +30,7 @@ def plot_generation(generation: pd.DataFrame, pre_war_generation: dict,
                 .sort(nice_generation_tech_order)
             ),
             x=alt.X("generation:Q").title("Generation").stack("normalize"),
-            y=alt.Y("scenario:N").title("Scenario").sort(SCENARIO_ORDER),
+            y=alt.Y("scenario:N").title("Scenario").sort(scenarios),
             order=alt.Order("color_carrier_sort_index:Q").sort("ascending")
         )
         .mark_bar()
@@ -68,6 +69,7 @@ if __name__ == "__main__":
     chart = plot_generation(
         generation=pd.read_csv(snakemake.input.generation, index_col=0),
         pre_war_generation=snakemake.params.pre_war,
-        nice_tech_names=snakemake.params.nice_tech_names
+        nice_tech_names=snakemake.params.nice_tech_names,
+        scenarios=snakemake.params.scenarios
     )
     chart.save(snakemake.output[0])
