@@ -96,7 +96,7 @@ global-sensitivity-analysis:
     resolution:
         space: 2
         time: 168H
-    parameters: # TODO biomass-potential if possible
+    parameters:
         nuclear+c:
             min: 0.25 # TODO update
             max: 2 # TODO update
@@ -121,8 +121,11 @@ global-sensitivity-analysis:
         biomass+m:
             min: 0.25 # TODO update
             max: 2 # TODO update
+        biomassstore+e:
+            min: 0.25 # TODO update
+            max: 2 # TODO update
     seed: 5839
-    number-trajectories: 15
+    number-trajectories: 5
 report:
     nice-names:
         technology:

@@ -5,3 +5,4 @@ global-sensitivity-analysis:
     resolution:
         space: 6
         time: 6H # TODO move to 1H once ready
+    number-trajectories: 15
