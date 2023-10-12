@@ -1,0 +1,7 @@
+name: pillow
+channels:
+    - conda-forge
+dependencies:
+    - python=3.10
+    - ipdb=0.13.13 # replaces default debugger with IPython debugger
+    - pillow=10.0.1

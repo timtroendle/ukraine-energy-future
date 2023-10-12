@@ -217,4 +217,14 @@ rule gsa_vis:
         sensitivities = rules.gsa_output.output[0]
     output: "build/results/gsa/sensitivities.vega.json"
     conda: "../envs/default.yaml"
-    script: "../scripts/gsa/vis.py"
+    script: "../scripts/vis/morris.py"
+
+
+rule annotate_vis:
+    message: "Add annotations to GSA vis."
+    input:
+        image = "build/results/gsa/sensitivities.png"
+    output:
+        image = "build/results/gsa/sensitivities-annotated.png"
+    conda: "../envs/pillow.yaml"
+    script: "../scripts/vis/annotate_morris.py"

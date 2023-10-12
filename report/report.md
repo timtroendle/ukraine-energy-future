@@ -63,7 +63,7 @@ In the only renewables scenario, biomass plays an important role (@fig:generatio
 
 The cost of nuclear has the greatest impact on LCOE difference between the two scenarios (@fig:sensitivities). When Nuclear capital cost is doubled, the nuclear-and-renewables scenario becomes on average more than 90\ €/MWh more expensive compared with the only-renewables scenario. Doubling the capital cost of solar, wind, and biomass increases the relative cost of the only-renewables scenario, but to a lower degree (20--30\ €/MWh on average). Capital costs of storage technologies and marginal costs have low or almost no impact.
 
-![**Sensitivities of LCOE difference between scenarios to model parameters.** Thick bars show the average increase in LCOE of the nuclear-and-renewables compared with the only-renewables scenario, given a doubling of parameter values. Thin bars show the standard deviation of these effects and are therefore a proxy for the interactivity of the parameters: the larger the standard deviation, the more does the impact of the parameter depend on other parameter values.](build/results/gsa/sensitivities.png){#fig:sensitivities}
+![**Sensitivities of LCOE difference between scenarios to model parameters.** Thick bars show the average increase in LCOE of the nuclear-and-renewables compared with the only-renewables scenario, given a doubling of parameter values. Thin bars show the standard deviation of these effects and are therefore a proxy for the interactivity of the parameters: the larger the standard deviation, the more does the impact of the parameter depend on other parameter values.](build/results/gsa/sensitivities-annotated.png){#fig:sensitivities}
 
 # Discussion
 

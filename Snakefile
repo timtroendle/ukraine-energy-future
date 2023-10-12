@@ -54,7 +54,7 @@ rule report:
         "build/results/capacities-power-main.png",
         "build/results/capacities-energy.csv",
         "build/results/generation-main.png",
-        "build/results/gsa/sensitivities.png",
+        "build/results/gsa/sensitivities-annotated.png",
     params: options = pandoc_options
     output: "build/report.{suffix}"
     wildcard_constraints:
