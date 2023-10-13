@@ -17,9 +17,9 @@ pypsa-eur:
         investment: 2300 # from Euro-Calliope
         lifetime: 20 # from Euro-Calliope
         efficiency: 0.45 # from Euro-Calliope
-        "discount rate": 0.1 # also defined in `costs`, [@Andersson:2020]
+        "discount rate": 0.122 # also defined in `costs`, [@IRENA:2023]
     costs:
-        "discount rate": 0.1 # also defined in `biomass`, [@Andersson:2020]
+        "discount rate": 0.122 # also defined in `biomass`, [@IRENA:2023]
     run:
         shared_cutouts: true
     scenario:
