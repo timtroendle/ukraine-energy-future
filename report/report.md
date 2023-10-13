@@ -12,29 +12,21 @@ Russia's invasion of Ukraine has led to massive damages to the national energy s
 
 Post-war recovery will require substantial investments into rebuilding Ukraine's energy supply. Apart from restoring energy access for the population as fast as possible, recovery should take energy security and climate objectives into consideration. Both require a reduction of the dependence of fossil fuels, a shift to low-carbon technologies, and large-scale electrification of the heat, mobility, and industrial sectors. Recovery of the electricity supply will therefore include not only rebuilding generation capacities to pre-war levels but an expansion to meet increased future demands.
 
-Before the 2022 invasion, Ukraine's energy system was characterised by its natural resources and geopolitical situation. About 30% of its energy came from natural gas of which the country has vast domestic reserves. Another roughly equally sized share came from low-carbon sources with nuclear being the largest contributor. Renewable energy played a minor role in Ukraine's energy mix but its importance was increasing. In particular solar photovoltaics was thriving, with a growth of about 1\ GW per year on average. (==something about attractiveness to foreign investors?==)
+Before the 2022 invasion, Ukraine's energy system was characterised by its natural resources and geopolitical situation. About 30% of its energy came from natural gas which was mainly imported despite the country's vast domestic reserves. Another roughly equally sized share came from low-carbon sources with nuclear being the largest contributor. Renewable energy played a minor role in Ukraine's energy mix but its importance was increasing. In particular solar photovoltaics was thriving, with a growth of about 1\ GW per year on average. Supported by international partners such as the OECD, the EU, EBRD and the IMF, Ukraine was exploring ways to develop a greener energy sector, notably through solar and wind power [@OECD:2021a]. The reforms implemented in the energy sector [@VerhovnaRadaUkrainy:2017; @VerhovnaRadaUkrainy:2021] (==Olena, can you send me translations of these titles?==) aimed to improve the investment climate and attract additional foreign capital.
 
-It its 2021 nationally determined contributions, Ukraine committed to reaching carbon-neutrality in 2060 and to decreasing greenhouse gas emissions by 65% by 2030 [@Ukraine:2021]. During war-time, the Ukraine government has repeated its intention to adhere to these commitments (==correct?==) and provided more detailled goals and instruments to reach them. By 2030, renewable energy should make up 27% of electricity generated in Ukraine, requiring an expansion of wind generation capacity of 10\ GW, up from ~1\ GW pre-war. A set of policy instruments is in preparation to enable this, including contracts for difference, and the facilitation of self consumption [@Ukraine:2023]. Natural gas is foreseen to be replaced by biomethane and hydrogen [@Directorate-GeneralforEnergy:2023], and the generation of nuclear power is intended to increase with the construction of 20 small modular nuclear reactors with a total capacity of 3.2\ GW [@AmericanNuclearSociety:2023] (==better source?==).
+It its 2021 nationally determined contributions, Ukraine committed to reaching carbon-neutrality in 2060 and to decreasing greenhouse gas emissions by 65% by 2030 [@Ukraine:2021]. During war-time, the Ukraine government has repeated its intention to adhere to these commitments (==source?==) and provided more detailed goals and instruments to reach them. By 2030, renewable energy should make up 27% of electricity generated in Ukraine, requiring an expansion of wind generation capacity of 10\ GW, up from ~1\ GW pre-war. A set of policy instruments is in preparation to enable this, including contracts for difference, and the facilitation of self consumption [@Ukraine:2023]. Natural gas is foreseen to be replaced by biomethane and hydrogen [@Directorate-GeneralforEnergy:2023], and the generation of nuclear power is intended to increase with the construction of 20 small modular nuclear reactors with a total capacity of 3.2\ GW [@Energoatom:2023].
 
 Renewable energy may prosper in the future: With strong winds and solar irradiation and with high availability of eligible land, generation potentials of wind and solar power are high [@Kudria:2021;@Sukurova:2023]. Through the 2021 synchronisation of the European continental transmission grid and initiatives to foster trade with the European Union [@Directorate-GeneralforEnergy:2023], Ukraine may have the potential to become an exporter of renewable energy.
 
 Here, we assess options for Ukraine to decarbonise its energy system by 2060. We apply a systems approach using a model that is highly resolved in space and time and that includes all energy sectors.
 
-# Results (preliminary)
+# Results
 
-System cost of renewable only scenario is low (<80 €/MWh, @tbl:lcoe). Keeping nuclear at pre-war's levels shows roughly the same cost (@tbl:lcoe).
-
-Meeting future electricity demand requires a substantial expansion of generation capacities in both scenarios (@tbl:capacities-power).
-
-A fully-autarkic energy system requires substantial amounts of storage capacities, especially in the renewables only scenario (@tbl:capacities-energy).
-
-In both scenarios, all available biomass is used (@tbl:generation).
-
-The cost of nuclear has the greatest impact on LCOE difference between the two scenarios (@fig:sensitivities). When Nuclear capital cost is doubled, the nuclear-and-renewables scenario becomes on average more than 70 €/MWh more expensive compared with the only-renewables scenario. Doubling the capital cost of solar, wind, and biomass increases the relative cost of the only-renewables scenario, but to a lower degree (20--35 €/MWh). Capital costs of storage technologies and marginal costs have low or almost no impact.
+System cost of renewable only scenario with fully-electrified heat and transport sectors and with average cost and medium-high economic growth assumption is low (<70\ €/MWh, @tbl:lcoe). Keeping nuclear at pre-war's levels shows 18% (12.2\ €/MWh) higher cost (@tbl:lcoe). System cost includes generation, transmission, and storage capacities.
 
 ```table
 ---
-caption: 'Levelised cost of electricity. {#tbl:lcoe}'
+caption: 'Levelised cost of electricity. (Table likely to be removed as not necessary.) {#tbl:lcoe}'
 alignment: LR
 include: build/results/lcoe.csv
 include-encoding: UTF-8
@@ -45,19 +37,11 @@ width:
 ---
 ```
 
-```table
----
-caption: 'Installed generation capacities (GW). {#tbl:capacities-power}'
-alignment: LRR
-include: build/results/capacities-power.csv
-include-encoding: UTF-8
-markdown: True
-width:
-    - 0.3
-    - 0.35
-    - 0.35
----
-```
+Meeting future electricity demand requires a substantial expansion of pre-war generation capacities in both scenarios (@fig:capacities-power), but especially in the renewables only scenario. This is explained by a switch to technologies with lower capacity factors (wind and solar), growing final energy demand based on population and economic growth, and an electrification of the heat and transport sectors (==can we compare final energy demand pre-war and scenarios?==).
+
+![**Installed capacities.** Installed **(A)** generation and **(B)** storage capacities of the pre-war electricity system and for scenarios with fully-electrified heat and transport sectors and with average cost assumptions and medium-high economic growth assumption. See Supplemental Figure\ S1 for both economic growth assumptions.](build/results/capacities-power-main.png){#fig:capacities-power}
+
+A fully-autarkic energy system requires substantial amounts of storage capacities in both scenarios, but slightly more in the renewables only scenario (@tbl:capacities-energy).
 
 ```table
 ---
@@ -73,21 +57,13 @@ width:
 ---
 ```
 
-```table
----
-caption: 'Generation (TWh). {#tbl:generation}'
-alignment: LRR
-include: build/results/generation.csv
-include-encoding: UTF-8
-markdown: True
-width:
-    - 0.3
-    - 0.35
-    - 0.35
----
-```
+In the only renewables scenario, biomass plays an important role (@fig:generation). Like onshore wind and solar, biomass generates roughly a third of the country's fully-electrified demand. In fact, all available biomass (513\ GWh) is used.
 
-![**Sensitivities of LCOE difference between scenarios to model parameters (preliminary).** Thick bars show the average increase in LCOE of the nuclear-and-renewables compared with the only-renewables scenario, given a doubling of parameter values. Thin bars show the standard deviation of these effects and are therefore a proxy for the interactivity of the parameters: the larger the standard deviation, the more does the impact of the parameter depend on other parameter values.](build/results/gsa/sensitivities.png){#fig:sensitivities}
+![**Electricity mix.** Electricity mix of the pre-war electricity system and for scenarios with fully-electrified heat and transport sectors and with average cost assumptions and medium-high economic growth assumption. See Supplemental Figure\ S2 for both economic growth assumptions.](build/results/generation-main.png){#fig:generation}
+
+The cost of nuclear has the greatest impact on LCOE difference between the two scenarios (@fig:sensitivities). When Nuclear capital cost is doubled, the nuclear-and-renewables scenario becomes on average more than 90\ €/MWh more expensive compared with the only-renewables scenario. Doubling the capital cost of solar, wind, and biomass increases the relative cost of the only-renewables scenario, but to a lower degree (20--30\ €/MWh on average). Capital costs of storage technologies and marginal costs have low or almost no impact.
+
+![**Sensitivities of LCOE difference between scenarios to model parameters.** Thick bars show the average increase in LCOE of the nuclear-and-renewables compared with the only-renewables scenario, given a doubling of parameter values. Thin bars show the standard deviation of these effects and are therefore a proxy for the interactivity of the parameters: the larger the standard deviation, the more does the impact of the parameter depend on other parameter values.](build/results/gsa/sensitivities-annotated.png){#fig:sensitivities}
 
 # Discussion
 
@@ -119,7 +95,7 @@ We model the energy system of Ukraine by soft-linking a demand projection and a 
 
 ## Energy demand projection
 
-We project Ukraine's energy demand for the year 2060 in which Ukraine intends to be climate-neutral. We consider full electrification of the heat and transport sectors by this time as one option for complete decarbonisation. We generate an hourly time series for a single weather year (2013 ==Iain, why this year?==) which we use as a exogenous input for the capacity expansion model, ignoring demand flexibility.
+We project Ukraine's energy demand for the year 2060 in which Ukraine intends to be climate-neutral. We consider full electrification of the heat and transport sectors by this time as one option for complete decarbonisation. We generate an hourly time series for a single weather year (==for now==) which we use as a exogenous input for the capacity expansion model, ignoring demand flexibility.
 
 We project annual energy demand in 2060 using DESSTINEE [@Oreggioni:2022] which projects energy demand per sector and per energy carrier. For the growth of the individual sectors, we apply the following assumptions. We assume a ==ZZ%== annual population growth between 2020--2060 (==SOURCE==) leading to a population of ==XX== million people  in 2060. We assume a ==ZZ%== annual GDP per capita growth in the same duration (==SOURCE==), leading to GDP per capita growing from ==XX== to ==YY==. We assume the GDP split across the different sectors to change in a way in which services grows fastest as countries get richer, leading to a GDP split in 2060 of ==XX%== services, ==YY%== agriculture, and ==ZZ%== industry (==SOURCE==).
 
@@ -145,7 +121,7 @@ fishing)
 
 To derive a hourly load time series of the fully-electrified energy demand, we disaggregate the annual energy demand in time. For commercial and residential heat, we use demand.ninja ==(CITE ONCE PUBLISHED)==. For transport we do X ==Iain: what?==. For electricity, we do Y ==Iain: what?==. For industry, we do Z ==Iain: what?==. Summing all these elements leads to a national load time series (@fig:load) which we feed into the capacity expansion model.
 
-![**Electricity load projection used in the model (preliminary).** Load is project for the year 2050 and it is assumed that heat and transport are fully electrified.](build/results/load.png){#fig:load}
+![**Electricity load projection used in the model (preliminary).** Load is project for the year 2060 and it is assumed that heat and transport are fully electrified.](build/results/load.png){#fig:load}
 
 ## Capacity expansion model
 

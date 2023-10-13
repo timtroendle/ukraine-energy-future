@@ -73,6 +73,27 @@ references:
   URL: >-
     https://energy.ec.europa.eu/publications/memorandum-understanding-between-european-union-and-ukraine-strategic-partnership-biomethane_en
 
+- id: Energoatom:2023
+  abstract: >-
+    SE «NNEGC «Energoatom» and Holtec International agree to build up to 20
+    SMR-160 power units in Ukraine
+  accessed:
+    - year: 2023
+      month: 10
+      day: 10
+  author:
+    - literal: Energoatom
+  citation-key: Energoatom:2023
+  issued:
+    - year: 2023
+      month: 4
+      day: 23
+  title: >-
+    Energoatom and Holtec International agree to build up to 20 SMR-160 power
+    units in Ukraine
+  type: webpage
+  URL: https://www.energoatom.com.ua/app-eng/eng-2304231.html
+
 - id: Geletukha:2020
   abstract: >-
     The purpose of the work is to elaborate a concept of Roadmap for bioenergy
@@ -273,6 +294,31 @@ references:
   URL: https://www.sciencedirect.com/science/article/pii/S0360319920336818
   volume: '46'
 
+- id: OECD:2021a
+  abstract: >-
+    This Review assesses Ukraine’s investment climate vis-à-vis the country’s
+    energy sector reforms and discusses challenges and opportunities in this
+    context. Capitalising on the OECD Policy Framework for Investment and other
+    relevant instruments and...
+  accessed:
+    - year: 2023
+      month: 10
+      day: 10
+  author:
+    - literal: OECD
+  citation-key: OECD:2021a
+  event-place: Paris
+  issued:
+    - year: 2021
+  language: en
+  publisher: Organisation for Economic Co-operation and Development
+  publisher-place: Paris
+  source: OECD iLibrary
+  title: OECD Energy Investment Policy Review of Ukraine
+  type: report
+  URL: >-
+    https://www.oecd-ilibrary.org/finance-and-investment/oecd-energy-investment-policy-review-of-ukraine_6e6e58c6-en
+
 - id: Oreggioni:2022
   abstract: >-
     Reaching climate stabilisation targets requires strengthening the efforts to
@@ -466,6 +512,72 @@ references:
     Spatial Scales
   type: manuscript
 
+- id: Steigerwald:2023
+  abstract: >-
+    Predicting future costs of technologies not yet developed is a complex
+    exercise that includes many uncertain parameters and functional forms. In
+    that context, small modular reactor (SMR) concepts that are in a rather
+    early development stage claim to have cost advantages through learning
+    effects, standardized design, modularization, co-siting economies, and other
+    factors, such as better time-to-market even though they exhibit negative
+    economies of scale in their construction costs due to their lower power
+    output compared to conventional nuclear reactors. In this paper, we compare
+    two different approaches from production theory and show that they have a
+    theoretically equal structure. In the second step, we apply these approaches
+    to estimate a range of potential construction costs for 15 SMR projects for
+    which sufficient data is available. These include water cooled, high
+    temperature, and fast neutron spectrum reactors. We then apply the Monte
+    Carlo method to benchmark the cost projections assumed by the manufacturers
+    by varying the investment costs, the weighted average cost of capital, the
+    capacity factor, and the wholesale electricity price in simulations of the
+    net present value (NPV) and the levelized cost of electricity (LCOE). We
+    also test whether the differences between the manufacturer estimates and
+    ours differ between technology families of SMR concepts and apply a
+    sensitivity analysis. Here we contribute to an intensifying debate in the
+    literature on the economics and finance of SMR concepts. The Monte Carlo
+    analysis suggests a broad range of NPVs and LCOEs: Surprisingly, the lowest
+    LCOE is calculated for a helium-cooled high-temperature reactor, whereas all
+    of the light water reactors feature higher LCOEs. None of the tested
+    concepts is able to compete economically with existing renewable
+    technologies, not even when taking their variability and necessary system
+    integration costs into account. The numerical results also confirm the
+    importance of the choice of production theory and parameters. We conclude
+    that any technology foresight has to take as much of the case specifics into
+    account, including technological and institutional specifics; this also
+    holds for SMR concepts.
+  accessed:
+    - year: 2023
+      month: 10
+      day: 10
+  author:
+    - family: Steigerwald
+      given: Björn
+    - family: Weibezahn
+      given: Jens
+    - family: Slowik
+      given: Martin
+    - family: Hirschhausen
+      given: Christian
+      non-dropping-particle: von
+  citation-key: Steigerwald:2023
+  container-title: Energy
+  container-title-short: Energy
+  DOI: 10.1016/j.energy.2023.128204
+  ISSN: 0360-5442
+  issued:
+    - year: 2023
+      month: 10
+      day: 15
+  page: '128204'
+  source: ScienceDirect
+  title: >-
+    Uncertainties in estimating production costs of future nuclear technologies:
+    A model-based analysis of small modular reactors
+  title-short: Uncertainties in estimating production costs of future nuclear technologies
+  type: article-journal
+  URL: https://www.sciencedirect.com/science/article/pii/S0360544223015980
+  volume: '281'
+
 - id: Sukurova:2023
   author:
     - family: Sukurova
@@ -512,6 +624,7 @@ references:
   author:
     - literal: Ukraine
   citation-key: Ukraine:2021
+  container-title: NDC
   issued:
     - year: 2021
       month: 7
@@ -643,6 +756,44 @@ references:
   type: article-newspaper
   URL: >-
     https://www.nytimes.com/2023/05/29/world/europe/ukraine-russia-wind-power.html
+
+- id: VerhovnaRadaUkrainy:2017
+  abstract: >-
+    Order of the Cabinet of Ministers of Ukraine; Strategy on August 18, 2017 №
+    605-р
+  accessed:
+    - year: 2023
+      month: 10
+      day: 10
+  author:
+    - literal: Verhovna Rada Ukrainy
+  citation-key: VerhovnaRadaUkrainy:2017
+  issued:
+    - year: 2017
+  language: uk
+  title: >-
+    Про схвалення Енергетичної стратегії України на період до 2035 року
+    “Безпека, енергоефективність, конкурентоспроможність”
+  type: bill
+  URL: https://zakon.rada.gov.ua/go/605-2017-%D1%80
+
+- id: VerhovnaRadaUkrainy:2021
+  abstract: >-
+    Order of the Cabinet of Ministers of Ukraine; Strategy on August 4, 2021 №
+    907-р
+  accessed:
+    - year: 2023
+      month: 10
+      day: 10
+  author:
+    - literal: Verhovna Rada Ukrainy
+  citation-key: VerhovnaRadaUkrainy:2021
+  issued:
+    - year: 2021
+  language: uk
+  title: Про схвалення Стратегії енергетичної безпеки
+  type: bill
+  URL: https://zakon.rada.gov.ua/go/907-2021-%D1%80
 
 - id: Worldbank:2023
   accessed:
