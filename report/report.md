@@ -129,7 +129,24 @@ To derive cost-minimal generation, storage, and transmission capacities, we appl
 
 The model has the option to expand generation and storage capacities of onshore wind, solar power, biomass, nuclear power, lithium-ion batteries, and hydrogen storage to meet demand in every hour of the year. Total system cost is derived by summing up annuities of investment, operation, and maintenance cost of all installed capacities (@tbl:technology-cost). The depreciation rate is set to 10% [@Andersson:2020]. The model finds the set of installed capacities with minimal total system cost.
 
-The potential generation of solar and wind power is taken from PyPSA-Eur and has been derived in the following way. ==Fabian, can you explain?==
+The potential generation of solar and wind power is taken from PyPSA-Eur and has been derived in the following way.
+
+First, the eligible area for wind and solar development is calculated for each region using *atlite* at 100\ m grid resolution [@Hofmann:2021].
+For all renewable technologies, natural protection areas are excluded based on the World Database on Protected Areas (WDPA) [@UNEP-WCMC:2018].
+Based on the Copernicus Global Land Cover dataset [@Buchhorn:2020], shrubland, herbaceous and sparse vegetation, and cropland are assumed to be eligible for wind and solar development.
+In addition, while built-up areas are included for solar PV potentials, a distance of 1000\ m from built-up areas has to be kept for onshore wind turbines.
+Offshore wind development is allowed up to a water depth of 50\ m, which is determined based on the GEBCO bathymetry dataset [@GEBCO:2015].
+Furthermore, dense shipping lanes are excluded based on the World Bank's Global Shipping Traffic Density dataset [@Cerdeiro:2021].
+Wind parks further out than 30\ km from shore are assumed to be DC-connected, whereas near-shore wind parks are assumed to be AC-connected.
+For each renewable technology and region, the available area is multiplied with allowed deployment densities, approximating the socio-technical potential.
+These densities are 3\ MW/km^2^ for onshore wind, 2\ MW/km^2^ for offshore wind, 1.7\ MW/km^2^ for solar.
+
+Second, based on the eligible areas per region, capacity factor time series for wind and solar generation are calculated using *atlite*.
+For this step, historical weather data for the years 2010--2014 from ECMWF's ERA5 reanalysis dataset [@Hersbach:2020] is used to convert wind speed and solar irradiance data to hourly capacity factors using models for typical wind turbines and solar panels.
+The solar generation is calculated based on the incidence angle of solar irradiation, the panel tilt angle and the conversion efficiency of CdTe panel.
+Power curves for a Vestas V112 3\ MW (onshore) and NREL 5\ MW (offshore) turbine are employed to map wind speeds scaled to hub height to power outputs.
+The capacity factors of offshore wind generation are multiplied with a correction factor of 88.55% to approximately account for wake effects [@Bosch:2018].
+Finally, the gridded dataset (0.25°x0.25°) is mapped onto the geographical shape of each region, using the available area as weighting.
 
 We assume the future bioenergy potential to be 513\ TWh/yr (438\ TWh/yr solid biomass and 75\ TWh/yr biogas), following an assessment in [@Geletukha:2020]. Their projections include energy crops but exclude liquid fuels. Energy crops may require up to ~6.6% of total land.
 
