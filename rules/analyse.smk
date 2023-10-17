@@ -73,6 +73,16 @@ rule plot_load:
     script: "../scripts/vis/load.py"
 
 
+rule plot_load_validation:
+    message: "Plot validation of load time series."
+    input:
+        data = "data/ninja.historical.validation.csv",
+    output:
+        "build/results/load-validation.vega.json"
+    conda: "../envs/default.yaml"
+    script: "../scripts/vis/validation.py"
+
+
 rule plot_generation_capacities:
     message: "Plot generation capacities."
     input:

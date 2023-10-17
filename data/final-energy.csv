@@ -1,0 +1,12 @@
+Sector,2020 electricity,2020 other fuels,"2060 electricity
+(high growth)","2060 electricity
+(low growth)"
+Industry,47,257,408,173
+Commercial,25,88,161,51
+Residential,41,169,128,63
+Transport,7,120,139,89
+All other,21,16,76,33
+Total,142,650,913,409
+… of which,,,,
+Space heating,19,176,52,29
+Space cooling,2,2,22,6

@@ -18,7 +18,7 @@ def plot_load(load: pd.DataFrame) -> alt.Chart:
                 tickCount={"interval": "month", "step": 3},
                 labelExpr="month(toDate(datum.value)) == 0 ? year(datum.value) : null"
             ),
-            y=alt.Y("load", title="Mean weekly electricity demand (GW)"),
+            y=alt.Y("load", title="Mean daily electricity demand (GW)"),
             color=alt.Color("scenario", title="Demand scenario")
         )
         .mark_line()
@@ -26,7 +26,7 @@ def plot_load(load: pd.DataFrame) -> alt.Chart:
         .configure_title(anchor='start', fontSize=12, color=DARK_GREY)
         .configure_axis(titleColor=DARK_GREY, labelColor=DARK_GREY)
         .configure_header(titleColor=DARK_GREY, labelColor=DARK_GREY)
-        .configure_legend(titleColor=DARK_GREY, labelColor=DARK_GREY)
+        .configure_legend(titleColor=DARK_GREY, labelColor=DARK_GREY, orient="bottom")
     )
 
 

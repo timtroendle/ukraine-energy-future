@@ -95,33 +95,45 @@ We model the energy system of Ukraine by soft-linking a demand projection and a 
 
 ## Energy demand projection
 
-We project Ukraine's energy demand for the year 2060 in which Ukraine intends to be climate-neutral. We consider full electrification of the heat and transport sectors by this time as one option for complete decarbonisation. We generate an hourly time series for a single weather year (==for now==) which we use as a exogenous input for the capacity expansion model, ignoring demand flexibility.
+We project Ukraine's energy demand for the year 2060 in which Ukraine intends to be climate-neutral. We consider full electrification of the heat and transport sectors by this time as one option for complete decarbonisation. We generate an hourly time series of electricity demand in 2060 through soft-linking DESSTINEE [@Oreggioni:2022] which projects annual energy demands per sector and per energy carrier, with the Demand.ninja model [@Staffell:2023a] which upscales these demands to hourly resolution based on the prevailing weather. We use the resulting profile as an exogenous input to the capacity expansion model, ignoring demand flexibility.
 
-We project annual energy demand in 2060 using DESSTINEE [@Oreggioni:2022] which projects energy demand per sector and per energy carrier. For the growth of the individual sectors, we apply the following assumptions. We assume a ==ZZ%== annual population growth between 2020--2060 (==SOURCE==) leading to a population of ==XX== million people  in 2060. We assume a ==ZZ%== annual GDP per capita growth in the same duration (==SOURCE==), leading to GDP per capita growing from ==XX== to ==YY==. We assume the GDP split across the different sectors to change in a way in which services grows fastest as countries get richer, leading to a GDP split in 2060 of ==XX%== services, ==YY%== agriculture, and ==ZZ%== industry (==SOURCE==).
+Annual energy demands are modelled using macroeconomic projections informing changes in energy service demands. These changes are converted to final energy consumption using assumptions on fuel switching (towards electrification) and device efficiency. We assume a 1.0% annual reduction in population between 2020--2060  [@UnitedNationsDepartmentofEconomicandSocialAffairsPopulationDivision:2022] leading to a reduction from 43.9 million people in 2020 to 29.8 million in 2060. We assume a 4.3% annual growth in GDP per capita over the same period, taken from the high/high scenario of [@Smits:2019]. This sees GDP per capita growing from $13,000 in 2020 to $70,100 in 2060 (in Purchasing Power Parity terms). As the World Bank present a range of scenarios, we also test their low/high scenario, with 1.0% annual growth that gives $19,100 GDP per capita in 2060. Under these scenarios, Ukraine’s national GDP at PPP changes from $570\ bn in 2020 to $2,100\ bn in 2060 (high scenario) or remains flat at $570\ bn in 2060 (low scenario) as higher incomes are countered by population degrowth. We take the GDP split across economic sectors in 2020 from [@WorldBankGroup:2023; @WorldBankGroup:2023a]: 70% services, 20% industry, 10% agriculture. This sectoral split is modelled to follow the trend observed across European countries, in which the service sectors grow faster than other sectors as countries get richer [@Bossmann:2015]. This yields a GDP split in 2060 of 83% services, 13% industry and 4% agriculture in the high-growth scenario, and 74% services, 18% industry and 8% agriculture in the low-growth scenario.
 
-Using these sector growth projections and historical final energy demand (@tbl:final-energy-demand-2020), DESSTINEE projects future final energy demand per sector. This includes a full electrification and energy efficiency improvements. The projected electricity demand in 2060 sums to ==YY== TWh/yr.
+DESSTINEE was updated to use 2019 as the baseline calibration year, as a proxy for 2020 which we avoid due to COVID impacts on energy demand.  Final energy demands were taken from the International Energy Agency [@IEA:2023] and ==(????????)==, shown in @tbl:final-energy-demand.  The split between end uses (for heating and cooling) is an output of the DESSTINEE model, derived from annual heating and cooling degree days.
 
------------------------------------------------------------
-Sector                            Electricity      Other fuels
----------------      ------------------------ ----------------
-Industry                      46                   140
+The 2060 demand projection was constructed using a bottom-up approach in DESSTINEE.  The numerous assumptions for consumer behaviour, technology mix and efficiency for each sector were derived from the default values in DESSTINEE for Ukraine’s neighbouring European countries (Poland, Slovakia, Hungary and Romania), except for assumptions on the fuel basket for each sector which were overridden to give complete electrification (in line with the study’s aims).  Influential assumptions included the average efficiency of heat pumps (Coefficient of Performance increasing from 3 in 2020 to 4.25 in 2060) and the specific energy consumption of private cars decreasing from 1.1 to 0.3\ MJ/passenger-km from 2020 to 2060 (due to efficiency gains from electric vehicles).  While these assumptions are particularly uncertain (as are any technical projections for several decades into the future), we find the results are relatively insensitive to the overall scale of demand, and thus to these particular assumptions.
 
-Commercial                   22                   35
+In @tbl:final-energy-demand, electricity consumption is seen to increase in all sectors in both the high and low-growth scenarios.  Total energy consumption also rises in the high-growth scenario, but falls in the low-growth scenario as increasing efficiency outweighs the increase in service demands due to greater prosperity.  The residential sector is the exception to this, due to the predominance of heating demand which is modelled to see very large efficiency gains due to the uptake of heat pumps.  Total demand for space heating sees a large reduction between 2020 and 2060 due to both this increasing efficiency and also the modelled increase in temperatures due to climate change: annual heating degree days are projected to fall by 17% from 3,150 to 2600 [@Staffell:2023a].  Conversely, demand for space cooling is projected to rise sharply for two reasons.  Firstly, the existing service is already provided by air conditioners, so efficiency improvements will be marginal technology improvements, rather than fuel switching from coal and oil. Secondly, climate change increases summer temperatures and thus service demands, with annual cooling degree days growing 35% from 580 to 780 [@Staffell:2023a].
 
-Residential                   37                   121
+```table
+---
+caption: 'Final energy demand by sector and carrier (TWh/yr). {#tbl:final-energy-demand}'
+alignment: LRRRR
+include: ../data/final-energy.csv
+include-encoding: UTF-8
+markdown: True
+width:
+    - 0.2
+    - 0.2
+    - 0.2
+    - 0.2
+    - 0.2
+---
+```
 
-Transport                     6                    87
+To derive a hourly load time series of the fully-electrified energy demand, in 2060, we disaggregate each sector’s annual energy demand over time. We distinguish between weather-invariant demands (industry, transport, and some end uses in residential and commercial buildings) and weather-dependent demands.
 
-Other                         4                    16
-(agriculture,
-fishing)
-------------------------------------------------------------
+Weather-invariant demands are modelled within DESSTINEE using the partial decomposition approach outlined in [@Bossmann:2015].  Diurnal profiles (covering 24 hours) are defined for each sector and end use, for weekdays and weekends, summers and winters, and applied to the demand.  For example, heavy-industry is modelled as a constant 24/7 load, residential appliances follow a general profile that mirrors household occupation.  Electric vehicles are modelled as an equal mix of time-of-use charging (daytime and evenings) and smart charging (overnight).
 
-: Final energy demand by sector and carrier (TWh/yr in 2020). ==Olena T.: SOURCE?== {#tbl:final-energy-demand-2020}
+The Demand.ninja model was used to model weather-dependent demands for space heating and cooling in residential and commercial buildings [@Staffell:2023a].  This derives a composite temperature index from four variables which influence thermal comfort: temperature, solar irradiance, wind speeds and humidity.  From this index, daily heating and cooling degree days were derived, which are then used to apportion heating and cooling demand over time. Open-access profiles were used, derived from the model’s global average parameters, including heating and cooling thresholds of 14*C and 20*C respectively [@Demand.ninja:2023]. Demands were then upscaled from daily to hourly resolution using the diurnal profiles for heating and cooling that were derived for Ukraine’s neighbouring countries [@Staffell:2023a].
 
-To derive a hourly load time series of the fully-electrified energy demand, we disaggregate the annual energy demand in time. For commercial and residential heat, we use demand.ninja ==(CITE ONCE PUBLISHED)==. For transport we do X ==Iain: what?==. For electricity, we do Y ==Iain: what?==. For industry, we do Z ==Iain: what?==. Summing all these elements leads to a national load time series (@fig:load) which we feed into the capacity expansion model.
+This process was first validated against historical national electricity demand in Ukraine [@ENTSO-E:2023], by applying weather data from 2018 to 2020 to the model’s baseline year (@tbl:final-energy-demand). The first ten months of 2020 were removed from comparison due to the effects of the COVID-19 pandemic on human activity and thus on energy demand [@Mehlig:2021].  This validation (@fig:load-validation) revealed a strong correlation between modelled and actual demand, with an R2\ =\ 0.95 and residual standard error of +/-\ 0.5\ GW compared to mean demand of 17\ GW.
 
-![**Electricity load projection used in the model (preliminary).** Load is project for the year 2060 and it is assumed that heat and transport are fully electrified.](build/results/load.png){#fig:load}
+![**Estimated versus measured demand.** Demand is shown as daily averages for the years 2018--2021. In our validation, we exclude data from the COVID19 period January--October 2020 (highlighted) due to its irregular pattern.](build/results/load-validation.png){#fig:load-validation}
+
+This same process was then applied to the 2060 scenarios, using the weather years of 2010--2014 to correspond with the years used for the wind and solar profiles (@fig:load). This profile was used in the capacity expansion model.
+
+![**Electricity load projection used in the model.** Load is projected for the year 2060 and it is assumed that heat and transport are fully electrified. Horizontal axis shows the historical weather years used to project 2060 demand.](build/results/load.png){#fig:load}
 
 ## Capacity expansion model
 

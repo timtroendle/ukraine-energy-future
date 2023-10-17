@@ -99,6 +99,35 @@ references:
   URL: https://www.sciencedirect.com/science/article/pii/S036054421831689X
   volume: '163'
 
+- id: Bossmann:2015
+  abstract: "National demand for electricity follows a regular and predictable daily pattern. This pattern is set to change due to efficiency improvements, de-industrialisation and electrification of heat and transport. These changes are independent of renewable infeed and are not well understood: contemporary studies assume that electricity load curves will retain their current shape, scaling equally in all hours. Changes to this shape will profoundly affect the electricity industry: increasing the requirements for flexible and peaking capacity, and reducing asset utilisation and profitability. This paper explores the evolution of load curves to 2050 in Germany and Britain: two countries undergoing radically different energy transformations. It reviews recent developments in Europe's electricity demand, and introduces two models for synthesising future hourly load curves: eLOAD (electricity LOad curve ADjustment) and DESSTinEE (Demand for Energy Services, Supply and Transmission in EuropE). Both models are applied to a decarbonisation scenario for 2050, and consistently show peak loads increasing by about 23% points above the change in annual demand, to 103\_GW in Germany and 92\_GW in Britain. Sensitivities around electrification show that a million extra heat pumps or electric vehicles add up to 1.5\_GW to peak demand. The structure and shape of the future load curves are analysed, and impacts on the national electricity systems are drawn."
+  accessed:
+    - year: 2017
+      month: 10
+      day: 20
+  author:
+    - family: Boßmann
+      given: Tobias
+    - family: Staffell
+      given: Iain
+  citation-key: Bossmann:2015
+  container-title: Energy
+  container-title-short: Energy
+  DOI: 10.1016/j.energy.2015.06.082
+  ISSN: 0360-5442
+  issue: Part 2
+  issued:
+    - year: 2015
+      month: 10
+      day: 1
+  page: 1317-1333
+  source: ScienceDirect
+  title: "The shape of future electricity demand: Exploring load curves in\_2050s Germany and Britain"
+  title-short: The shape of future electricity demand
+  type: article-journal
+  URL: http://www.sciencedirect.com/science/article/pii/S0360544215008385
+  volume: '90'
+
 - id: Buchhorn:2020
   abstract: >-
     Near real time epoch 2019 from the Collection 3 of annual, global 100m land
@@ -174,6 +203,20 @@ references:
   URL: >-
     https://datacatalog.worldbank.org/search/dataset/0037580/Global-Shipping-Traffic-Density
 
+- id: Demand.ninja:2023
+  accessed:
+    - year: 2023
+      month: 10
+      day: 17
+  author:
+    - literal: Demand.ninja
+  citation-key: Demand.ninja:2023
+  issued:
+    - year: 2023
+  title: Pre-compiled model results
+  type: dataset
+  URL: https://demand.ninja/#data-downloads
+
 - id: Directorate-GeneralforEnergy:2023
   abstract: >-
     Memorandum of understanding between the European Union and Ukraine on a
@@ -218,6 +261,20 @@ references:
     units in Ukraine
   type: webpage
   URL: https://www.energoatom.com.ua/app-eng/eng-2304231.html
+
+- id: ENTSO-E:2023
+  accessed:
+    - year: 2023
+      month: 10
+      day: 17
+  author:
+    - literal: ENTSO-E
+  citation-key: ENTSO-E:2023
+  issued:
+    - year: 2023
+  title: ENTSO-E Transparency Platform
+  type: dataset
+  URL: https://transparency.entsoe.eu/
 
 - id: GEBCO:2015
   accessed:
@@ -521,6 +578,25 @@ references:
   URL: https://linkinghub.elsevier.com/retrieve/pii/S2211467X18300804
   volume: '22'
 
+- id: IEA:2023
+  abstract: >-
+    The International Energy Agency works with countries around the world to
+    shape energy policies for a secure and sustainable future.
+  accessed:
+    - year: 2023
+      month: 10
+      day: 17
+  author:
+    - literal: IEA
+  citation-key: IEA:2023
+  issued:
+    - year: 2023
+      month: 8
+  language: en-GB
+  title: World Energy Balances
+  type: dataset
+  URL: https://www.iea.org/data-and-statistics/data-product/world-energy-balances
+
 - id: IRENA:2023
   author:
     - literal: IRENA
@@ -620,6 +696,61 @@ references:
   type: article-journal
   URL: https://www.sciencedirect.com/science/article/pii/S0360319920336818
   volume: '46'
+
+- id: Mehlig:2021
+  abstract: >-
+    Around the world, efforts to contain the COVID-19 pandemic have profoundly
+    changed human activity, which may have improved air quality and reduced
+    greenhouse gas emissions. We investigated the impact of the pandemic on
+    energy demand and subsequent emissions from electricity and gas throughout
+    2020 in the UK. The daily pattern of electricity demand changed in both
+    lockdowns, with weekday demand shifting to that of a typical pre-pandemic
+    weekend. Energy demand in 2020 was modelled to reveal the impact of the
+    weather and the pandemic. The first lockdown reduced demand by 15.6% for
+    electricity and 12.0% for commercial gas, whereas the second lockdown
+    produced reductions less than half. Domestic gas demand did not change
+    during the first lockdown, but increased by 6.1% in the second, likely due
+    to increased domestic heat demand. The changes in demand for gas resulted in
+    little change to overall gas consumption emissions during the pandemic. For
+    electricity, large emission reductions occurred during the two lockdowns: up
+    to 22% for CO2, 47% for NO x , and 29% for PM2.5. Yet, the largest CO2
+    emission reduction for electricity in 2020 (25%) occurred before the
+    pandemic, which happened during a warm and stormy spell with exceptional
+    wind generation. These observations suggest that future similar changes in
+    activity may result in little change for gas demand and emissions. For
+    electricity, emission reductions through changes in energy demand are made
+    possible by the generation mix. To enable further emission reductions in the
+    future, the generation mix should continue to decarbonise. This will yield
+    emission reductions in both times of lowered energy demand, but more
+    importantly, during times of high renewable output.
+  accessed:
+    - year: 2023
+      month: 10
+      day: 17
+  author:
+    - family: Mehlig
+      given: Daniel
+    - family: ApSimon
+      given: Helen
+    - family: Staffell
+      given: Iain
+  citation-key: Mehlig:2021
+  container-title: Environmental Research Letters
+  container-title-short: Environ. Res. Lett.
+  DOI: 10.1088/1748-9326/abf876
+  ISSN: 1748-9326
+  issue: '5'
+  issued:
+    - year: 2021
+      month: 4
+  language: en
+  page: '054037'
+  publisher: IOP Publishing
+  source: Institute of Physics
+  title: The impact of the UK’s COVID-19 lockdowns on energy demand and emissions
+  type: article-journal
+  URL: https://dx.doi.org/10.1088/1748-9326/abf876
+  volume: '16'
 
 - id: OECD:2021a
   abstract: >-
@@ -823,7 +954,69 @@ references:
   URL: https://www.sciencedirect.com/science/article/pii/S1570794609701543
   volume: '26'
 
-- id: Staffell:2023
+- id: Smits:2019
+  author:
+    - family: Smits
+      given: Karlis
+    - family: Favaro
+      given: Edgardo M.
+    - family: Golovach
+      given: Anastasia
+    - family: Khan
+      given: Faruk
+    - family: Larson
+      given: Donald F.
+    - family: Schroeder
+      given: Kateryna Goychuk
+    - family: Schmidt
+      given: Gabriela
+    - family: Niviecskyi
+      given: Oleg
+    - family: Osmochescu
+      given: Eugeniu
+    - family: Ponomarenko
+      given: Hanna
+    - family: Cuaresma
+      given: Jesus Crespo
+    - family: Oberhofer
+      given: Harald
+    - family: Hrebeniuk
+      given: Yevhen
+    - family: Ek
+      given: Colin Christopher
+  citation-key: Smits:2019
+  event-place: Washington, D.C.
+  issued:
+    - year: 2019
+      month: 3
+      day: 29
+  publisher: World Bank Group
+  publisher-place: Washington, D.C.
+  title: 'Ukraine Growth Study Final Document: Faster, Lasting and Kinder'
+  type: report
+  URL: >-
+    http://documents.worldbank.org/curated/en/543041554211825812/Ukraine-Growth-Study-Final-Document-Faster-Lasting-and-Kinder
+
+- id: Staffell:2023a
+  abstract: >-
+    Accurate modelling of the weather’s temporal and spatial impacts on building
+    energy demand is critical to decarbonizing energy systems. Here we introduce
+    a customizable model for hourly heating and cooling demand applicable
+    globally at all spatial scales. We validate against demand from ~5,000
+    buildings and 43 regions across four continents. The model requires limited
+    data inputs and shows better agreement with measured demand than existing
+    models. We use it first to demonstrate that a 1 °C reduction in thermostat
+    settings across all buildings could reduce Europe’s gas consumption by
+    240 TWh yr−1, approximately one-sixth of historical imports from Russia.
+    Second, we show that service demand for cooling is increasing by up to 5%
+    per year in some regions due to climate change, and 5 billion people
+    experience >100 additional cooling degree days per year when compared with a
+    generation ago. The model and underlying data are freely accessible to
+    promote further research.
+  accessed:
+    - year: 2023
+      month: 10
+      day: 17
   author:
     - family: Staffell
       given: Iain
@@ -831,13 +1024,25 @@ references:
       given: Stefan
     - family: Johnson
       given: Nathan
-  citation-key: Staffell:2023
+  citation-key: Staffell:2023a
+  container-title: Nature Energy
+  container-title-short: Nat Energy
+  DOI: 10.1038/s41560-023-01341-5
+  ISSN: 2058-7546
   issued:
     - year: 2023
+      month: 9
+      day: 14
+  language: en
+  license: 2023 The Author(s)
+  page: 1-17
+  publisher: Nature Publishing Group
+  source: www.nature.com
   title: >-
-    A Global Model of Hourly Space Heating and Cooling Demand at Multiple
-    Spatial Scales
-  type: manuscript
+    A global model of hourly space heating and cooling demand at multiple
+    spatial scales
+  type: article-journal
+  URL: https://www.nature.com/articles/s41560-023-01341-5
 
 - id: Steigerwald:2023
   abstract: >-
@@ -1020,6 +1225,18 @@ references:
   type: webpage
   URL: https://www.protectedplanet.net/
 
+- id: UnitedNationsDepartmentofEconomicandSocialAffairsPopulationDivision:2022
+  author:
+    - literal: >-
+        United Nations, Department of Economic and Social Affairs, Population
+        Division
+  citation-key: UnitedNationsDepartmentofEconomicandSocialAffairsPopulationDivision:2022
+  issued:
+    - year: 2022
+  title: World Population Prospects 2022
+  type: dataset
+  URL: https://population.un.org/wpp/
+
 - id: Usher:2023
   abstract: >-
     Background: Energy system optimisation models (ESOMs) are commonly used to
@@ -1161,4 +1378,36 @@ references:
   type: report
   URL: >-
     http://documents.worldbank.org/curated/en/099445209072239810/P17884304837910630b9c6040ac12428d5c
+
+- id: WorldBankGroup:2023
+  abstract: Free and open access to global development data
+  accessed:
+    - year: 2023
+      month: 10
+      day: 17
+  author:
+    - literal: World Bank Group
+  citation-key: WorldBankGroup:2023
+  issued:
+    - year: 2023
+  language: en
+  number: NV.IND.TOTL.ZS
+  title: Industry (including construction), value added (% of GDP)
+  type: dataset
+  URL: https://data.worldbank.org/indicator/NV.IND.TOTL.ZS
+
+- id: WorldBankGroup:2023a
+  accessed:
+    - year: 2023
+      month: 10
+      day: 17
+  author:
+    - literal: World Bank Group
+  citation-key: WorldBankGroup:2023a
+  issued:
+    - year: 2023
+  number: NV.AGR.TOTL.ZS
+  title: Agriculture, forestry, and fishing, value added (% of GDP)
+  type: dataset
+  URL: https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS
 ...
