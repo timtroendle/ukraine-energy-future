@@ -66,8 +66,7 @@ rule gsa_parameters:
 rule plot_load:
     message: "Plot load time series."
     input:
-        load_low = "data/electricity-demand-fully-electrified-low.csv",
-        load_high = "data/electricity-demand-fully-electrified-high.csv",
+        load = "data/electricity-demand-fully-electrified.nc",
     output:
         "build/results/load.vega.json"
     conda: "../envs/default.yaml"

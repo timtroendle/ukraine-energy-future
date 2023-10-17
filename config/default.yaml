@@ -36,16 +36,16 @@ pypsa-eur:
         retrieve_cutout: false
 
     snapshots:
-        start: "2013-01-01"
-        end: "2016-01-01"
+        start: "2010-01-01"
+        end: "2012-01-01"
 
     atlite:
         cutouts:
-            europe-2013-2015-era5:
+            europe-2010-2014-era5:
                 module: era5
                 x: [20., 42.]
                 y: [42., 53.]
-                time: ['2013', '2015']
+                time: ['2010', '2014']
 
     electricity:
         renewable_carriers: [solar, onwind, offwind-ac, offwind-dc, hydro]
@@ -60,15 +60,15 @@ pypsa-eur:
 
     renewable:
         solar:
-            cutout: europe-2013-2015-era5
+            cutout: europe-2010-2014-era5
         onwind:
-            cutout: europe-2013-2015-era5
+            cutout: europe-2010-2014-era5
         offwind-ac:
-            cutout: europe-2013-2015-era5
+            cutout: europe-2010-2014-era5
         offwind-dc:
-            cutout: europe-2013-2015-era5
+            cutout: europe-2010-2014-era5
         hydro:
-            cutout: europe-2013-2015-era5
+            cutout: europe-2010-2014-era5
 
     conventional:
         nuclear:
