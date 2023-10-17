@@ -49,6 +49,131 @@ references:
   URL: >-
     https://uabio.org/wp-content/uploads/2020/05/Final_UA_Path_to_100_percent_renewables_Ukraine.pdf
 
+- id: Bosch:2018
+  abstract: >-
+    Several influential energy systems models (ESMs) indicate that renewable
+    energy must supply a large share of the world's electricity to limit global
+    temperature increases to 1.5 °C. To better represent the costs and other
+    implications of such a transition, it is important that ESMs can
+    realistically characterise the technical and economic potential of renewable
+    energy resources. This paper presents a Geospatial Information System
+    methodology for estimating the global offshore wind energy potential, i.e.
+    the terawatt hour per year (TWh/yr) production potential of wind farms,
+    assuming capacity could be built across the viable offshore area of each
+    country. A bottom-up approach characterises the capacity factors of offshore
+    wind farms by estimating the available wind power from high resolution
+    global wind speed data sets. Temporal phenomena are retained by binning
+    hourly wind speeds into 32 time slices per year considering the wind
+    resource across several decades. For 157 countries with a viable offshore
+    wind potential, electricity generation potential is produced in tranches
+    according to the distance to grid connection, water depth and average annual
+    capacity factor. These data can be used as inputs to ESMs and to assess the
+    economically viable offshore wind energy potential, on a global or
+    per-country basis.
+  accessed:
+    - year: 2023
+      month: 10
+      day: 17
+  author:
+    - family: Bosch
+      given: Jonathan
+    - family: Staffell
+      given: Iain
+    - family: Hawkes
+      given: Adam D.
+  citation-key: Bosch:2018
+  container-title: Energy
+  container-title-short: Energy
+  DOI: 10.1016/j.energy.2018.08.153
+  ISSN: 0360-5442
+  issued:
+    - year: 2018
+      month: 11
+      day: 15
+  page: 766-781
+  source: ScienceDirect
+  title: >-
+    Temporally explicit and spatially resolved global offshore wind energy
+    potentials
+  type: article-journal
+  URL: https://www.sciencedirect.com/science/article/pii/S036054421831689X
+  volume: '163'
+
+- id: Buchhorn:2020
+  abstract: >-
+    Near real time epoch 2019 from the Collection 3 of annual, global 100m land
+    cover maps. Other available epochs: 2015 2016 2017 2018 Produced by the
+    global component of the Copernicus Land Service, derived from PROBA-V
+    satellite observations and ancillary datasets. The maps include a main
+    discrete classification with 23 classes aligned with UN-FAO's Land Cover
+    Classification System, a set of versatile cover fractions: percentage (%) of
+    ground cover for the 10 main classes a forest type layer quality layers on
+    input data density and on the confidence of the detected land cover change
+    Click here to view the maps More information about the land cover maps
+    Product User Manual
+  accessed:
+    - year: 2023
+      month: 10
+      day: 17
+  author:
+    - family: Buchhorn
+      given: Marcel
+    - family: Smets
+      given: Bruno
+    - family: Bertels
+      given: Luc
+    - family: Roo
+      given: Bert De
+    - family: Lesiv
+      given: Myroslava
+    - family: Tsendbazar
+      given: Nandin-Erdene
+    - family: Herold
+      given: Martin
+    - family: Fritz
+      given: Steffen
+  citation-key: Buchhorn:2020
+  DOI: 10.5281/ZENODO.3939050
+  issued:
+    - year: 2020
+      month: 9
+      day: 8
+  language: en
+  license: Creative Commons Attribution 4.0 International, Open Access
+  publisher: Zenodo
+  source: DOI.org (Datacite)
+  title: >-
+    Copernicus Global Land Service: Land Cover 100m: collection 3: epoch 2019:
+    Globe
+  title-short: Copernicus Global Land Service
+  type: dataset
+  URL: https://zenodo.org/record/3939050
+  version: V3.0.1
+
+- id: Cerdeiro:2021
+  accessed:
+    - year: 2023
+      month: 10
+      day: 17
+  author:
+    - family: Cerdeiro
+      given: Diego A.
+    - family: Komaromi
+      given: Andras
+    - family: Liu
+      given: Yang
+    - family: Saeed
+      given: Mamoon
+  citation-key: Cerdeiro:2021
+  issued:
+    - year: 2021
+      month: 5
+      day: 3
+  title: IMF’s World Seaborne Trade monitoring system
+  type: dataset
+  URL: >-
+    https://datacatalog.worldbank.org/search/dataset/0037580/Global-Shipping-Traffic-Density
+
 - id: Directorate-GeneralforEnergy:2023
   abstract: >-
     Memorandum of understanding between the European Union and Ukraine on a
@@ -93,6 +218,22 @@ references:
     units in Ukraine
   type: webpage
   URL: https://www.energoatom.com.ua/app-eng/eng-2304231.html
+
+- id: GEBCO:2015
+  accessed:
+    - year: 2023
+      month: 10
+      day: 17
+  author:
+    - literal: GEBCO
+  citation-key: GEBCO:2015
+  issued:
+    - year: 2015
+  language: en
+  title: GEBCO_2014 Grid
+  type: dataset
+  URL: https://www.gebco.net/data_and_products/historical_data_sets/#gebco_2014
+  version: '20150318'
 
 - id: Geletukha:2020
   abstract: >-
@@ -175,6 +316,180 @@ references:
   URL: http://joss.theoj.org/papers/10.21105/joss.00097
   volume: '2'
 
+- id: Hersbach:2020
+  abstract: >-
+    Within the Copernicus Climate Change Service (C3S), ECMWF is producing the
+    ERA5 reanalysis which, once completed, will embody a detailed record of the
+    global atmosphere, land surface and ocean waves from 1950 onwards. This new
+    reanalysis replaces the ERA-Interim reanalysis (spanning 1979 onwards) which
+    was started in 2006. ERA5 is based on the Integrated Forecasting System
+    (IFS) Cy41r2 which was operational in 2016. ERA5 thus benefits from a decade
+    of developments in model physics, core dynamics and data assimilation. In
+    addition to a significantly enhanced horizontal resolution of 31 km,
+    compared to 80 km for ERA-Interim, ERA5 has hourly output throughout, and an
+    uncertainty estimate from an ensemble (3-hourly at half the horizontal
+    resolution). This paper describes the general set-up of ERA5, as well as a
+    basic evaluation of characteristics and performance, with a focus on the
+    dataset from 1979 onwards which is currently publicly available.
+    Re-forecasts from ERA5 analyses show a gain of up to one day in skill with
+    respect to ERA-Interim. Comparison with radiosonde and PILOT data prior to
+    assimilation shows an improved fit for temperature, wind and humidity in the
+    troposphere, but not the stratosphere. A comparison with independent buoy
+    data shows a much improved fit for ocean wave height. The uncertainty
+    estimate reflects the evolution of the observing systems used in ERA5. The
+    enhanced temporal and spatial resolution allows for a detailed evolution of
+    weather systems. For precipitation, global-mean correlation with
+    monthly-mean GPCP data is increased from 67% to 77%. In general,
+    low-frequency variability is found to be well represented and from 10 hPa
+    downwards general patterns of anomalies in temperature match those from the
+    ERA-Interim, MERRA-2 and JRA-55 reanalyses.
+  accessed:
+    - year: 2022
+      month: 2
+      day: 26
+  author:
+    - family: Hersbach
+      given: Hans
+    - family: Bell
+      given: Bill
+    - family: Berrisford
+      given: Paul
+    - family: Hirahara
+      given: Shoji
+    - family: Horányi
+      given: András
+    - family: Muñoz-Sabater
+      given: Joaquín
+    - family: Nicolas
+      given: Julien
+    - family: Peubey
+      given: Carole
+    - family: Radu
+      given: Raluca
+    - family: Schepers
+      given: Dinand
+    - family: Simmons
+      given: Adrian
+    - family: Soci
+      given: Cornel
+    - family: Abdalla
+      given: Saleh
+    - family: Abellan
+      given: Xavier
+    - family: Balsamo
+      given: Gianpaolo
+    - family: Bechtold
+      given: Peter
+    - family: Biavati
+      given: Gionata
+    - family: Bidlot
+      given: Jean
+    - family: Bonavita
+      given: Massimo
+    - family: De Chiara
+      given: Giovanna
+    - family: Dahlgren
+      given: Per
+    - family: Dee
+      given: Dick
+    - family: Diamantakis
+      given: Michail
+    - family: Dragani
+      given: Rossana
+    - family: Flemming
+      given: Johannes
+    - family: Forbes
+      given: Richard
+    - family: Fuentes
+      given: Manuel
+    - family: Geer
+      given: Alan
+    - family: Haimberger
+      given: Leo
+    - family: Healy
+      given: Sean
+    - family: Hogan
+      given: Robin J.
+    - family: Hólm
+      given: Elías
+    - family: Janisková
+      given: Marta
+    - family: Keeley
+      given: Sarah
+    - family: Laloyaux
+      given: Patrick
+    - family: Lopez
+      given: Philippe
+    - family: Lupu
+      given: Cristina
+    - family: Radnoti
+      given: Gabor
+    - family: Rosnay
+      given: Patricia
+      non-dropping-particle: de
+    - family: Rozum
+      given: Iryna
+    - family: Vamborg
+      given: Freja
+    - family: Villaume
+      given: Sebastien
+    - family: Thépaut
+      given: Jean-Noël
+  citation-key: Hersbach:2020
+  container-title: Quarterly Journal of the Royal Meteorological Society
+  DOI: 10.1002/qj.3803
+  ISSN: 1477-870X
+  issue: '730'
+  issued:
+    - year: 2020
+  language: en
+  page: 1999-2049
+  source: Wiley Online Library
+  title: The ERA5 global reanalysis
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/qj.3803
+  volume: '146'
+
+- id: Hofmann:2021
+  abstract: >-
+    Hofmann et al., (2021). atlite: A Lightweight Python Package for Calculating
+    Renewable Power Potentials and Time Series. Journal of Open Source Software,
+    6(62), 3294, https://doi.org/10.21105/joss.03294
+  accessed:
+    - year: 2023
+      month: 10
+      day: 17
+  author:
+    - family: Hofmann
+      given: Fabian
+    - family: Hampp
+      given: Johannes
+    - family: Neumann
+      given: Fabian
+    - family: Brown
+      given: Tom
+    - family: Hörsch
+      given: Jonas
+  citation-key: Hofmann:2021
+  container-title: Journal of Open Source Software
+  DOI: 10.21105/joss.03294
+  ISSN: 2475-9066
+  issue: '62'
+  issued:
+    - year: 2021
+      month: 6
+      day: 24
+  language: en
+  page: '3294'
+  source: joss.theoj.org
+  title: >-
+    atlite: A Lightweight Python Package for Calculating Renewable Power
+    Potentials and Time Series
+  title-short: atlite
+  type: article-journal
+  URL: https://joss.theoj.org/papers/10.21105/joss.03294
+  volume: '6'
+
 - id: Horsch:2018
   accessed:
     - year: 2020
@@ -205,6 +520,18 @@ references:
   type: article-journal
   URL: https://linkinghub.elsevier.com/retrieve/pii/S2211467X18300804
   volume: '22'
+
+- id: IRENA:2023
+  author:
+    - literal: IRENA
+  citation-key: IRENA:2023
+  issued:
+    - year: 2023
+      month: 5
+  language: en
+  source: Zotero
+  title: The cost of financing for renewable power
+  type: report
 
 - id: Koster:2012
   accessed:
@@ -671,6 +998,27 @@ references:
   title: Ukraine Energy Damage Assessment
   type: report
   URL: https://www.undp.org/ukraine/publications/ukraine-energy-damage-assessment
+
+- id: UNEP-WCMC:2018
+  abstract: |-
+    Protected Planet is the online interface for the
+        World Database on Protected Areas (WDPA), and the most comprehensive
+        global database on terrestrial and marine protected areas.
+  accessed:
+    - year: 2018
+      month: 2
+      day: 2
+  author:
+    - literal: UNEP-WCMC
+    - literal: IUCN
+  citation-key: UNEP-WCMC:2018
+  container-title: Protected Planet
+  issued:
+    - year: 2018
+  language: en
+  title: 'Protected Planet: The World Database on Protected Areas (WDPA)'
+  type: webpage
+  URL: https://www.protectedplanet.net/
 
 - id: Usher:2023
   abstract: >-
