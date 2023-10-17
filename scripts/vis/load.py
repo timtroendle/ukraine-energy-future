@@ -1,5 +1,6 @@
 
 import pandas as pd
+import xarray as xr
 import altair as alt
 
 DARK_GREY = "#424242"
@@ -12,8 +13,12 @@ def plot_load(load: pd.DataFrame) -> alt.Chart:
         alt
         .Chart(daily.stack().rename_axis(["utc_timestamp", "scenario"]).rename("load").reset_index(), width=WIDTH)
         .encode(
-            x=alt.X("utc_timestamp:T", title="Time").axis(format='%B'),
-            y=alt.Y("load", title="Mean daily electricity demand (GW)"),
+            x=alt.X("utc_timestamp:T").title(None).axis(
+                format="%Y",
+                tickCount={"interval": "month", "step": 3},
+                labelExpr="month(toDate(datum.value)) == 0 ? year(datum.value) : null"
+            ),
+            y=alt.Y("load", title="Mean weekly electricity demand (GW)"),
             color=alt.Color("scenario", title="Demand scenario")
         )
         .mark_line()
@@ -27,9 +32,6 @@ def plot_load(load: pd.DataFrame) -> alt.Chart:
 
 if __name__ == "__main__":
     chart = plot_load(
-        load=pd.DataFrame({
-            "low": pd.read_csv(snakemake.input.load_low, index_col=0, parse_dates=True)["UA"],
-            "high": pd.read_csv(snakemake.input.load_high, index_col=0, parse_dates=True)["UA"]
-        })
+        load=xr.open_dataset(snakemake.input[0]).to_dataframe()
     )
     chart.save(snakemake.output[0])

@@ -6,3 +6,7 @@ global-sensitivity-analysis:
         space: 6
         time: 6H # TODO move to 1H once ready
     number-trajectories: 15
+pypsa-eur:
+    snapshots:
+        start: "2010-01-01"
+        end: "2015-01-01"
