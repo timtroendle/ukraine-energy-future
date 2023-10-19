@@ -2,7 +2,7 @@ import pandas as pd
 import altair as alt
 
 
-GENERATION_TECH_ORDER = ["fossil", "hydro", "nuclear", "biomass", "onwind", "solar"]
+GENERATION_TECH_ORDER = ["fossil", "hydro", "nuclear", "biomass", "onwind", "offwind", "solar"]
 STORAGE_TECH_ORDER = ["PHS", "H2 electrolysis", "H2 fuel cell", "battery charger", "battery discharger"]
 DARK_GREY = "#424242"
 WIDTH_PER_DISPLAY = 185
@@ -85,6 +85,9 @@ def preprocess_capacities(sim_capacities: pd.DataFrame, pre_war_capacities: dict
     )
     capacities = (
         sim_capacities
+        .T
+        .assign(offwind=lambda df: df["offwind-dc"] + df["offwind-ac"])
+        .T
         .unstack()
         .rename("capacity")
         .rename_axis(index=["scenario", "carrier"])

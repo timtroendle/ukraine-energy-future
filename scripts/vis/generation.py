@@ -2,8 +2,8 @@ import pandas as pd
 import altair as alt
 
 
-GENERATION_TECH_ORDER = ["nuclear", "fossil", "hydro", "biomass", "onwind", "solar"]
-TECH_COLORS = ["#A01914", "#424242", "#4F6DB8", "#679436", "#9483C1", "#FABC3C"]
+GENERATION_TECH_ORDER = ["nuclear", "fossil", "hydro", "biomass", "offwind", "onwind", "solar"]
+TECH_COLORS = ["#A01914", "#424242", "#4F6DB8", "#679436", "#6851A3", "#9483C1", "#FABC3C"]
 DARK_GREY = "#424242"
 
 
@@ -46,6 +46,9 @@ def preprocess_generation(sim_generation: pd.DataFrame, pre_war_generation: dict
                           nice_tech_names: dict[str: str]) -> pd.DataFrame:
     sim_generation = (
         sim_generation
+        .T
+        .assign(offwind=lambda df: df["offwind-dc"] + df["offwind-ac"])
+        .T
         .unstack()
         .rename("generation")
         .rename_axis(index=["scenario", "carrier"])

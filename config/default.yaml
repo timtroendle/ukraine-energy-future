@@ -155,7 +155,8 @@ report:
         technology:
             biomass: "Biomass"
             nuclear: "Nuclear"
-            onwind: "Wind"
+            onwind: "Onshore wind"
+            offwind: "Offshore wind"
             solar: "Solar"
             hydro: "Hydro"
             "battery charger": "Battery charger"
@@ -185,6 +186,7 @@ report:
             solar: 8.1 # IRENA
             hydro: 6.6 # IRENA
             onwind: 1.7 # IRENA
+            offwind: 0 # IRENA
             biomass: 0.3 # IRENA
             fossil: 21.5 # TODO add Olena's source
         electricity-mix: # 2021 https://ourworldindata.org/energy/country/ukraine
@@ -192,5 +194,6 @@ report:
             solar: 0.04
             hydro: 0.07
             onwind: 0.03
+            offwind: 0
             biomass: 0.005
             fossil: 0.30
