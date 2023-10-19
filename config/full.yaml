@@ -7,6 +7,8 @@ global-sensitivity-analysis:
         time: 6H # TODO move to 1H once ready
     number-trajectories: 15
 pypsa-eur:
-    snapshots:
+    biomass:
+        potential: 2565000000 # [@Geletukha:2020] 513000000 times number of years
+    snapshots: # change in length requires change of biomass potential above
         start: "2010-01-01"
         end: "2015-01-01"

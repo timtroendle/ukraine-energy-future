@@ -10,7 +10,7 @@ resolution:
     time: 24H
 pypsa-eur:
     biomass:
-        potential: 513000000 # [@Geletukha:2020]
+        potential: 1026000000 # [@Geletukha:2020] 513000000 times number of years
         FOM: 4.1 # from Euro-Calliope
         VOM: 3.1 # from Euro-Calliope
         fuel: 18.47 # from Euro-Calliope
@@ -35,7 +35,7 @@ pypsa-eur:
         build_cutout: true
         retrieve_cutout: false
 
-    snapshots:
+    snapshots: # any change in total duration requires change of biomass potential above
         start: "2010-01-01"
         end: "2012-01-01"
 
