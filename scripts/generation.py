@@ -20,7 +20,6 @@ def generation_per_carrier(n: pypsa.Network) -> pd.Series:
         .groupby(n.generators.carrier, axis=1)
         .sum() # across locations
         .mean() # across time
-        .drop(index="load")
         .mul(8760)
         .mul(MW_TO_TW)
     )

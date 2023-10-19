@@ -76,7 +76,7 @@ pypsa-eur:
 
     solving:
         options:
-            load_shedding: true
+            load_shedding: false
         solver:
             options: gurobi-numeric-focus
 scenarios:
