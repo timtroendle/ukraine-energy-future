@@ -71,16 +71,16 @@ use rule * from pypsa_scenario3 exclude retrieve_databundle, build_cutout, downl
 use rule * from pypsa_scenario4 exclude retrieve_databundle, build_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, build_ship_raster, build_renewable_profiles, solve_network as pypsa4_*
 use rule solve_network from pypsa_scenario1 as pypsa1_solve_network with:
     resources:
-        runtime = 360
+        runtime = 600
 use rule solve_network from pypsa_scenario2 as pypsa2_solve_network with:
     resources:
-        runtime = 360
+        runtime = 600
 use rule solve_network from pypsa_scenario3 as pypsa3_solve_network with:
     resources:
-        runtime = 360
+        runtime = 600
 use rule solve_network from pypsa_scenario4 as pypsa4_solve_network with:
     resources:
-        runtime = 360
+        runtime = 600
 use rule build_renewable_profiles from pypsa_scenario1 as pypsa1_build_renewable_profiles with:
     resources:
         runtime = 60

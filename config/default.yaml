@@ -130,6 +130,9 @@ global-sensitivity-analysis:
         onwind+c:
             min: 0.25 # TODO update
             max: 2 # TODO update
+        offwind+c:
+            min: 0.25 # TODO update
+            max: 2 # TODO update
         biomass+c:
             min: 0.25 # TODO update
             max: 2 # TODO update
