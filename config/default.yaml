@@ -116,6 +116,24 @@ scenarios:
             conventional_carriers: [biomass]
             extendable_carriers:
                 Generator: [solar, onwind, offwind-ac, offwind-dc, biomass]
+    only-renewables-scaled:
+        run:
+            name: "only-renewables-scaled"
+
+        electricity:
+            conventional_carriers: [biomass]
+            extendable_carriers:
+                Generator: [solar, onwind, offwind-ac, offwind-dc, biomass]
+    nuclear-and-renewables-today:
+        run:
+            name: "nuclear-and-renewables-today"
+
+        electricity:
+            conventional_carriers: [biomass, nuclear]
+            extendable_carriers:
+                Generator: [solar, onwind, offwind-ac, offwind-dc, biomass, nuclear]
+            BAU_mincapacities:
+                nuclear: 13900 # https://en.wikipedia.org/wiki/Nuclear_power_in_Ukraine
 global-sensitivity-analysis:
     resolution:
         space: 2
@@ -175,14 +193,18 @@ report:
             - pre-war
             - nuclear-and-renewables-low
             - nuclear-and-renewables-high
+            - nuclear-and-renewables-today
             - only-renewables-low
             - only-renewables-high
+            - only-renewables-scaled
     scenario-colors:
         pre-war: "#424242"
         nuclear-and-renewables-low: "#FCDC98"
         nuclear-and-renewables-high: "#FABC3C"
+        nuclear-and-renewables-today: "#EEFA3C"
         only-renewables-low: "#A0CB71"
         only-renewables-high: "#679436"
+        only-renewables-scaled: "#BFE90D"
     pre-war:
         capacities:
             nuclear: 13.9 # https://en.wikipedia.org/wiki/Nuclear_power_in_Ukraine

@@ -13,7 +13,9 @@ SCENARIO_NAME_1 = "nuclear-and-renewables-high"
 SCENARIO_NAME_2 = "only-renewables-high"
 SCENARIO_NAME_3 = "nuclear-and-renewables-low"
 SCENARIO_NAME_4 = "only-renewables-low"
-SCENARIO_NAMES = [SCENARIO_NAME_1, SCENARIO_NAME_2, SCENARIO_NAME_3, SCENARIO_NAME_4]
+SCENARIO_NAME_5 = "only-renewables-scaled"
+SCENARIO_NAME_6 = "nuclear-and-renewables-today"
+SCENARIO_NAMES = [SCENARIO_NAME_1, SCENARIO_NAME_2, SCENARIO_NAME_3, SCENARIO_NAME_4, SCENARIO_NAME_5, SCENARIO_NAME_6]
 RESULT_PATH = "pypsa-eur/results/networks/{scenario}/elec_s_{spatial_res}_ec_lvopt_{temporal_res}-BAU{opts}.nc"
 
 
@@ -65,10 +67,30 @@ module pypsa_scenario4:
         scenario_configs[3]
 
 
+module pypsa_scenario5:
+    snakefile:
+        "../pypsa-eur/Snakefile"
+    prefix:
+        "pypsa-eur"
+    config:
+        scenario_configs[4]
+
+
+module pypsa_scenario6:
+    snakefile:
+        "../pypsa-eur/Snakefile"
+    prefix:
+        "pypsa-eur"
+    config:
+        scenario_configs[5]
+
+
 use rule * from pypsa_scenario1 exclude build_load_data, build_renewable_profiles, solve_network as pypsa1_*
 use rule * from pypsa_scenario2 exclude retrieve_databundle, build_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, build_ship_raster, build_renewable_profiles, solve_network as pypsa2_*
 use rule * from pypsa_scenario3 exclude retrieve_databundle, build_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, build_ship_raster, build_renewable_profiles, solve_network as pypsa3_*
 use rule * from pypsa_scenario4 exclude retrieve_databundle, build_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, build_ship_raster, build_renewable_profiles, solve_network as pypsa4_*
+use rule * from pypsa_scenario5 exclude retrieve_databundle, build_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, build_ship_raster, build_renewable_profiles, solve_network as pypsa5_*
+use rule * from pypsa_scenario6 exclude retrieve_databundle, build_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, build_ship_raster, build_renewable_profiles, solve_network as pypsa6_*
 use rule solve_network from pypsa_scenario1 as pypsa1_solve_network with:
     resources:
         runtime = 600
@@ -79,6 +101,12 @@ use rule solve_network from pypsa_scenario3 as pypsa3_solve_network with:
     resources:
         runtime = 600
 use rule solve_network from pypsa_scenario4 as pypsa4_solve_network with:
+    resources:
+        runtime = 600
+use rule solve_network from pypsa_scenario5 as pypsa5_solve_network with:
+    resources:
+        runtime = 600
+use rule solve_network from pypsa_scenario6 as pypsa6_solve_network with:
     resources:
         runtime = 600
 use rule build_renewable_profiles from pypsa_scenario1 as pypsa1_build_renewable_profiles with:
@@ -93,22 +121,32 @@ use rule build_renewable_profiles from pypsa_scenario3 as pypsa3_build_renewable
 use rule build_renewable_profiles from pypsa_scenario4 as pypsa4_build_renewable_profiles with:
     resources:
         runtime = 60
+use rule build_renewable_profiles from pypsa_scenario5 as pypsa5_build_renewable_profiles with:
+    resources:
+        runtime = 60
+use rule build_renewable_profiles from pypsa_scenario6 as pypsa6_build_renewable_profiles with:
+    resources:
+        runtime = 60
+
 
 localrules: pypsa1_retrieve_cost_data, pypsa1_build_cutout, pypsa1_retrieve_databundle, pypsa1_retrieve_ship_raster
 localrules: pypsa1_retrieve_natura_raster, pypsa1_download_copernicus_land_cover, pypsa1_build_powerplants
 localrules: pypsa2_retrieve_cost_data, pypsa2_retrieve_natura_raster, pypsa2_build_powerplants
 localrules: pypsa3_retrieve_cost_data, pypsa3_retrieve_natura_raster, pypsa3_build_powerplants
 localrules: pypsa4_retrieve_cost_data, pypsa4_retrieve_natura_raster, pypsa4_build_powerplants
+localrules: pypsa5_retrieve_cost_data, pypsa5_retrieve_natura_raster, pypsa5_build_powerplants
+localrules: pypsa6_retrieve_cost_data, pypsa6_retrieve_natura_raster, pypsa6_build_powerplants
 
 
 rule build_load_data_high:
     message: "Use externally defined load time series in all scenarios with high growth."
     input: "data/electricity-demand-fully-electrified.nc"
     params:
-        profile = "2060 High Growth"
+        profile = "2060 High Growth",
+        scale_to = None
     output: "pypsa-eur/resources/{scenario}/load.csv"
     wildcard_constraints:
-        scenario = "((nuclear-and-renewables-high)|(only-renewables-high))"
+        scenario = "((nuclear-and-renewables-high)|(only-renewables-high)|(nuclear-and-renewables-today))"
     conda: "../envs/default.yaml"
     script: "../scripts/load.py"
 
@@ -118,10 +156,24 @@ rule build_load_data_low:
     message: "Use externally defined load time series in all scenarios with low growth."
     input: "data/electricity-demand-fully-electrified.nc"
     params:
-        profile = "2060 Low Growth"
+        profile = "2060 Low Growth",
+        scale_to = None
     output: "pypsa-eur/resources/{scenario}/load.csv"
     wildcard_constraints:
         scenario = "((nuclear-and-renewables-low)|(only-renewables-low))"
+    conda: "../envs/default.yaml"
+    script: "../scripts/load.py"
+
+
+rule build_load_data_scaled:
+    message: "Use externally defined load time series in all scenarios with scaled growth."
+    input: "data/electricity-demand-fully-electrified.nc"
+    params:
+        profile = "2060 Low Growth",
+        scale_to = "2060 High Growth"
+    output: "pypsa-eur/resources/{scenario}/load.csv"
+    wildcard_constraints:
+        scenario = "((only-renewables-scaled))"
     conda: "../envs/default.yaml"
     script: "../scripts/load.py"
 
@@ -131,7 +183,7 @@ rule build_ship_raster: # this is necessary because of race conditions across sc
     input: f"pypsa-eur/resources/{SCENARIO_NAME_1}/shipdensity_raster.nc"
     output: "pypsa-eur/resources/{scenario}/shipdensity_raster.nc"
     wildcard_constraints:
-        scenario = f"(({SCENARIO_NAME_2})|({SCENARIO_NAME_3})|({SCENARIO_NAME_4}))"
+        scenario = f"(({SCENARIO_NAME_2})|({SCENARIO_NAME_3})|({SCENARIO_NAME_4})|({SCENARIO_NAME_5})|({SCENARIO_NAME_6}))"
     run:
         copyfile(input[0], output[0])
 
@@ -163,16 +215,30 @@ rule run_scenarios:
             spatial_res=config["resolution"]["space"],
             temporal_res=config["resolution"]["time"],
             opts=""),
+        s5 = RESULT_PATH.format(
+            scenario=SCENARIO_NAME_5,
+            spatial_res=config["resolution"]["space"],
+            temporal_res=config["resolution"]["time"],
+            opts=""),
+        s6 = RESULT_PATH.format(
+            scenario=SCENARIO_NAME_6,
+            spatial_res=config["resolution"]["space"],
+            temporal_res=config["resolution"]["time"],
+            opts=""),
     output:
         s1 = f"build/results/scenarios/{SCENARIO_NAME_1}.nc",
         s2 = f"build/results/scenarios/{SCENARIO_NAME_2}.nc",
         s3 = f"build/results/scenarios/{SCENARIO_NAME_3}.nc",
         s4 = f"build/results/scenarios/{SCENARIO_NAME_4}.nc",
+        s5 = f"build/results/scenarios/{SCENARIO_NAME_5}.nc",
+        s6 = f"build/results/scenarios/{SCENARIO_NAME_6}.nc",
     run:
         copyfile(input.s1, output.s1)
         copyfile(input.s2, output.s2)
         copyfile(input.s3, output.s3)
         copyfile(input.s4, output.s4)
+        copyfile(input.s5, output.s5)
+        copyfile(input.s6, output.s6)
 
 
 checkpoint gsa_input:
