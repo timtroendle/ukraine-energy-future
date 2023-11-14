@@ -4,7 +4,11 @@ channels:
 dependencies:
     - python=3.11
     - numpy=1.24.3
-    - pandas=2.0.1
+    - pandas=1.5.3
+    - pypsa=0.23.0
+    - xarray=2023.2.0
+    - libnetcdf=4.9.1
+    - netcdf4=1.6.3
     - pytest=7.3.1
     - pytest-html=3.2.0
     - pip=23.1.2

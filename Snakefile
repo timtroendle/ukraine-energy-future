@@ -26,6 +26,7 @@ rule all:
         "build/report.pdf",
         "build/supplementary.pdf",
         "build/test-report.html",
+        "build/test.success"
 
 
 def pandoc_options(wildcards):
@@ -119,7 +120,12 @@ rule clean: # removes all generated results
 
 
 rule test:
-    conda: "envs/test.yaml"
-    output: "build/test-report.html"
-    shell:
-        "py.test --html={output} --self-contained-html"
+    message: "Run tests"
+    input:
+        test_dir = "tests",
+        tests = map(str, Path("tests").glob("**/test_*.py")),
+        scenarios = expand("build/results/scenarios/{scenario}.nc", scenario=config["scenarios"].keys())
+    log: "build/test-report.html"
+    output: "build/test.success"
+    conda: "./envs/test.yaml"
+    script: "./tests/test_runner.py"
