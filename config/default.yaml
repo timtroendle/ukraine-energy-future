@@ -222,3 +222,5 @@ report:
             offwind: 0
             biomass: 0.005
             fossil: 0.30
+    global-sensitivity-analysis:
+        zero-line: 1056

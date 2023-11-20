@@ -6,23 +6,24 @@ from PIL import ImageDraw
 DARK_GREY = "#424242"
 LIGHT_GREY = "#DCDCDC"
 
-ZERO_LINE = 916
 
-
-def annotate_image(img: Image) -> Image:
+def annotate_image(img: Image, zero_line: int) -> Image:
     img = add_margin(img, 100, 0, 0, 0, "white")
 
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("Lato-Semibold.ttf", size=32)
+    try:
+        font = ImageFont.truetype("Lato-Semibold.ttf", size=32)
+    except OSError:
+        font = ImageFont.truetype("/cluster/home/trtim/.fonts/Lato-Semibold.ttf", size=32)
 
     draw.line(
-        xy=[(ZERO_LINE, 0), (ZERO_LINE, 70)],
+        xy=[(zero_line, 0), (zero_line, 70)],
         fill=LIGHT_GREY,
         width=3
     )
 
     draw.text(
-        xy=(ZERO_LINE - 46, 0),
+        xy=(zero_line - 46, 0),
         text="←",
         font=font,
         fill=DARK_GREY,
@@ -30,7 +31,7 @@ def annotate_image(img: Image) -> Image:
     )
 
     draw.text(
-        xy=(ZERO_LINE + 14, 0),
+        xy=(zero_line + 14, 0),
         text="→",
         font=font,
         fill=DARK_GREY,
@@ -38,7 +39,7 @@ def annotate_image(img: Image) -> Image:
     )
 
     draw.text(
-        xy=(ZERO_LINE - 410, 0),
+        xy=(zero_line - 410, 0),
         text="Nuclear-and-renewables\n gets cheaper",
         font=font,
         fill=DARK_GREY,
@@ -46,7 +47,7 @@ def annotate_image(img: Image) -> Image:
     )
 
     draw.text(
-        xy=(ZERO_LINE + 59, 0),
+        xy=(zero_line + 59, 0),
         text="Only-renewables\n gets cheaper",
         font=font,
         fill=DARK_GREY,
@@ -67,5 +68,5 @@ def add_margin(pil_img, top, right, bottom, left, color):
 
 if __name__ == "__main__":
     img = Image.open(snakemake.input.image)
-    img = annotate_image(img)
+    img = annotate_image(img, zero_line=snakemake.params.zero_line)
     img.save(snakemake.output.image)

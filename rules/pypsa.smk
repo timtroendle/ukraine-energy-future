@@ -323,6 +323,8 @@ rule annotate_vis:
     message: "Add annotations to GSA vis."
     input:
         image = "build/results/gsa/sensitivities.png"
+    params:
+        zero_line = config["report"]["global-sensitivity-analysis"]["zero-line"]
     output:
         image = "build/results/gsa/sensitivities-annotated.png"
     conda: "../envs/pillow.yaml"
