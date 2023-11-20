@@ -71,6 +71,20 @@ Both scenarios require large amounts of new generation and storage capacities. G
 
 While required generation and storage capacities are large, there is no reason to believe these capacities could not be built. Ukraine can be powered by only renewables in the future at cost similar to a energy supply including nuclear.
 
+---
+
+The existing energy system of Ukraine has deep problems, caused primarily by severe damage to infrastructure facilities as a result of targeted missile attacks on energy infrastructure and equipment wear and tear, and its restoration requires significant investment, which may be comparable to the investment costs of building a new energy system. According to the calculations, the capital and operating costs of nuclear generation are 3-4 times higher than those of renewable energy sources. However, nuclear power has advantages, as it does not depend on seasonal fluctuations. The calculated need for storage capacities under both scenarios does not differ significantly or affect the choice.
+
+The projected transition to an energy model based on the elimination of fossil fuels will be able to fully meet the growing demand and full electrification of industrial and residential energy consumption, including mobility, according to various forecasts of economic growth in Ukraine. The scenario with a combination of nuclear and green generation is more expensive, as it involves higher capital costs and LCOE, respectively. This also finds it prove in model-based analysis of 19 small modular reactors conducted by Steigerwald et al. The authors state that the costs to generate electricity is non-competitive when compared to current costs for generating electricity from renewable energy sources [@Steigerwald:2023].
+
+Both scenarios envisage not only the generation of the required amount of electricity but also the decentralisation of the energy system, which is an essential condition for ensuring the country's energy security, given the geopolitical situation and the direct threat from Russia, which will potentially persist even after the war ends or enters a frozen phase. Although decentralisation of the energy sector will require the creation and maintenance of significant storage capacities, according to the calculations, this will not significantly affect the relative cost of electricity under both scenarios and, in the long run, may lead to a reduction in overall costs.
+
+Modelling of a scenario using only renewable energy sources revealed a high potential of bioenergy, which could be equal to the pre-war needs for imports of fossil fuels. Given that biomass fuel is currently not constrained in the model, we can assume that storage capacities will increase even further once biomass fuel is constrained. However, we can also assume that storage capacities can decrease strongly with connecting Ukraine to neighbouring countries.
+
+The potential of renewable energy in Ukraine far exceeds the estimated demand by 2060, which indicates that Ukraine has the potential to it can sell surplus energy generated. By using opportunities tendered by the Ukraine-EU electricity interconnection project, "European Network of Transmission System Operators for Electricity (ENTSO-E) of Ukraine," as an emergency response, Ukraine can transit from being a net importer of energy resources to an energy exporter in the post-war time. Ukraine's geographic location places it at the crossroads of major energy transit routes, including pipelines and transportation networks. This strategic position allows Ukraine to serve as a transit country for energy resources moving between Europe and Asia. Exports of energy resources, in turn, will help reduce the potential cost of electricity for domestic consumers, reducing the need to build storage facilities.
+
+The development of new, cleaner energy systems will help reduce GHG emissions and improve environmental quality. Moreover, synchronized efforts of Ukraine and Europe will contribute to the achievement of the climate goals of both Ukraine and the European Union.
+
 # Experimental procedures
 
 ## Resource Availability
