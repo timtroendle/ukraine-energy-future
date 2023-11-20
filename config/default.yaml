@@ -5,6 +5,10 @@ cluster-sync:
     receive-ignore: .syncignore-receive
     cluster-base-dir: ~/Develop/ukraine-energy-future
     local-results-dir: build/cluster
+push:
+    from: build/cluster
+    logs: build/logs
+    to: ~/Documents/work/projects/ukraine-energy-future
 resolution:
     space: 6 # number of nodes in the model
     time: 24H

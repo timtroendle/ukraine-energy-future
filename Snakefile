@@ -109,6 +109,37 @@ rule dag:
          """
 
 
+rule push:
+    message: "Package, zip, and move entire build."
+    params:
+        push_from_directory = config["push"]["from"],
+        logs_directory = config["push"]["logs"],
+        push_to_directory = config["push"]["to"]
+    run:
+        from datetime import datetime
+        from pathlib import Path
+        import shutil
+
+        today = datetime.today().strftime('%Y-%m-%d')
+        from_folder = Path(params.push_from_directory)
+        logs_folder = Path(params.logs_directory)
+        to_folder = Path(params.push_to_directory).expanduser()
+        build_archive_filename = to_folder / "results" / f"ukraine-energy-future-{today}"
+        logs_archive_filename = to_folder / "logs" / f"ukraine-energy-future-{today}"
+        report_origin_pdf = from_folder / "report.pdf"
+        report_destination_pdf = to_folder / "working-documents" / f"ukraine-energy-future-{today}.pdf"
+        report_origin_docx = from_folder / "report.docx"
+        report_destination_docx = to_folder / "working-documents" / f"ukraine-energy-future-{today}.docx"
+        supplementary_origin = from_folder / "supplementary.pdf"
+        supplementary_destination = to_folder / "working-documents" / f"ukraine-energy-future-{today}-supplementary.pdf"
+
+        shutil.make_archive(build_archive_filename, 'zip', from_folder)
+        shutil.make_archive(logs_archive_filename, 'zip', logs_folder)
+        shutil.copyfile(report_origin_pdf, report_destination_pdf)
+        shutil.copyfile(report_origin_docx, report_destination_docx)
+        shutil.copyfile(supplementary_origin, supplementary_destination)
+
+
 rule clean: # removes all generated results
     message: "Remove all build results but keep downloaded data."
     run:
