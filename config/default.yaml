@@ -140,35 +140,35 @@ global-sensitivity-analysis:
         time: 168H
     parameters:
         nuclear+c:
-            min: 0.25 # TODO update
-            max: 2 # TODO update
+            min: 0.25
+            max: 2
         solar+c:
-            min: 0.25 # TODO update
-            max: 2 # TODO update
+            min: 0.25
+            max: 2
         onwind+c:
-            min: 0.25 # TODO update
-            max: 2 # TODO update
+            min: 0.25
+            max: 2
         offwind+c:
-            min: 0.25 # TODO update
-            max: 2 # TODO update
+            min: 0.25
+            max: 2
         biomass+c:
-            min: 0.25 # TODO update
-            max: 2 # TODO update
+            min: 0.25
+            max: 2
         H2+c:
-            min: 0.25 # TODO update
-            max: 2 # TODO update
+            min: 0.25
+            max: 2
         battery+c:
-            min: 0.25 # TODO update
-            max: 2 # TODO update
+            min: 0.25
+            max: 2
         nuclear+m:
-            min: 0.25 # TODO update
-            max: 2 # TODO update
+            min: 0.25
+            max: 2
         biomass+m:
-            min: 0.25 # TODO update
-            max: 2 # TODO update
+            min: 0.25
+            max: 2
         biomassstore+e:
-            min: 0.25 # TODO update
-            max: 2 # TODO update
+            min: 0.25
+            max: 2
     seed: 5839
     number-trajectories: 5
 report:

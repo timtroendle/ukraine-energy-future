@@ -116,7 +116,7 @@ rule clean: # removes all generated results
 
          shutil.rmtree("build")
          print("Data downloaded to data/ has not been cleaned.")
-         print("PyPSA-Eur data has not been cleaned.") # FIXME clean PyPSA data
+         print("PyPSA-Eur data has not been cleaned.")
 
 
 rule test:
