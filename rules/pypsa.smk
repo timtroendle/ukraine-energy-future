@@ -85,12 +85,18 @@ module pypsa_scenario6:
         scenario_configs[5]
 
 
-use rule * from pypsa_scenario1 exclude build_load_data, build_renewable_profiles, solve_network as pypsa1_*
+use rule * from pypsa_scenario1 exclude build_load_data, build_cutout, build_renewable_profiles, solve_network as pypsa1_*
 use rule * from pypsa_scenario2 exclude retrieve_databundle, build_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, build_ship_raster, build_renewable_profiles, solve_network as pypsa2_*
 use rule * from pypsa_scenario3 exclude retrieve_databundle, build_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, build_ship_raster, build_renewable_profiles, solve_network as pypsa3_*
 use rule * from pypsa_scenario4 exclude retrieve_databundle, build_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, build_ship_raster, build_renewable_profiles, solve_network as pypsa4_*
 use rule * from pypsa_scenario5 exclude retrieve_databundle, build_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, build_ship_raster, build_renewable_profiles, solve_network as pypsa5_*
 use rule * from pypsa_scenario6 exclude retrieve_databundle, build_cutout, download_copernicus_land_cover, retrieve_load_data, build_load_data, retrieve_ship_raster, build_ship_raster, build_renewable_profiles, solve_network as pypsa6_*
+use rule build_cutout from pypsa_scenario1 as pypsa1_build_cutout with: # TODO requires internet access
+                                                                        # on compute notes which is not
+                                                                        # given by default on Euler.
+                                                                        # Load env module manually.
+    resources:
+        runtime = 2880
 use rule solve_network from pypsa_scenario1 as pypsa1_solve_network with:
     resources:
         runtime = 600
@@ -129,7 +135,7 @@ use rule build_renewable_profiles from pypsa_scenario6 as pypsa6_build_renewable
         runtime = 60
 
 
-localrules: pypsa1_retrieve_cost_data, pypsa1_build_cutout, pypsa1_retrieve_databundle, pypsa1_retrieve_ship_raster
+localrules: pypsa1_retrieve_cost_data, pypsa1_retrieve_databundle, pypsa1_retrieve_ship_raster
 localrules: pypsa1_retrieve_natura_raster, pypsa1_download_copernicus_land_cover, pypsa1_build_powerplants
 localrules: pypsa2_retrieve_cost_data, pypsa2_retrieve_natura_raster, pypsa2_build_powerplants
 localrules: pypsa3_retrieve_cost_data, pypsa3_retrieve_natura_raster, pypsa3_build_powerplants
