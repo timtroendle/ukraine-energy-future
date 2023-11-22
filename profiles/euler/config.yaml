@@ -12,6 +12,6 @@ max-jobs-per-second: 10
 max-status-checks-per-second: 1
 default-resources:
     - runtime=10
-    - mem_mb_per_cpu=16000
-    - mem_mb=16000
+    - mem_mb_per_cpu=4000
+    - mem_mb=4000
     - slurm_account=es_apatt # TODO keep out of repository

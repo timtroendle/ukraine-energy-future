@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 
 import pytest
-import xarray as xr
+import pypsa
 
 
 def run_test(snakemake):
@@ -27,20 +27,39 @@ def _create_config_plugin(snakemake):
 
     class SnakemakeConfigPlugin():
 
-        @pytest.fixture(scope="session", params=snakemake.input.scenarios)
+        @pytest.fixture(scope="session", params=snakemake.input.main_scenarios + snakemake.input.gsa_scenarios)
         def scenario(self, request):
-            return xr.open_dataset(request.param)
+            return pypsa.Network(request.param)
+
+        @pytest.fixture(params=snakemake.input.main_scenario_logs + snakemake.input.gsa_scenario_logs)
+        def scenario_log(self, request):
+            with Path(request.param).open("r") as f_log:
+                return f_log.readlines()
 
         @pytest.fixture(params=["offwind", "onwind", "solar"])
         def re_potential_time_series(self, scenario, request):
-            generators = [g.item() for g in scenario.generators_t_p_i if request.param in g.item()]
-            potential = (
+            all_potentials = scenario.generators_t.p_max_pu
+            generators = [g for g in all_potentials.columns if request.param in g]
+            return all_potentials[generators].mean(axis="columns")
+
+        @pytest.fixture()
+        def biomass_generation(self, scenario):
+            periods = scenario.snapshot_weightings.generators.sum()
+            return (
                 scenario
-                .generators_t_p_max_pu
-                .sel(generators_t_p_max_pu_i=generators)
-                .mean("generators_t_p_max_pu_i")
+                .links_t
+                .p1
+                .groupby(scenario.links.carrier, axis=1)
+                .sum() # across locations
+                .mean() # across time
+                .mul(periods)
+                .mul(-1)
+                .loc["biomass"]
             )
-            return potential
+
+        @pytest.fixture()
+        def biomass_potential(self):
+            return snakemake.params.biomass_potential
 
     return SnakemakeConfigPlugin()
 

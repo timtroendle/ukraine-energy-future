@@ -17,7 +17,10 @@ SCENARIO_NAME_5 = "only-renewables-scaled"
 SCENARIO_NAME_6 = "nuclear-and-renewables-today"
 SCENARIO_NAMES = [SCENARIO_NAME_1, SCENARIO_NAME_2, SCENARIO_NAME_3, SCENARIO_NAME_4, SCENARIO_NAME_5, SCENARIO_NAME_6]
 RESULT_PATH = "pypsa-eur/results/networks/{scenario}/elec_s_{spatial_res}_ec_lvopt_{temporal_res}-BAU{opts}.nc"
+LOG_PATH = "pypsa-eur/logs/{scenario}/solve_network/elec_s_{spatial_res}_ec_lvopt_{temporal_res}-BAU{opts}_python.log"
 
+RUNTIME_RUNS = 600 # mins
+MEMORY_RUNS = 16000 # MB
 
 def build_scenario_config(base_pypsa, scenario_name):
     scenario_config = copy.deepcopy(base_pypsa)
@@ -99,22 +102,28 @@ use rule build_cutout from pypsa_scenario1 as pypsa1_build_cutout with: # TODO r
         runtime = 2880
 use rule solve_network from pypsa_scenario1 as pypsa1_solve_network with:
     resources:
-        runtime = 600
+        runtime = RUNTIME_RUNS,
+        mem_mb = MEMORY_RUNS
 use rule solve_network from pypsa_scenario2 as pypsa2_solve_network with:
     resources:
-        runtime = 600
+        runtime = RUNTIME_RUNS,
+        mem_mb = MEMORY_RUNS
 use rule solve_network from pypsa_scenario3 as pypsa3_solve_network with:
     resources:
-        runtime = 600
+        runtime = RUNTIME_RUNS,
+        mem_mb = MEMORY_RUNS
 use rule solve_network from pypsa_scenario4 as pypsa4_solve_network with:
     resources:
-        runtime = 600
+        runtime = RUNTIME_RUNS,
+        mem_mb = MEMORY_RUNS
 use rule solve_network from pypsa_scenario5 as pypsa5_solve_network with:
     resources:
-        runtime = 600
+        runtime = RUNTIME_RUNS,
+        mem_mb = MEMORY_RUNS
 use rule solve_network from pypsa_scenario6 as pypsa6_solve_network with:
     resources:
-        runtime = 600
+        runtime = RUNTIME_RUNS,
+        mem_mb = MEMORY_RUNS
 use rule build_renewable_profiles from pypsa_scenario1 as pypsa1_build_renewable_profiles with:
     resources:
         runtime = 60
@@ -201,50 +210,38 @@ rule build_ship_raster: # this is necessary because of race conditions across sc
 
 rule run_scenarios:
     input:
-        s1 = RESULT_PATH.format(
-            scenario=SCENARIO_NAME_1,
-            spatial_res=config["resolution"]["space"],
-            temporal_res=config["resolution"]["time"],
-            opts=""),
-        s2 = RESULT_PATH.format(
-            scenario=SCENARIO_NAME_2,
-            spatial_res=config["resolution"]["space"],
-            temporal_res=config["resolution"]["time"],
-            opts=""),
-        s3 = RESULT_PATH.format(
-            scenario=SCENARIO_NAME_3,
-            spatial_res=config["resolution"]["space"],
-            temporal_res=config["resolution"]["time"],
-            opts=""),
-        s4 = RESULT_PATH.format(
-            scenario=SCENARIO_NAME_4,
-            spatial_res=config["resolution"]["space"],
-            temporal_res=config["resolution"]["time"],
-            opts=""),
-        s5 = RESULT_PATH.format(
-            scenario=SCENARIO_NAME_5,
-            spatial_res=config["resolution"]["space"],
-            temporal_res=config["resolution"]["time"],
-            opts=""),
-        s6 = RESULT_PATH.format(
-            scenario=SCENARIO_NAME_6,
-            spatial_res=config["resolution"]["space"],
-            temporal_res=config["resolution"]["time"],
-            opts=""),
+        scenarios = [
+            RESULT_PATH.format(
+                scenario=scenario,
+                spatial_res=config["resolution"]["space"],
+                temporal_res=config["resolution"]["time"],
+                opts=""
+            )
+            for scenario in SCENARIO_NAMES
+        ],
+        logs = [
+            LOG_PATH.format(
+                scenario=scenario,
+                spatial_res=config["resolution"]["space"],
+                temporal_res=config["resolution"]["time"],
+                opts=""
+            )
+            for scenario in SCENARIO_NAMES
+        ]
     output:
-        s1 = f"build/results/scenarios/{SCENARIO_NAME_1}.nc",
-        s2 = f"build/results/scenarios/{SCENARIO_NAME_2}.nc",
-        s3 = f"build/results/scenarios/{SCENARIO_NAME_3}.nc",
-        s4 = f"build/results/scenarios/{SCENARIO_NAME_4}.nc",
-        s5 = f"build/results/scenarios/{SCENARIO_NAME_5}.nc",
-        s6 = f"build/results/scenarios/{SCENARIO_NAME_6}.nc",
+        scenarios = [
+            f"build/results/scenarios/{scenario}.nc"
+            for scenario in SCENARIO_NAMES
+        ],
+        logs = [
+            f"build/results/scenarios/{scenario}.log"
+            for scenario in SCENARIO_NAMES
+        ]
     run:
-        copyfile(input.s1, output.s1)
-        copyfile(input.s2, output.s2)
-        copyfile(input.s3, output.s3)
-        copyfile(input.s4, output.s4)
-        copyfile(input.s5, output.s5)
-        copyfile(input.s6, output.s6)
+        for s_origin, s_destination in zip(input.scenarios, output.scenarios):
+            copyfile(s_origin, s_destination)
+        for l_origin, l_destination in zip(input.logs, output.logs):
+            copyfile(l_origin, l_destination)
 
 
 checkpoint gsa_input:
@@ -261,6 +258,15 @@ checkpoint gsa_input:
 
 def gsa_runs(wildcards) -> list[str]:
     """Returns list with pathnames of all necessary runs for GSA."""
+    return gsa_files(wildcards, RESULT_PATH)
+
+
+def gsa_run_logs(wildcards) -> list[str]:
+    """Returns list with pathnames of all solver logs of GSA."""
+    return gsa_files(wildcards, LOG_PATH)
+
+
+def gsa_files(wildcards, base_path):
     x = pd.read_csv(checkpoints.gsa_input.get().output[0], index_col=0)
     pypsa_opts = {
         run_id: "-".join(f"{param_name}{x.loc[run_id, param_name]:.2f}" for param_name in x.keys())
@@ -268,12 +274,12 @@ def gsa_runs(wildcards) -> list[str]:
     }
     runs = [
         (
-            RESULT_PATH.format(
+            base_path.format(
                 scenario=SCENARIO_NAME_1,
                 spatial_res=config["global-sensitivity-analysis"]["resolution"]["space"],
                 temporal_res=config["global-sensitivity-analysis"]["resolution"]["time"],
                 opts="-" + opts),
-            RESULT_PATH.format(
+            base_path.format(
                 scenario=SCENARIO_NAME_2,
                 spatial_res=config["global-sensitivity-analysis"]["resolution"]["space"],
                 temporal_res=config["global-sensitivity-analysis"]["resolution"]["time"],
@@ -292,6 +298,8 @@ rule gsa_lcoe:
     params:
         ignore_existing = False,
         opts_out = True
+    resources:
+        mem_mb = 16000
     conda: "../envs/default.yaml"
     script: "../scripts/lcoe.py"
 

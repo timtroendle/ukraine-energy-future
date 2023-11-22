@@ -17,9 +17,13 @@ def visualise_sensitivities(sensitivities: pd.DataFrame) -> alt.Chart:
                 .str
                 .replace("onwind", "wind")
                 .str
+                .replace("biomassinflow", "Biomass")
+                .str
                 .replace("\+c", " capital cost", regex=True)
                 .str
                 .replace("\+m", " marginal cost", regex=True)
+                .str
+                .replace("\+l", " potential", regex=True)
                 .str
                 .capitalize()
             )

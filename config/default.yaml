@@ -57,6 +57,7 @@ pypsa-eur:
             enable: false
         BAU_mincapacities:
             biomass: 0
+            biomassinflow: 0
             solar: 0
             onwind: 0
             offwind-ac: 0
@@ -170,7 +171,7 @@ global-sensitivity-analysis:
         biomass+m:
             min: 0.25
             max: 2
-        biomassstore+e:
+        biomassinflow+l:
             min: 0.25
             max: 2
     seed: 5839

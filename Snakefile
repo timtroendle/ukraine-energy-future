@@ -155,7 +155,14 @@ rule test:
     input:
         test_dir = "tests",
         tests = map(str, Path("tests").glob("**/test_*.py")),
-        scenarios = expand("build/results/scenarios/{scenario}.nc", scenario=config["scenarios"].keys())
+        main_scenarios = rules.run_scenarios.output.scenarios,
+        main_scenario_logs = rules.run_scenarios.output.logs,
+        gsa_scenarios = gsa_runs,
+        gsa_scenario_logs = gsa_run_logs
+    params:
+        biomass_potential = config["pypsa-eur"]["biomass"]["potential"]
+    resources:
+        mem_mb = 8000
     log: "build/test-report.html"
     output: "build/test.success"
     conda: "./envs/test.yaml"
