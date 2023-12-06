@@ -189,6 +189,7 @@ report:
             "battery discharger": "Battery discharger"
             PHS: "Pumped hydro"
             fossil: "Fossil"
+            average-load: "Average demand"
     scenario-sets:
         main:
             - pre-war
@@ -219,6 +220,7 @@ report:
             offwind: 0 # IRENA
             biomass: 0.3 # IRENA
             fossil: 21.5 # TODO add Olena's source
+            average-load: 17.5 # own calculation using DESSTINEE
         electricity-mix: # 2021 https://ourworldindata.org/energy/country/ukraine
             nuclear: 0.55
             solar: 0.04

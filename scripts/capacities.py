@@ -16,7 +16,8 @@ def aggregated_power_capacities(n: pypsa.Network) -> pd.Series:
     return pd.concat([
         n.generators.groupby("carrier").p_nom_opt.sum().mul(MW_TO_GW),
         n.storage_units.groupby("carrier").p_nom_opt.sum().mul(MW_TO_GW),
-        n.links.groupby("carrier").p_nom_opt.sum().mul(MW_TO_GW)
+        n.links.groupby("carrier").p_nom_opt.sum().mul(MW_TO_GW),
+        pd.Series(index=["average-load"], data=n.loads_t.p.sum(axis=1).mul(MW_TO_GW).mean())
     ]).rename("Capacities (GW)")
 
 

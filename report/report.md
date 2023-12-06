@@ -37,9 +37,9 @@ width:
 ---
 ```
 
-Meeting future electricity demand requires a substantial expansion of pre-war generation capacities in both scenarios (@fig:capacities-power), but especially in the renewables only scenario. This is explained by a switch to technologies with lower capacity factors (wind and solar), growing final energy demand based on population and economic growth, and an electrification of the heat and transport sectors (==can we compare final energy demand pre-war and scenarios?==).
+Meeting future electricity demand requires a substantial expansion of pre-war generation capacities in both scenarios (@fig:capacities-power), but especially in the renewables only scenario. This is explained by a switch to technologies with lower capacity factors (wind and solar), growing final energy demand based on population and economic growth, and an electrification of the heat and transport sectors (electricity demand ~5 times higher than pre-war).
 
-![**Installed capacities.** Installed **(A)** generation and **(B)** storage capacities of the pre-war electricity system and for scenarios with fully-electrified heat and transport sectors and with average cost assumptions and medium-high economic growth assumption. See Supplemental Figure\ S1 for both economic growth assumptions.](build/results/capacities-power-main.png){#fig:capacities-power}
+![**Installed capacities and electricity demand.** Installed **(A)** generation and **(B)** storage capacities, and **(C)** average electricity demand of the pre-war electricity system and for scenarios with fully-electrified heat and transport sectors and with average cost assumptions and medium-high economic growth assumption. See Supplemental Figure\ S1 for results based on both economic growth assumptions.](build/results/capacities-power-main.png){#fig:capacities-power}
 
 A fully-autarkic energy system requires substantial amounts of storage capacities in both scenarios, but slightly more in the renewables only scenario (@tbl:capacities-energy).
 
