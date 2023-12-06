@@ -313,7 +313,9 @@ rule gsa_output:
         parameters = config["global-sensitivity-analysis"]["parameters"],
         seed = config["global-sensitivity-analysis"]["seed"]
     output:
-        xy = "build/results/gsa/sensitivities.csv"
+        sensitivities = "build/results/gsa/sensitivities.csv",
+        lcoe_diffs = "build/results/gsa/output.csv",
+        xy = "build/results/gsa/xy.csv"
     conda: "../envs/gsa.yaml"
     script: "../scripts/gsa/output.py"
 
@@ -321,7 +323,7 @@ rule gsa_output:
 rule gsa_vis:
     message: "Visualise sensitivities."
     input:
-        sensitivities = rules.gsa_output.output[0]
+        sensitivities = rules.gsa_output.output.sensitivities
     output: "build/results/gsa/sensitivities.vega.json"
     conda: "../envs/default.yaml"
     script: "../scripts/vis/morris.py"

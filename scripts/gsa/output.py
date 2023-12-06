@@ -5,12 +5,12 @@ from SALib.analyze.morris import analyze as morris_analyze
 
 
 def determine_sensitivities(parameters: dict[str: dict[str: float]], path_to_lcoe: str,
-                            x: pd.DataFrame, seed: int) -> pd.DataFrame:
+                            x: pd.DataFrame, seed: int) -> (pd.DataFrame, pd.Series):
     problem = create_problem(parameters)
     lcoes = read_lcoe(path_to_lcoe)
     Y = y(x, lcoes)
     sensitivities = morris_analyze(problem, x.values, Y, seed)
-    return pd.DataFrame(sensitivities)
+    return (pd.DataFrame(sensitivities), pd.Series(index=x.index, data=Y, name="lcoe_diff"))
 
 
 def y(x: pd.DataFrame, lcoe: xr.DataArray) -> list:
@@ -57,10 +57,14 @@ def create_problem(parameters: dict[str: dict[str: float]]) -> dict:
 
 
 if __name__ == "__main__":
-    sensitivities = determine_sensitivities(
+    x = pd.read_csv(snakemake.input.x, index_col=0)
+    sensitivities, lcoe_diffs = determine_sensitivities(
         parameters=snakemake.params.parameters,
         seed=snakemake.params.seed,
-        x=pd.read_csv(snakemake.input.x, index_col=0),
+        x=x,
         path_to_lcoe=snakemake.input.lcoe
     )
-    sensitivities.to_csv(snakemake.output[0], index=False, header=True)
+    sensitivities.to_csv(snakemake.output.sensitivities, index=False, header=True)
+    lcoe_diffs.to_csv(snakemake.output.lcoe_diffs, index=True, header=True)
+    xy = pd.concat([x, lcoe_diffs], axis=1)
+    xy.to_csv(snakemake.output.xy, index=True, header=True)

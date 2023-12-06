@@ -34,7 +34,7 @@ def visualise_sensitivities(sensitivities: pd.DataFrame) -> alt.Chart:
         .Chart(sensitivities, width=WIDTH)
         .encode(
             y=alt.Y("names", title="Parameter").sort(alt.EncodingSortField("mu_star", op="max", order="descending")),
-            x=alt.X("mu", title="Impact on LCOE difference (€/MWh)")
+            x=alt.X("mu", title="Impact on cost penalty of nuclear scenario (€/MWh)")
         )
     )
     bar = chart.mark_bar()
