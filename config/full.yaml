@@ -4,7 +4,7 @@ resolution:
 global-sensitivity-analysis:
     resolution:
         space: 6
-        time: 6H # TODO move to 1H once ready
+        time: 1H
     number-trajectories: 15
 pypsa-eur:
     biomass:
