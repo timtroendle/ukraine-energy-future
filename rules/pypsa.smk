@@ -20,7 +20,7 @@ RESULT_PATH = "pypsa-eur/results/networks/{scenario}/elec_s_{spatial_res}_ec_lvo
 LOG_PATH = "pypsa-eur/logs/{scenario}/solve_network/elec_s_{spatial_res}_ec_lvopt_{temporal_res}-BAU{opts}_python.log"
 
 RUNTIME_RUNS = 600 # mins
-MEMORY_RUNS = 16000 # MB
+MEMORY_RUNS = 12000 # MB
 
 def build_scenario_config(base_pypsa, scenario_name):
     scenario_config = copy.deepcopy(base_pypsa)
@@ -299,7 +299,8 @@ rule gsa_lcoe:
         ignore_existing = False,
         opts_out = True
     resources:
-        mem_mb = 16000
+        runtime = 60,
+        mem_mb = 32000
     conda: "../envs/default.yaml"
     script: "../scripts/lcoe.py"
 

@@ -162,7 +162,8 @@ rule test:
     params:
         biomass_potential = config["pypsa-eur"]["biomass"]["potential"]
     resources:
-        mem_mb = 8000
+        runtime = 60,
+        mem_mb = 16000
     log: "build/test-report.html"
     output: "build/test.success"
     conda: "./envs/test.yaml"
