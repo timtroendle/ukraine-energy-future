@@ -9,8 +9,13 @@ def determine_sensitivities(parameters: dict[str: dict[str: float]], path_to_lco
     problem = create_problem(parameters)
     lcoes = read_lcoe(path_to_lcoe)
     Y = y(x, lcoes)
-    sensitivities = morris_analyze(problem, x.values, Y, seed)
-    return (pd.DataFrame(sensitivities), pd.Series(index=x.index, data=Y, name="lcoe_diff"))
+    sensitivities = (
+        pd
+        .DataFrame(morris_analyze(problem, x.values, Y, seed))
+        .set_index("names")
+        .pipe(scale_sensitivities, parameters)
+    )
+    return (sensitivities, pd.Series(index=x.index, data=Y, name="lcoe_diff"))
 
 
 def y(x: pd.DataFrame, lcoe: xr.DataArray) -> list:
@@ -56,6 +61,13 @@ def create_problem(parameters: dict[str: dict[str: float]]) -> dict:
     }
 
 
+def scale_sensitivities(sensitivities: pd.DataFrame, parameters: dict[str: dict[str: float]]) -> pd.DataFrame:
+    # Sensitivities are not scaled by default. We would like to report sensitivity scaled
+    # to a unit change of the parameter. Thus, we need to scale be the range of the parameter.
+    param_range = np.array([param["max"] - param["min"] for param in parameters.values()])
+    return (sensitivities.T / param_range).T
+
+
 if __name__ == "__main__":
     x = pd.read_csv(snakemake.input.x, index_col=0)
     sensitivities, lcoe_diffs = determine_sensitivities(
@@ -64,7 +76,7 @@ if __name__ == "__main__":
         x=x,
         path_to_lcoe=snakemake.input.lcoe
     )
-    sensitivities.to_csv(snakemake.output.sensitivities, index=False, header=True)
+    sensitivities.to_csv(snakemake.output.sensitivities, index=True, header=True)
     lcoe_diffs.to_csv(snakemake.output.lcoe_diffs, index=True, header=True)
     xy = pd.concat([x, lcoe_diffs], axis=1)
     xy.to_csv(snakemake.output.xy, index=True, header=True)
