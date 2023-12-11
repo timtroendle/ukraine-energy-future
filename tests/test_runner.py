@@ -31,8 +31,13 @@ def _create_config_plugin(snakemake):
         def scenario(self, request):
             return pypsa.Network(request.param)
 
-        @pytest.fixture(params=snakemake.input.main_scenario_logs + snakemake.input.gsa_scenario_logs)
-        def scenario_log(self, request):
+        @pytest.fixture(params=snakemake.input.main_scenario_logs)
+        def main_scenario_log(self, request):
+            with Path(request.param).open("r") as f_log:
+                return f_log.readlines()
+
+        @pytest.fixture(params=snakemake.input.gsa_scenario_logs)
+        def gsa_scenario_log(self, request):
             with Path(request.param).open("r") as f_log:
                 return f_log.readlines()
 
