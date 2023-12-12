@@ -19,7 +19,7 @@ SCENARIO_NAMES = [SCENARIO_NAME_1, SCENARIO_NAME_2, SCENARIO_NAME_3, SCENARIO_NA
 RESULT_PATH = "pypsa-eur/results/networks/{scenario}/elec_s_{spatial_res}_ec_lvopt_{temporal_res}-BAU{opts}.nc"
 LOG_PATH = "pypsa-eur/logs/{scenario}/solve_network/elec_s_{spatial_res}_ec_lvopt_{temporal_res}-BAU{opts}_python.log"
 
-RUNTIME_RUNS = 600 # mins
+RUNTIME_RUNS = 1440 # mins
 MEMORY_RUNS = 12000 # MB
 
 def build_scenario_config(base_pypsa, scenario_name):
