@@ -22,24 +22,13 @@ Here, we assess options for Ukraine to decarbonise its energy system by 2060. We
 
 # Results
 
-System cost of renewable only scenario with fully-electrified heat and transport sectors and with average cost and medium-high economic growth assumption is low (<70\ €/MWh, @tbl:lcoe). Keeping nuclear at pre-war's levels shows 18% (12.2\ €/MWh) higher cost (@tbl:lcoe). System cost includes generation, transmission, and storage capacities.
+System cost of renewable only scenario with fully-electrified heat and transport sectors and with average cost and medium-high economic growth assumption is low (<70\ €/MWh, @fig:lcoe). Keeping nuclear at pre-war's levels shows 18% (12.2\ €/MWh) higher cost (@fig:lcoe). System cost includes generation, transmission, and storage capacities.
 
-```table
----
-caption: 'Levelised cost of electricity. (Table likely to be removed as not necessary.) {#tbl:lcoe}'
-alignment: LR
-include: build/results/lcoe.csv
-include-encoding: UTF-8
-markdown: True
-width:
-    - 0.4
-    - 0.2
----
-```
+![**Cost breakdown of levelised system cost of electricity.** Cost for scenarios with fully-electrified heat and transport sectors, average cost assumptions, and medium-high economic growth assumption. See Supplemental Figure\ S1 for results based on both economic growth assumptions. Storage includes hydrogen, battery, and pumped-hydro storage.](build/results/lcoe-main.png){#fig:lcoe}
 
 Meeting future electricity demand requires a substantial expansion of pre-war generation capacities in both scenarios (@fig:capacities-power), but especially in the renewables only scenario. This is explained by a switch to technologies with lower capacity factors (wind and solar), growing final energy demand based on population and economic growth, and an electrification of the heat and transport sectors (electricity demand ~5 times higher than pre-war).
 
-![**Installed capacities and electricity demand.** Installed **(A)** generation and **(B)** storage capacities, and **(C)** average electricity demand of the pre-war electricity system and for scenarios with fully-electrified heat and transport sectors and with average cost assumptions and medium-high economic growth assumption. See Supplemental Figure\ S1 for results based on both economic growth assumptions.](build/results/capacities-power-main.png){#fig:capacities-power}
+![**Installed capacities and electricity demand.** Installed **(A)** generation and **(B)** storage capacities, and **(C)** average electricity demand of the pre-war electricity system and for scenarios with fully-electrified heat and transport sectors and with average cost assumptions and medium-high economic growth assumption. See Supplemental Figure\ S2 for results based on both economic growth assumptions.](build/results/capacities-power-main.png){#fig:capacities-power}
 
 A fully-autarkic energy system requires substantial amounts of storage capacities in both scenarios, but slightly more in the renewables only scenario (@tbl:capacities-energy).
 
@@ -59,7 +48,7 @@ width:
 
 In the only renewables scenario, biomass plays an important role (@fig:generation). Like onshore wind and solar, biomass generates roughly a third of the country's fully-electrified demand. In fact, all available biomass (513\ GWh) is used.
 
-![**Electricity mix.** Electricity mix of the pre-war electricity system and for scenarios with fully-electrified heat and transport sectors and with average cost assumptions and medium-high economic growth assumption. See Supplemental Figure\ S2 for both economic growth assumptions.](build/results/generation-main.png){#fig:generation}
+![**Electricity mix.** Electricity mix of the pre-war electricity system and for scenarios with fully-electrified heat and transport sectors and with average cost assumptions and medium-high economic growth assumption. See Supplemental Figure\ S3 for both economic growth assumptions.](build/results/generation-main.png){#fig:generation}
 
 The cost of nuclear has the greatest impact on the cost penalty of the nuclear scenario (@fig:sensitivities). When Nuclear capital cost is doubled, the nuclear-and-renewables scenario becomes on average more than 90\ €/MWh more expensive compared with the only-renewables scenario. Doubling the capital cost of solar, wind, and biomass increases the relative cost of the only-renewables scenario, but to a lower degree (20--30\ €/MWh on average). Capital costs of storage technologies and marginal costs have low or almost no impact.
 

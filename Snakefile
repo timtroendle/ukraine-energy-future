@@ -53,7 +53,7 @@ rule report:
         "data/final-energy.csv",
         "build/results/load.png",
         "build/results/load-validation.png",
-        "build/results/lcoe.csv",
+        "build/results/lcoe-main.png",
         "build/results/capacities-power-main.png",
         "build/results/capacities-energy.csv",
         "build/results/generation-main.png",
@@ -82,6 +82,7 @@ rule supplementary:
         "report/pandoc-metadata.yaml",
         "report/apa.csl",
         "report/supplementary.css",
+        "build/results/lcoe-all.png",
         "build/results/capacities-power-all.png",
         "build/results/generation-all.png",
     params: options = pandoc_options

@@ -20,18 +20,27 @@ class Scenario:
 def lcoe_all(scenarios: list[Scenario]) -> pd.Series:
     return (
         pd
-        .DataFrame
-        .from_dict(
-            dict([lcoe(s) for s in scenarios]),
-            orient="index",
-            columns=["LCOE (€/MWh)"]
-        )
+        .concat([lcoe(s) for s in scenarios], axis=1).T
     )
 
 
-def lcoe(scenario: Scenario) -> (str, float):
+def lcoe(scenario: Scenario) -> pd.Series:
     network = scenario.n
-    return scenario.name, total_cost_network(network) / demand_network(network)
+    system = pd.Series(
+        index=["System LCOE (€/MWh)"],
+        data=total_cost_network(network) / demand_network(network)
+    )
+    components = components_lcoe(network)
+    return pd.concat([system, components]).rename(scenario.name)
+
+
+def components_lcoe(network: pypsa.Network) -> pd.Series():
+    capex = network.statistics.capex()
+    opex = network.statistics.opex().reindex(capex.index, fill_value=0)
+    cost = capex + opex
+    demand = demand_network(network)
+    levelised_cost = cost / demand
+    return levelised_cost.rename("cost").reset_index().set_index("carrier").cost
 
 
 def demand_network(n: pypsa.Network) -> float:
@@ -42,9 +51,13 @@ def total_cost_network(n: pypsa.Network) -> float:
     return n.statistics.capex().sum() + n.statistics.opex().sum()
 
 
+def component_cost_network(n: pypsa.Network) -> pd.Series:
+    return n.statistics.capex().sum() + n.statistics.opex().sum()
+
+
 if __name__ == "__main__":
     lcoes = lcoe_all(
         scenarios=(Scenario(n=pypsa.Network(path_to_n), opt_in_name=snakemake.params.opts_out)
                    for path_to_n in snakemake.input.scenarios)
     )
-    lcoes.to_csv(snakemake.output[0], index=True, header=True, float_format="%0.2f") # FIXME remove float format
+    lcoes.to_csv(snakemake.output[0], index=True, header=True)

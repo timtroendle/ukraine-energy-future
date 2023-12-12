@@ -37,7 +37,7 @@ def read_lcoe(path_to_file: str) -> xr.DataArray:
         .drop_duplicates(["scenario", "opts"])
         .set_index(["scenario", "opts"])
         .to_xarray()
-        ["LCOE (€/MWh)"]
+        ["System LCOE (€/MWh)"]
     )
 
 

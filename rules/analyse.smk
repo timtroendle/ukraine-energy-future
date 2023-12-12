@@ -109,3 +109,17 @@ rule plot_generation:
         "build/results/generation-{scenario_set}.vega.json"
     conda: "../envs/default.yaml"
     script: "../scripts/vis/generation.py"
+
+
+rule plot_lcoes:
+    message: "Plot LCOE breakdown."
+    input:
+        lcoes = rules.lcoe.output[0]
+    params:
+        component_map = config["report"]["components"]["mapping"],
+        component_colors = config["report"]["components"]["colors"],
+        scenarios = lambda wildcards, output: config["report"]["scenario-sets"][wildcards.scenario_set]
+    output:
+        "build/results/lcoe-{scenario_set}.vega.json"
+    conda: "../envs/default.yaml"
+    script: "../scripts/vis/lcoe.py"

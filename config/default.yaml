@@ -190,6 +190,12 @@ report:
             PHS: "Pumped hydro"
             fossil: "Fossil"
             average-load: "Average demand"
+        component:
+            biomass: Biomass
+            nuclear: Nuclear
+            grid: Grid
+            renewable: "Wind, water, sun"
+            storage: "Storage"
     scenario-sets:
         main:
             - pre-war
@@ -199,10 +205,8 @@ report:
             - pre-war
             - nuclear-and-renewables-low
             - nuclear-and-renewables-high
-            - nuclear-and-renewables-today
             - only-renewables-low
             - only-renewables-high
-            - only-renewables-scaled
     scenario-colors:
         pre-war: "#424242"
         nuclear-and-renewables-low: "#FCDC98"
@@ -211,6 +215,31 @@ report:
         only-renewables-low: "#A0CB71"
         only-renewables-high: "#679436"
         only-renewables-scaled: "#BFE90D"
+    components:
+        mapping:
+            "Battery Storage": Storage
+            "Hydrogen Storage": Storage
+            "biomassstore": Biomass
+            "Pumped Hydro Storage": Storage
+            "Reservoir & Dam": "Wind, water, sun"
+            "Biomass": Biomass
+            "H2 electrolysis": Storage
+            "H2 fuel cell": Storage
+            "battery charger": Storage
+            "battery discharger": Storage
+            "Nuclear": Nuclear
+            "Offshore Wind (AC)": "Wind, water, sun"
+            "Offshore Wind (DC)": "Wind, water, sun"
+            "Onshore Wind": "Wind, water, sun"
+            "Solar": "Wind, water, sun"
+            "biomassinflow": Biomass
+            "AC": Grid
+        colors:
+            Nuclear: "#A01914"
+            Storage: "#72B7B1"
+            Grid: "#F58418"
+            "Wind, water, sun": "#FABC3C"
+            Biomass: "#679436"
     pre-war:
         capacities:
             nuclear: 13.9 # https://en.wikipedia.org/wiki/Nuclear_power_in_Ukraine
