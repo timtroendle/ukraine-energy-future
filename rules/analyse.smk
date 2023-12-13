@@ -17,6 +17,8 @@ rule capacities:
     message: "Calculate capacities of all scenarios."
     input:
         scenarios = all_scenarios
+    params:
+        opts_out = False
     output:
         power = "build/results/capacities-power.csv",
         energy = "build/results/capacities-energy.csv",

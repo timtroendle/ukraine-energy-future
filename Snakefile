@@ -25,6 +25,8 @@ rule all:
         "build/report.docx",
         "build/report.pdf",
         "build/supplementary.pdf",
+        "build/results/gsa/capacities-power.csv",
+        "build/results/gsa/capacities-energy.csv",
         "build/test-report.html",
         "build/test.success"
 

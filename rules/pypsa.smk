@@ -305,6 +305,22 @@ rule gsa_lcoe:
     script: "../scripts/lcoe.py"
 
 
+rule gsa_capacities:
+    message: "Calculate capacities of all GSA scenarios."
+    input:
+        scenarios = gsa_runs
+    params:
+        opts_out = True
+    resources:
+        runtime = 60,
+        mem_mb = 32000
+    output:
+        power = "build/results/gsa/capacities-power.csv",
+        energy = "build/results/gsa/capacities-energy.csv",
+    conda: "../envs/default.yaml"
+    script: "../scripts/capacities.py"
+
+
 rule gsa_output:
     message: "Analyse sensitivities of GSA."
     input:

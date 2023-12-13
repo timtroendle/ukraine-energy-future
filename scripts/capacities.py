@@ -1,13 +1,26 @@
+from dataclasses import dataclass, field
+
 import pandas as pd
 import pypsa
 
 
 MW_TO_GW = 1e-3
 
+@dataclass
+class Scenario:
+    n: pypsa.Network
+    opt_in_name: bool
+    name: str = field(init=False)
 
-def all_aggregated_capacities(scenarios: list[pypsa.Network], aggregator: callable) -> pd.DataFrame:
+    def __post_init__(self):
+        self.name = self.n._meta["run"]["name"]
+        if self.opt_in_name:
+            self.name = self.name + "--" + self.n._meta["wildcards"]["opts"]
+
+
+def all_aggregated_capacities(scenarios: list[Scenario], aggregator: callable) -> pd.DataFrame:
     return pd.DataFrame({
-        s._meta["run"]["name"]: aggregator(s)
+        s.name: aggregator(s.n)
         for s in scenarios
     })
 
@@ -34,8 +47,15 @@ def aggregated_energy_capacities(n: pypsa.Network) -> pd.Series:
 
 
 if __name__ == "__main__":
-    scenarios = [pypsa.Network(s) for s in snakemake.input.scenarios]
+    scenarios=(
+        Scenario(n=pypsa.Network(path_to_n), opt_in_name=snakemake.params.opts_out)
+        for path_to_n in snakemake.input.scenarios
+    )
     power = all_aggregated_capacities(scenarios, aggregated_power_capacities)
+    scenarios=(
+        Scenario(n=pypsa.Network(path_to_n), opt_in_name=snakemake.params.opts_out)
+        for path_to_n in snakemake.input.scenarios
+    )
     energy = all_aggregated_capacities(scenarios, aggregated_energy_capacities)
     power.to_csv(snakemake.output.power, index=True, header=True, float_format="%.1f")
     energy.to_csv(snakemake.output.energy, index=True, header=True, float_format="%.1f")
