@@ -82,17 +82,38 @@ rule plot_load_validation:
     script: "../scripts/vis/validation.py"
 
 
-rule plot_generation_capacities:
-    message: "Plot generation capacities."
+rule plot_power_capacities:
+    message: "Plot power capacities."
     input:
         capacities = rules.capacities.output.power
     params:
+        type = "power",
         pre_war = config["report"]["pre-war"]["capacities"],
         nice_tech_names = config["report"]["nice-names"]["technology"],
         scenarios = lambda wildcards, output: config["report"]["scenario-sets"][wildcards.scenario_set],
-        scenario_colors = config["report"]["scenario-colors"]
+        scenario_colors = config["report"]["scenario-colors"],
+        generation_techs = ["fossil", "hydro", "nuclear", "biomass", "onwind", "offwind", "solar"],
+        storage_techs = ["PHS", "H2 electrolysis", "H2 fuel cell", "battery charger", "battery discharger"],
+        demand_techs = ["average-load"]
     output:
         "build/results/capacities-power-{scenario_set}.vega.json"
+    conda: "../envs/default.yaml"
+    script: "../scripts/vis/capacities.py"
+
+
+rule plot_energy_capacities:
+    message: "Plot energy capacities."
+    input:
+        capacities = rules.capacities.output.energy
+    params:
+        type = "energy",
+        pre_war = config["report"]["pre-war"]["capacities"],
+        nice_tech_names = config["report"]["nice-names"]["technology"],
+        scenarios = lambda wildcards, output: config["report"]["scenario-sets"][wildcards.scenario_set],
+        scenario_colors = config["report"]["scenario-colors"],
+        storage_techs = ["battery", "H2"],
+    output:
+        "build/results/capacities-energy-{scenario_set}.vega.json"
     conda: "../envs/default.yaml"
     script: "../scripts/vis/capacities.py"
 

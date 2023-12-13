@@ -55,6 +55,7 @@ rule report:
         "build/results/load-validation.png",
         "build/results/lcoe-main.png",
         "build/results/capacities-power-main.png",
+        "build/results/capacities-energy-main.png",
         "build/results/capacities-energy.csv",
         "build/results/generation-main.png",
         "build/results/gsa/sensitivities-annotated.png",
@@ -84,6 +85,7 @@ rule supplementary:
         "report/supplementary.css",
         "build/results/lcoe-all.png",
         "build/results/capacities-power-all.png",
+        "build/results/capacities-energy-all.png",
         "build/results/generation-all.png",
     params: options = pandoc_options
     output: "build/supplementary.{suffix}"

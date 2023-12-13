@@ -190,6 +190,9 @@ report:
             PHS: "Pumped hydro"
             fossil: "Fossil"
             average-load: "Average demand"
+            H2: Hydrogen
+            battery: Battery
+            biomassstore: Biomass
         component:
             biomass: Biomass
             nuclear: Nuclear
