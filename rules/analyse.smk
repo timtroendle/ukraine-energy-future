@@ -68,6 +68,8 @@ rule plot_load:
     message: "Plot load time series."
     input:
         load = "data/electricity-demand-fully-electrified.nc",
+    params:
+        colors = {"2060 Low Growth": "#A0CB71", "2060 High Growth": "#679436"}
     output:
         "build/results/load.vega.json"
     conda: "../envs/default.yaml"
@@ -92,6 +94,7 @@ rule plot_power_capacities:
         type = "power",
         pre_war = config["report"]["pre-war"]["capacities"],
         nice_tech_names = config["report"]["nice-names"]["technology"],
+        nice_scenario_names = config["report"]["nice-names"]["scenario"],
         scenarios = lambda wildcards, output: config["report"]["scenario-sets"][wildcards.scenario_set],
         scenario_colors = config["report"]["scenario-colors"],
         generation_techs = ["fossil", "hydro", "nuclear", "biomass", "onwind", "offwind", "solar"],
@@ -111,6 +114,7 @@ rule plot_energy_capacities:
         type = "energy",
         pre_war = config["report"]["pre-war"]["capacities"],
         nice_tech_names = config["report"]["nice-names"]["technology"],
+        nice_scenario_names = config["report"]["nice-names"]["scenario"],
         scenarios = lambda wildcards, output: config["report"]["scenario-sets"][wildcards.scenario_set],
         scenario_colors = config["report"]["scenario-colors"],
         storage_techs = ["battery", "H2"],
@@ -127,6 +131,7 @@ rule plot_generation:
     params:
         pre_war = config["report"]["pre-war"]["electricity-mix"],
         nice_tech_names = config["report"]["nice-names"]["technology"],
+        nice_scenario_names = config["report"]["nice-names"]["scenario"],
         scenarios = lambda wildcards, output: config["report"]["scenario-sets"][wildcards.scenario_set]
     output:
         "build/results/generation-{scenario_set}.vega.json"
@@ -141,7 +146,8 @@ rule plot_lcoes:
     params:
         component_map = config["report"]["components"]["mapping"],
         component_colors = config["report"]["components"]["colors"],
-        scenarios = lambda wildcards, output: config["report"]["scenario-sets"][wildcards.scenario_set]
+        scenarios = lambda wildcards, output: config["report"]["scenario-sets"][wildcards.scenario_set],
+        nice_scenario_names = config["report"]["nice-names"]["scenario"]
     output:
         "build/results/lcoe-{scenario_set}.vega.json"
     conda: "../envs/default.yaml"

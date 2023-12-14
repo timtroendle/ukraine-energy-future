@@ -4,10 +4,10 @@ import xarray as xr
 import altair as alt
 
 DARK_GREY = "#424242"
-WIDTH = 500
+WIDTH = 498
 
 
-def plot_load(load: pd.DataFrame) -> alt.Chart:
+def plot_load(load: pd.DataFrame, colors: dict[str, str]) -> alt.Chart:
     daily = load.div(1e3).resample("D").mean()
     return (
         alt
@@ -19,7 +19,12 @@ def plot_load(load: pd.DataFrame) -> alt.Chart:
                 labelExpr="month(toDate(datum.value)) == 0 ? year(datum.value) : null"
             ),
             y=alt.Y("load", title="Mean daily electricity demand (GW)"),
-            color=alt.Color("scenario", title="Demand scenario")
+            color=(
+                alt
+                .Color("scenario")
+                .title("Demand scenario")
+                .scale(domain=list(colors.keys()), range=list(colors.values()))
+            )
         )
         .mark_line()
         .configure(font="Lato")
@@ -32,6 +37,7 @@ def plot_load(load: pd.DataFrame) -> alt.Chart:
 
 if __name__ == "__main__":
     chart = plot_load(
-        load=xr.open_dataset(snakemake.input[0]).to_dataframe()
+        load=xr.open_dataset(snakemake.input[0]).to_dataframe(),
+        colors=snakemake.params.colors
     )
     chart.save(snakemake.output[0])

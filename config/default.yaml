@@ -187,6 +187,8 @@ report:
             hydro: "Hydro"
             "battery charger": "Battery charger"
             "battery discharger": "Battery discharger"
+            "H2 electrolysis": "H2 electrolysis"
+            "H2 fuel cell": "H2 fuel cell"
             PHS: "Pumped hydro"
             fossil: "Fossil"
             average-load: "Average demand"
@@ -199,6 +201,12 @@ report:
             grid: Grid
             renewable: "Wind, water, sun"
             storage: "Storage"
+        scenario:
+            nuclear-and-renewables-high: nuclear-and-renewables
+            only-renewables-high: only-renewables
+            nuclear-and-renewables-low: nuclear-and-renewables-low-demand
+            only-renewables-low: only-renewables-low-demand
+            pre-war: pre-war
     scenario-sets:
         main:
             - pre-war

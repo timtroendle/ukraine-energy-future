@@ -3,25 +3,31 @@ import altair as alt
 
 
 DARK_GREY = "#424242"
-TWO_COLUMN_WIDTH_PER_DISPLAY = 185
-SINGLE_COLUMN_WIDTH = TWO_COLUMN_WIDTH_PER_DISPLAY * 2.55
+TWO_COLUMN_WIDTH_PER_DISPLAY = 163
+SINGLE_COLUMN_WIDTH = 473
 
 
 def plot_power_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
-                          nice_tech_names: dict[str: str], scenarios: list[str],
+                          nice_tech_names: dict[str: str], nice_scenario_names: dict[str, str],
+                          scenarios: list[str],
                           scenario_colors: dict[str: str], generation_techs: list[str],
                           storage_techs: list[str], demand_techs: list[str]) -> alt.Chart:
-    capacities = preprocess_capacities(capacities, pre_war_capacities, nice_tech_names)
+    capacities = preprocess_capacities(capacities, pre_war_capacities, nice_tech_names, nice_scenario_names)
+    scenarios = list(map(nice_scenario_names.get, scenarios))
+    scenario_colors = {nice_scenario_names.get(s, s): c for s, c in scenario_colors.items()}
+    generation_techs = list(map(nice_tech_names.get, generation_techs))
+    storage_techs = list(map(nice_tech_names.get, storage_techs))
+    demand_techs = list(map(nice_tech_names.get, demand_techs))
 
     base = (
         alt
         .Chart(capacities.reset_index(), width=TWO_COLUMN_WIDTH_PER_DISPLAY)
     )
 
-    panel_a = plot_capacities(base, generation_techs, "A", nice_tech_names, scenarios, scenario_colors)
-    panel_b = plot_capacities(base, storage_techs, "B", nice_tech_names, scenarios, scenario_colors)
+    panel_a = plot_capacities(base, generation_techs, "A", scenarios, scenario_colors)
+    panel_b = plot_capacities(base, storage_techs, "B", scenarios, scenario_colors)
     panel_c = plot_capacities(
-        base, demand_techs, "C", nice_tech_names, scenarios, scenario_colors,
+        base, demand_techs, "C", scenarios, scenario_colors,
         carrier_axis_label=None, capacity_axis_label="Demand (GW)"
     )
     chart = (panel_a | (panel_b & panel_c))
@@ -29,9 +35,13 @@ def plot_power_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
 
 
 def plot_storage_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
-                           nice_tech_names: dict[str: str], scenarios: list[str],
+                           nice_tech_names: dict[str: str], nice_scenario_names: dict[str, str],
+                           scenarios: list[str],
                            scenario_colors: dict[str: str], storage_techs: list[str]) -> alt.Chart:
-    capacities = preprocess_capacities(capacities, pre_war_capacities, nice_tech_names).div(1000) # to TWh
+    capacities = preprocess_capacities(capacities, pre_war_capacities, nice_tech_names, nice_scenario_names).div(1000)
+    scenarios = list(map(nice_scenario_names.get, scenarios))
+    scenario_colors = {nice_scenario_names.get(s, s): c for s, c in scenario_colors.items()}
+    storage_techs = list(map(nice_tech_names.get, storage_techs))
 
     base = (
         alt
@@ -42,7 +52,6 @@ def plot_storage_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
         base,
         storage_techs,
         "",
-        nice_tech_names,
         scenarios,
         scenario_colors,
         capacity_axis_label="Capacity (TWh)")
@@ -56,20 +65,19 @@ def configure_chart(chart: alt.Chart) -> alt.Chart:
         .configure_title(anchor='start', fontSize=12, color=DARK_GREY)
         .configure_axis(titleColor=DARK_GREY, labelColor=DARK_GREY)
         .configure_header(titleColor=DARK_GREY, labelColor=DARK_GREY)
-        .configure_legend(titleColor=DARK_GREY, labelColor=DARK_GREY, orient="bottom")
+        .configure_legend(titleColor=DARK_GREY, labelColor=DARK_GREY, orient="bottom", columns=3)
     )
 
 
-def plot_capacities(base: alt.Chart, techs: list[str], title: str, nice_tech_names: dict[str: str],
-                    scenarios: list[str], scenario_colors: dict[str: str], capacity_axis_label="Capacity (GW)",
-                    carrier_axis_label="Carrier") -> alt.Chart:
-    nice_generation_tech_order = [nice_tech_names.get(t, t) for t in techs]
+def plot_capacities(base: alt.Chart, techs: list[str], title: str, scenarios: list[str],
+                    scenario_colors: dict[str: str], capacity_axis_label="Capacity (GW)",
+                    carrier_axis_label="Technology") -> alt.Chart:
     return (
         base
-        .transform_filter(alt.FieldOneOfPredicate(field='carrier', oneOf=nice_generation_tech_order))
+        .transform_filter(alt.FieldOneOfPredicate(field='carrier', oneOf=techs))
         .transform_filter(alt.FieldOneOfPredicate(field='scenario', oneOf=scenarios))
         .encode(
-            y=alt.Y("carrier:N").title(carrier_axis_label).sort(nice_generation_tech_order),
+            y=alt.Y("carrier:N").title(carrier_axis_label).sort(techs),
             x=alt.X("capacity:Q").title(capacity_axis_label),
             color=(
                 alt
@@ -81,12 +89,12 @@ def plot_capacities(base: alt.Chart, techs: list[str], title: str, nice_tech_nam
             yOffset=alt.YOffset("scenario:N").sort(scenarios)
         )
         .mark_bar()
-        .properties(title=title)
+        .properties(title=title, height=alt.Step(15))
     )
 
 
 def preprocess_capacities(sim_capacities: pd.DataFrame, pre_war_capacities: dict,
-                          nice_tech_names: dict[str: str]) -> pd.DataFrame:
+                          nice_tech_names: dict[str: str], nice_scenario_names: dict[str, str]) -> pd.DataFrame:
     pre_war = (
         pd.
         Series(pre_war_capacities)
@@ -96,7 +104,8 @@ def preprocess_capacities(sim_capacities: pd.DataFrame, pre_war_capacities: dict
         .assign(scenario="pre-war")
         .reset_index()
         .set_index(["scenario", "carrier"])
-        .rename(index=nice_tech_names)
+        .rename(index=nice_scenario_names, level=0)
+        .rename(index=nice_tech_names, level=1)
     )
     capacities = (
         sim_capacities
@@ -104,7 +113,8 @@ def preprocess_capacities(sim_capacities: pd.DataFrame, pre_war_capacities: dict
         .unstack()
         .rename("capacity")
         .rename_axis(index=["scenario", "carrier"])
-        .rename(index=nice_tech_names)
+        .rename(index=nice_scenario_names, level=0)
+        .rename(index=nice_tech_names, level=1)
     )
     return pd.concat([capacities.to_frame(), pre_war])
 
@@ -128,6 +138,7 @@ if __name__ == "__main__":
                 capacities=pd.read_csv(snakemake.input.capacities, index_col=0),
                 pre_war_capacities=snakemake.params.pre_war,
                 nice_tech_names=snakemake.params.nice_tech_names,
+                nice_scenario_names=snakemake.params.nice_scenario_names,
                 scenarios=snakemake.params.scenarios,
                 scenario_colors=snakemake.params.scenario_colors,
                 generation_techs=snakemake.params.generation_techs,
@@ -139,6 +150,7 @@ if __name__ == "__main__":
                 capacities=pd.read_csv(snakemake.input.capacities, index_col=0),
                 pre_war_capacities=snakemake.params.pre_war,
                 nice_tech_names=snakemake.params.nice_tech_names,
+                nice_scenario_names=snakemake.params.nice_scenario_names,
                 scenarios=snakemake.params.scenarios,
                 scenario_colors=snakemake.params.scenario_colors,
                 storage_techs=snakemake.params.storage_techs,

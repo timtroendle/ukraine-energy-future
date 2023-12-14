@@ -3,17 +3,19 @@ import altair as alt
 
 
 DARK_GREY = "#424242"
-WIDTH = 388
+WIDTH = 411
 
 
 def plot_lcoes(lcoes: pd.DataFrame, component_map: dict[str, str], component_colors: dict[str: str],
-               scenarios: list[str]) -> alt.Chart:
+               scenarios: list[str], nice_scenario_names: dict[str, str]) -> alt.Chart:
+    scenarios = list(map(nice_scenario_names.get, scenarios))
     lcoes = (
         lcoes
         .groupby(by=component_map, axis=1)
         .sum()
         .unstack()
         .rename_axis(index=["technology", "scenario"])
+        .rename(index=nice_scenario_names, level=1)
         .rename("LCOE")
         .reset_index()
     )
@@ -47,6 +49,7 @@ if __name__ == "__main__":
         lcoes=pd.read_csv(snakemake.input.lcoes, index_col=0),
         component_map=snakemake.params.component_map,
         component_colors=snakemake.params.component_colors,
+        nice_scenario_names=snakemake.params.nice_scenario_names,
         scenarios=snakemake.params.scenarios
     )
     chart.save(snakemake.output[0])
