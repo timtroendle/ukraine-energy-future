@@ -130,19 +130,19 @@ This same process was then applied to the 2060 scenarios, using the weather year
 
 ## Capacity expansion model
 
-To derive cost-minimal generation, storage, and transmission capacities, we apply PyPSA-Eur [@Horsch:2018] as capacity expansion model. Given the long-term perspective in our analysis, we apply a greenfield approach in which we do not consider any existing capacities other than the transmission grid and hydro generation capacities. We do not consider any connections to other countries, but model Ukraine as a stand-alone system.
+To derive cost-minimal generation, storage, and transmission capacities, we apply PyPSA-Eur [@Horsch:2018] as capacity expansion model. Given the long-term perspective in our analysis, we apply a greenfield approach in which we do not consider any existing capacities other than the transmission grid (Supplemental Figure\ S5) and hydro generation capacities. We do not consider any connections to other countries, but model Ukraine as a stand-alone system.
 
-The model has the option to expand generation and storage capacities of onshore wind, solar power, biomass, nuclear power, lithium-ion batteries, and hydrogen storage to meet demand in every hour of the year. Total system cost is derived by summing up annuities of investment, operation, and maintenance cost of all installed capacities (@tbl:technology-cost). The depreciation rate is set to 10% [@Andersson:2020]. The model finds the set of installed capacities with minimal total system cost.
+The model has the option to expand generation and storage capacities of onshore wind, offshore wind, solar power, biomass, nuclear power, lithium-ion batteries, and hydrogen storage to meet demand in every hour of the year. Total system cost is derived by summing up annuities of investment, operation, and maintenance cost of all installed capacities (@tbl:technology-cost). The depreciation rate is set to 10% [@Andersson:2020]. The model finds the set of installed capacities with minimal total system cost.
 
 The potential generation of solar and wind power is taken from PyPSA-Eur and has been derived in the following way.
 
 First, the eligible area for wind and solar development is calculated for each region using *atlite* at 100\ m grid resolution [@Hofmann:2021].
 For all renewable technologies, natural protection areas are excluded based on the World Database on Protected Areas (WDPA) [@UNEP-WCMC:2018].
 Based on the Copernicus Global Land Cover dataset [@Buchhorn:2020], shrubland, herbaceous and sparse vegetation, and cropland are assumed to be eligible for wind and solar development.
-In addition, while built-up areas are included for solar PV potentials, a distance of 1000\ m from built-up areas has to be kept for onshore wind turbines.
+In addition, while built-up areas are included for solar PV potentials, a distance of 1000\ m from built-up areas has to be kept for onshore wind turbines (Supplemental Figures\ S6 and S7).
 Offshore wind development is allowed up to a water depth of 50\ m, which is determined based on the GEBCO bathymetry dataset [@GEBCO:2015].
 Furthermore, dense shipping lanes are excluded based on the World Bank's Global Shipping Traffic Density dataset [@Cerdeiro:2021].
-Wind parks further out than 30\ km from shore are assumed to be DC-connected, whereas near-shore wind parks are assumed to be AC-connected.
+Wind parks further out than 30\ km from shore are assumed to be DC-connected, whereas near-shore wind parks are assumed to be AC-connected (Supplemental Figures\ S8 and S9).
 For each renewable technology and region, the available area is multiplied with allowed deployment densities, approximating the socio-technical potential.
 These densities are 3\ MW/km^2^ for onshore wind, 2\ MW/km^2^ for offshore wind, 1.7\ MW/km^2^ for solar.
 

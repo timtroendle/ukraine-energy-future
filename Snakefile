@@ -89,6 +89,11 @@ rule supplementary:
         "build/results/capacities-power-all.png",
         "build/results/capacities-energy-all.png",
         "build/results/generation-all.png",
+        "data/transmission-grid.png",
+        "data/availability-offwind-ac.png",
+        "data/availability-offwind-dc.png",
+        "data/availability-onwind.png",
+        "data/availability-solar.png",
     params: options = pandoc_options
     output: "build/supplementary.{suffix}"
     wildcard_constraints:

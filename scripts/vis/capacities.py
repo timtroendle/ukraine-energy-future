@@ -89,7 +89,7 @@ def plot_capacities(base: alt.Chart, techs: list[str], title: str, scenarios: li
             yOffset=alt.YOffset("scenario:N").sort(scenarios)
         )
         .mark_bar()
-        .properties(title=title, height=alt.Step(15))
+        .properties(title=title, height=alt.Step(14))
     )
 
 
