@@ -82,7 +82,7 @@ The model code and all analysis steps are publicly available as a reproducible S
 
 ## Model overview
 
-We model the energy system of Ukraine by soft-linking a demand projection and a cost-minimising capacity expansion model. We run two different scenarios and analyse the sensitivity of the cost difference to input parameters using a global sensitivity analysis. We describe each element of our analysis in the following.
+We model the energy system of Ukraine by soft-linking a demand projection and a cost-minimising capacity expansion model. We run four different scenarios and analyse the sensitivity of the cost difference to input parameters using a global sensitivity analysis. We describe each element of our analysis in the following.
 
 ## Energy demand projection
 
@@ -128,7 +128,7 @@ This same process was then applied to the 2060 scenarios, using the weather year
 
 ## Capacity expansion model
 
-To derive cost-minimal generation, storage, and transmission capacities, we apply PyPSA-Eur [@Horsch:2018] as capacity expansion model. Given the long-term perspective in our analysis, we apply a greenfield approach in which we do not consider any existing capacities other than the transmission grid (Supplemental Figure\ S5) and hydro generation capacities. We do not consider any connections to other countries, but model Ukraine as a stand-alone system.
+To derive cost-minimal generation, storage, and transmission capacities, we apply PyPSA-Eur [@Horsch:2018] as capacity expansion model. We run the model in hourly resolution over five historical weather years. Given the long-term perspective in our analysis, we apply a greenfield approach in which we do not consider any existing capacities other than the transmission grid (Supplemental Figure\ S5) and hydro generation capacities. We do not consider any connections to other countries, but model Ukraine as a stand-alone system.
 
 The model has the option to expand generation and storage capacities of onshore wind, offshore wind, solar power, biomass, nuclear power, lithium-ion batteries, and hydrogen storage to meet demand in every hour of the year. Total system cost is derived by summing up annuities of investment, operation, and maintenance cost of all installed capacities (@tbl:technology-cost). The depreciation rate is set to 10% [@Andersson:2020]. The model finds the set of installed capacities with minimal total system cost.
 
@@ -171,15 +171,17 @@ width:
 
 ## Scenarios
 
-We run two scenarios to assess the impact of nuclear power on system cost of a fully-decarbonised energy supply. In the first scenario, `only-renewables`, electricity is generated exclusively from renewable sources: solar, wind, hydro, and biomass. In the second scenario, `nuclear-and-renewables`, in addition to renewables, electricity can be generated from nuclear fuel. We set the minimal level of nuclear to its pre-war level of ~50% of electricity generation: ==60 GW (final number depends on energy demand)==.
+We four scenarios to assess the impact of nuclear power on system cost of a fully-decarbonised energy supply. In the first scenario, *only-renewables*, electricity is generated exclusively from renewable sources: solar, wind, hydro, and biomass. In the second scenario, *nuclear-and-renewables*, in addition to renewables, electricity can be generated from nuclear fuel. We set the minimal level of nuclear to its pre-war level of ~50% of electricity generation: 52\ GW.
+
+Scenarios three and four duplicate scenarios one and two but with a low-, rather than a high-economic growth assumption.
 
 ## Global sensitivity analysis
 
-To understand the impact of model parameters on cost difference between the two scenarios, we perform a global sensitivity analysis. We apply the Morris Method, an efficient method that estimates sensitivities accurately and efficiently [@Kristensen:2016; @Usher:2023]. We use the method to understand which model parameters impact the LCOE difference between the two scenarios the most. We assess eight cost parameters of the model (@tbl:gsa-parameters).
+To understand the impact of model parameters on cost penalty of nuclear power, we perform a global sensitivity analysis. We apply the Morris Method, an efficient method that estimates sensitivities accurately and efficiently [@Kristensen:2016; @Usher:2023]. We use the method to understand which model parameters impact the cost penalty of nuclear power the most. In the sensitivity analysis, we only consider the high-economic growth assumption scenarios. We assess ten cost parameters of the model (@tbl:gsa-parameters).
 
 ```table
 ---
-caption: 'Parameter uncertainty ranges considered in the global sensitivity analysis. Minimum and maximum values are relative to the default values considered in the model. ==**UPDATE RANGES**== {#tbl:gsa-parameters}'
+caption: 'Parameter uncertainty ranges considered in the global sensitivity analysis. Minimum and maximum values are relative to the default values considered in the model. {#tbl:gsa-parameters}'
 alignment: LRR
 include: build/gsa-parameters.csv
 include-encoding: UTF-8
@@ -187,6 +189,9 @@ markdown: True
 ---
 ```
 
-The sampling of the Morris Method works in the following way: Given eight model parameters, the method chooses a random start value within the 8-dimensional space spanned by the model parameters. The method follows a one-step-at-a-time approach, in which each iteration of the method changes the value of a single parameter only. This approach leads to a trajectory of (8 + 1) points in the parameter space. To explore this space more comprehensively, we generate 15 such trajectories, creating 135 different combinations of parameter values. We run both scenarios for all combinations allowing us to attribute LCOE differences to parameter values. For each parameter, we observe its impact on LCOE difference once for each trajectory, a total of 15 times. We use the open-source Python library SALib to perform the global sensitivity analysis [@Herman:2017].
+The sampling of the Morris Method works in the following way: Given ten model parameters, the method chooses a random start value within the 10-dimensional space spanned by the model parameters. The method follows a one-step-at-a-time approach, in which each iteration of the method changes the value of a single parameter only. This approach leads to a trajectory of (10 + 1) points in the parameter space. To explore this space more comprehensively, we generate 15 such trajectories, creating 165 different combinations of parameter values. We run both the scenario with and without nuclear power for all combinations allowing us to attribute cost penalty changes to parameter values. For each parameter, we observe its impact on cost penalty once for each trajectory, a total of 15 times. We use the open-source Python library SALib to perform the global sensitivity analysis [@Herman:2017].
+
+# CRediT author statement
+**Tim Tröndle**: Conceptualisation, Investigation, Data curation, Formal analysis, Software, Visualisation, Writing – Original draft. **Olena Melnyk**: Data curation, Writing – Original draft. **Olena Tutova**: Data curation, Writing – review & editing. **Fabian Neumann**: Formal analysis, Software, Writing – Original draft. **Iain Staffell**: Formal analysis, Software, Writing – Original draft. **Anthony Patt**: Conceptualisation, Funding acquisition, Writing – review & editing.
 
 # References
