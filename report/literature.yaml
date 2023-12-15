@@ -128,6 +128,51 @@ references:
   URL: http://www.sciencedirect.com/science/article/pii/S0360544215008385
   volume: '90'
 
+- id: Brown:2021a
+  abstract: >-
+    Preventing global warming in excess of 1.5°C–2°C requires a transition to
+    zero-carbon electricity systems by midcentury along with the widespread
+    electrification of other sectors. Current state-level renewable portfolio
+    standards and regional transmission arrangements do not capture the benefits
+    of inter-regional transmission or coordination of planning and dispatch for
+    renewable-energy integration. Here, using a co-optimized capacity-planning
+    and dispatch model over 7 years of hourly operation, we show that
+    inter-state coordination and transmission expansion reduce the system cost
+    of electricity in a 100%-renewable US power system by 46% compared with a
+    state-by-state approach, from 135 $/MWh to 73 $/MWh. Sensitivity analyses
+    show that reductions in the cost of photovoltaics, wind, and lithium-ion
+    batteries lead to the lowest electricity costs for systems in which
+    transmission expansion is allowed, while cost reductions for nuclear power
+    or long-duration energy storage lead to greater electricity cost reductions
+    for isolated systems.
+  accessed:
+    - year: 2023
+      month: 12
+      day: 15
+  author:
+    - family: Brown
+      given: Patrick R.
+    - family: Botterud
+      given: Audun
+  citation-key: Brown:2021a
+  container-title: Joule
+  container-title-short: Joule
+  DOI: 10.1016/j.joule.2020.11.013
+  ISSN: 2542-4351
+  issue: '1'
+  issued:
+    - year: 2021
+      month: 1
+      day: 20
+  page: 115-134
+  source: ScienceDirect
+  title: >-
+    The Value of Inter-Regional Coordination and Transmission in Decarbonizing
+    the US Electricity System
+  type: article-journal
+  URL: https://www.sciencedirect.com/science/article/pii/S2542435120305572
+  volume: '5'
+
 - id: Buchhorn:2020
   abstract: >-
     Near real time epoch 2019 from the Collection 3 of annual, global 100m land
@@ -752,6 +797,30 @@ references:
   URL: https://dx.doi.org/10.1088/1748-9326/abf876
   volume: '16'
 
+- id: Neumann:2021
+  accessed:
+    - year: 2021
+      month: 4
+      day: 28
+  author:
+    - family: Neumann
+      given: Fabian
+  citation-key: Neumann:2021
+  container-title: Energy Strategy Reviews
+  container-title-short: Energy Strategy Reviews
+  DOI: 10.1016/j.esr.2021.100652
+  ISSN: 2211467X
+  issued:
+    - year: 2021
+      month: 5
+  language: en
+  page: '100652'
+  source: DOI.org (Crossref)
+  title: Costs of regional equity and autarky in a renewable European power system
+  type: article-journal
+  URL: https://linkinghub.elsevier.com/retrieve/pii/S2211467X21000389
+  volume: '35'
+
 - id: OECD:2021a
   abstract: >-
     This Review assesses Ukraine’s investment climate vis-à-vis the country’s
@@ -824,6 +893,84 @@ references:
   type: article
   URL: https://papers.ssrn.com/abstract=4005084
 
+- id: Penn:2023
+  abstract: >-
+    The project that NuScale Power and Western energy companies had developed
+    struggled to attract enough utility customers.
+  accessed:
+    - year: 2023
+      month: 11
+      day: 14
+  author:
+    - family: Penn
+      given: Ivan
+    - family: Plumer
+      given: Brad
+  citation-key: Penn:2023
+  container-title: The New York Times
+  ISSN: 0362-4331
+  issued:
+    - year: 2023
+      month: 11
+      day: 8
+  language: en-US
+  section: Business
+  source: NYTimes.com
+  title: Nuclear Energy Project in Idaho Is Canceled
+  type: article-newspaper
+  URL: >-
+    https://www.nytimes.com/2023/11/08/business/energy-environment/nuclear-energy-idaho-nuscale.html
+
+- id: Pickering:2022
+  abstract: >-
+    <h2>Summary</h2><p>Disagreements persist on how to design a self-sufficient,
+    carbon-neutral European energy system. To explore the diversity of design
+    options, we develop a high-resolution model of the entire European energy
+    system and produce 441 technically feasible system designs that are within
+    10% of the optimal economic cost. We show that a wide range of systems based
+    on renewable energy are feasible, with no need to import energy from outside
+    Europe. Model solutions reveal considerable flexibility in the choice and
+    geographical distribution of new infrastructure across the continent.
+    Balanced renewable energy supply can be achieved either with or without
+    mechanisms such as biofuel use, curtailment, and expansion of the
+    electricity network. Trade-offs emerge once specific preferences are
+    imposed. Low biofuel use, for example, requires heat electrification and
+    controlled vehicle charging. This exploration of the impact of preferences
+    on system design options is vital to inform urgent, politically difficult
+    decisions for eliminating fossil fuel imports and achieving European carbon
+    neutrality.</p>
+  accessed:
+    - year: 2022
+      month: 6
+      day: 16
+  author:
+    - family: Pickering
+      given: Bryn
+    - family: Lombardi
+      given: Francesco
+    - family: Pfenninger
+      given: Stefan
+  citation-key: Pickering:2022
+  container-title: Joule
+  container-title-short: Joule
+  DOI: 10.1016/j.joule.2022.05.009
+  ISSN: 2542-4785, 2542-4351
+  issue: '6'
+  issued:
+    - year: 2022
+      month: 6
+      day: 15
+  language: English
+  page: 1253-1276
+  publisher: Elsevier
+  source: www.cell.com
+  title: >-
+    Diversity of options to eliminate fossil fuels and reach carbon neutrality
+    across the entire European energy system
+  type: article-journal
+  URL: https://www.cell.com/joule/abstract/S2542-4351(22)00236-7
+  volume: '6'
+
 - id: Pieton:2023
   author:
     - family: Pieton
@@ -859,6 +1006,34 @@ references:
     HYPAT Working Paper 02/2023, Export Potentials of Green Hydrogen –
     Methodology for a Techno-Economic Assessment
   type: report
+
+- id: Plumer:2023
+  abstract: >-
+    The dream of reviving nuclear power in the U.S. rests on a new generation of
+    smaller reactors meant to be easier to build. But major obstacles loom.
+  accessed:
+    - year: 2023
+      month: 11
+      day: 14
+  author:
+    - family: Plumer
+      given: Brad
+    - family: Penn
+      given: Ivan
+  citation-key: Plumer:2023
+  container-title: The New York Times
+  ISSN: 0362-4331
+  issued:
+    - year: 2023
+      month: 11
+      day: 12
+  language: en-US
+  section: Climate
+  source: NYTimes.com
+  title: U.S. Bets on Small Nuclear Reactors to Help Fix a Huge Climate Problem
+  type: article-newspaper
+  URL: >-
+    https://www.nytimes.com/interactive/2023/11/12/climate/nuclear-reactors-clean-energy.html
 
 - id: Sandbu:2023
   accessed:
@@ -1145,8 +1320,33 @@ references:
   source: Zotero
   title: >-
     HYPAT Working Paper 04/2023. Ukrainian Hydrogen Export Potential:
-    Oppor-tunities and Challenges in the Light of the Ongoing War
+    Opportunities and Challenges in the Light of the Ongoing War
   type: report
+
+- id: Trondle:2020a
+  author:
+    - family: Tröndle
+      given: Tim
+    - family: Lilliestam
+      given: Johan
+    - family: Marelli
+      given: Stefano
+    - family: Pfenninger
+      given: Stefan
+  citation-key: Trondle:2020a
+  container-title: Joule
+  DOI: 10.1016/j.joule.2020.07.018
+  issue: '9'
+  issued:
+    - year: 2020
+      month: 9
+      day: 16
+  page: 1929-1948
+  title: >-
+    Trade-offs between geographic scale, cost, and infrastructure requirements
+    for fully renewable electricity in Europe
+  type: article-journal
+  volume: '4'
 
 - id: Ukraine:2021
   accessed:
