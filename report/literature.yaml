@@ -224,6 +224,26 @@ references:
   URL: https://zenodo.org/record/3939050
   version: V3.0.1
 
+- id: CabinetofMinistersofUkraine:2022
+  accessed:
+    - year: 2024
+      month: 2
+      day: 9
+  author:
+    - literal: Cabinet of Ministers of Ukraine
+  citation-key: CabinetofMinistersofUkraine:2022
+  issued:
+    - year: 2022
+  title: >-
+    Про схвалення плану заходів з реалізації Оновленого Національно визначеного
+    внеску України до Паризької угоди до 2030 року [Draft Resolution of the
+    Cabinet of Ministers of Ukraine "On Approval of the Action Plan for
+    Implementation of the Updated Nationally Determined Contribution of Ukraine
+    to the Paris Agreement by 2030"]
+  type: bill
+  URL: >-
+    https://mepr.gov.ua/povidomlennya-pro-oprylyudnennya-proyektu-rozporyadzhennya-kabinetu-ministriv-ukrayiny-pro-shvalennya-planu-zahodiv-z-realizatsiyi-onovlenogo-natsionalno-vyznachenogo-vnesku-ukrayiny-do-paryzkoyi-ugod/
+
 - id: Cerdeiro:2021
   accessed:
     - year: 2023
@@ -1219,6 +1239,24 @@ references:
   type: article-journal
   URL: https://www.nature.com/articles/s41560-023-01341-5
 
+- id: StateStatisticsServiceofUkraine:2021
+  accessed:
+    - year: 2024
+      month: 2
+      day: 9
+  author:
+    - literal: State Statistics Service of Ukraine
+  citation-key: StateStatisticsServiceofUkraine:2021
+  event-place: Kyiv
+  issued:
+    - year: 2021
+  publisher: State Statistics Service of Ukraine
+  publisher-place: Kyiv
+  title: Паливно-енергетичні ресурси України [Fuel and Energy Resources of Ukraine]
+  type: report
+  URL: >-
+    https://stat.gov.ua/sites/default/files/2023-08/Статистичний%20збірник%20Паливно-енергетичні%20ресурси%20України.pdf
+
 - id: Steigerwald:2023
   abstract: >-
     Predicting future costs of technologies not yet developed is a complex
@@ -1380,10 +1418,10 @@ references:
       month: 9
       day: 5
   title: >-
-    Картка законопроекту - Законотворчість (Draft Law on Amendments to Certain
+    Картка законопроекту - Законотворчість [Draft Law on Amendments to Certain
     Laws of Ukraine on the Introduction of the Register of Issuance, Use and
     Termination of the Guarantee of Origin of Electric Energy Produced from
-    Renewable Energy Sources)
+    Renewable Energy Sources]
   type: bill
   URL: https://itd.rada.gov.ua/billInfo/Bills/Card/41361
 
@@ -1536,9 +1574,14 @@ references:
   issued:
     - year: 2017
   language: uk
+  medium: >-
+    On approval of the Energy Strategy of Ukraine for the period up to 2035
+    'Security, Energy Efficiency, Competitiveness'
   title: >-
     Про схвалення Енергетичної стратегії України на період до 2035 року
-    “Безпека, енергоефективність, конкурентоспроможність”
+    “Безпека, енергоефективність, конкурентоспроможність” [On approval of the
+    Energy Strategy of Ukraine for the period up to 2035 'Security, Energy
+    Efficiency, Competitiveness']
   type: bill
   URL: https://zakon.rada.gov.ua/go/605-2017-%D1%80
 
@@ -1556,7 +1599,10 @@ references:
   issued:
     - year: 2021
   language: uk
-  title: Про схвалення Стратегії енергетичної безпеки
+  medium: On approval of the Energy Security Strategy
+  title: >-
+    Про схвалення Стратегії енергетичної безпеки [On approval of the Energy
+    Security Strategy]
   type: bill
   URL: https://zakon.rada.gov.ua/go/907-2021-%D1%80
 

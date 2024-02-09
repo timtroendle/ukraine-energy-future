@@ -7,8 +7,8 @@ def parameters_table(parameters: dict[str: dict[str: float]]) -> pd.DataFrame:
     return pd.DataFrame(
         index=nice_names(parameters.keys()),
         data={
-            "Minimum": [p["min"] for p in parameters.values()],
-            "Maximum": [p["max"] for p in parameters.values()]
+            "Minimum": [f"{p['min'] * 100}%" for p in parameters.values()],
+            "Maximum": [f"{p['max'] * 100}%" for p in parameters.values()]
         }
     )
 

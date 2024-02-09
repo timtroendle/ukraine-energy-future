@@ -15,7 +15,17 @@ keywords:
     - nuclear electricity
     - renewable electricity
 abstract: |
-    Analysing options for Ukraine's future energy supply.
+    Since Russia’s 2022 invasion, Ukraine’s civilian energy infrastructure has faced systematic attack,
+    which requires urgent and strategic reconstruction. This study confronts the dual challenges of
+    rebuilding Ukraine’s energy system rapidly to mitigate civilian and economic disruption while
+    aligning this to long-term goals of sustainability and energy security. We demonstrate that Ukraine
+    can readily meet future energy demands through a fully renewable electrified system at costs
+    comparable to those from fossil fuels and nuclear power. Contrary to previous reliance on
+    high-carbon energy sources, we find a diversified renewable energy portfolio, including significant
+    solar photovoltaic and wind contributions, can efficiently meet growing energy demands and position
+    Ukraine as an energy exporter, leveraging its geographical advantages. The implications of our study
+    extend beyond national borders, offering a model for post-conflict reconstruction that harmonizes
+    immediate recovery with sustainable energy transition.
 bibliography: literature.yaml
 csl: apa.csl
 link-citations: True
@@ -38,5 +48,5 @@ secPrefix:
     - "Section"
     - "Sections"
 linkReferences: True
-date: 2023-12-15
+date: 2024-02-09
 ---

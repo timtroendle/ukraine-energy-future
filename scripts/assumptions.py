@@ -19,6 +19,7 @@ def assumption_table(costs: pd.DataFrame, technologies: list[str], parameters: l
             col_name: format_float_col(col_name, fmt_str)
             for col_name, fmt_str in parameter_to_format_string.items()
         })
+        .rename(index=nice_name, columns=nice_name)
     )
 
 
@@ -26,6 +27,16 @@ def format_float_col(col: str, fmt_str: str):
     def format_col(df: pd.DataFrame):
         return df[col].map(lambda cell: f"{cell:{fmt_str}}")
     return format_col
+
+
+def nice_name(name: str) -> str:
+    return (
+        name
+        .replace("onwind", "onshore wind")
+        .replace("offwind", "offshore wind")
+        .replace("PHS", "pumped-hydro storage")
+        .capitalize()
+    )
 
 
 if __name__ == "__main__":
