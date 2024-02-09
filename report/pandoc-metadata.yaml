@@ -27,7 +27,7 @@ abstract: |
     extend beyond national borders, offering a model for post-conflict reconstruction that harmonizes
     immediate recovery with sustainable energy transition.
 bibliography: literature.yaml
-csl: apa.csl
+csl: joule.csl
 link-citations: True
 css:
     - https://timtroendle.github.io/signature-layout/layout/reset.css
