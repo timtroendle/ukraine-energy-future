@@ -15,9 +15,10 @@ keywords:
     - infrastructure
     - nuclear electricity
     - renewable electricity
+    - crisis
 abstract: |
-    Since Russia’s 2022 invasion, Ukraine’s civilian energy infrastructure has faced systematic attack,
-    which requires urgent and strategic reconstruction. This study confronts the dual challenges of
+    Since Russia’s 2022 invasion, Ukraine’s civilian energy infrastructure has faced systematic attack
+    and requires urgent and strategic reconstruction. This study confronts the dual challenges of
     rebuilding Ukraine’s energy system rapidly to mitigate civilian and economic disruption while
     aligning this to long-term goals of sustainability and energy security. We demonstrate that Ukraine
     can readily meet future energy demands through a fully renewable electrified system at costs
@@ -49,5 +50,5 @@ secPrefix:
     - "Section"
     - "Sections"
 linkReferences: True
-date: 2024-02-09
+date: 2024-02-12
 ---

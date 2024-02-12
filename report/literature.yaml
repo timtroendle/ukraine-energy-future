@@ -49,6 +49,124 @@ references:
   URL: >-
     https://uabio.org/wp-content/uploads/2020/05/Final_UA_Path_to_100_percent_renewables_Ukraine.pdf
 
+- id: Bersalli:2023
+  abstract: >-
+    As the climate targets tighten and countries are impacted by several crises,
+    understanding how and under which conditions carbon dioxide emissions peak
+    and start declining is gaining importance. We assess the timing of emissions
+    peaks in all major emitters (1965–2019) and the extent to which past
+    economic crises have impacted structural drivers of emissions contributing
+    to emission peaks. We show that in 26 of 28 countries that have peaked
+    emissions, the peak occurred just before or during a recession through the
+    combined effect of lower economic growth (1.5 median percentage points per
+    year) and decreasing energy and/or carbon intensity (0.7) during and after
+    the crisis. In peak-and-decline countries, crises have typically magnified
+    pre-existing improvements in structural change. In non-peaking countries,
+    economic growth was less affected, and structural change effects were weaker
+    or increased emissions. Crises do not automatically trigger peaks but may
+    strengthen ongoing decarbonisation trends through several mechanisms.
+  accessed:
+    - year: 2023
+      month: 2
+      day: 21
+  author:
+    - family: Bersalli
+      given: Germán
+    - family: Tröndle
+      given: Tim
+    - family: Lilliestam
+      given: Johan
+  citation-key: Bersalli:2023
+  container-title: Communications Earth & Environment
+  container-title-short: Commun Earth Environ
+  DOI: 10.1038/s43247-023-00687-8
+  ISSN: 2662-4435
+  issue: '1'
+  issued:
+    - year: 2023
+      month: 2
+      day: 21
+  language: en
+  license: 2023 The Author(s)
+  number: '1'
+  page: 1-11
+  publisher: Nature Publishing Group
+  source: www.nature.com
+  title: >-
+    Most industrialised countries have peaked carbon dioxide emissions during
+    economic crises through strengthened structural change
+  type: article-journal
+  URL: https://www.nature.com/articles/s43247-023-00687-8
+  volume: '4'
+
+- id: Bersalli:2024
+  abstract: >-
+    Crises may act as tipping points for decarbonization pathways by triggering
+    structural economic change or offering windows of opportunity for policy
+    change. We investigate both types of effects of the global financial and
+    COVID-19 crises on decarbonization in Spain and Germany through a
+    quantitative Kaya-decomposition analysis of CO2 emissions and through a
+    qualitative review of climate and energy policy changes. We show that the
+    global financial crisis resulted in a critical juncture for Spanish CO2
+    emissions due to the combined effects of the deep economic recession and
+    crisis-induced structural change, resulting in reductions in carbon and
+    energy intensities and shifts in the economic structure. However, the crisis
+    also resulted in a rollback of renewable energy policy, halting progress in
+    the transition to green electricity. The impacts were less pronounced in
+    Germany, where pre-existing decarbonization and policy trends continued
+    after the crisis. Recovery packages had modest effects, primarily due to
+    their temporary nature and the limited share of climate-related spending.
+    The direct short-term impacts of the COVID-19 crisis on CO2 emissions were
+    more substantial in Spain than in Germany. The policy responses in both
+    countries sought to align short-term economic recovery with the long-term
+    climate change goals of decarbonization, but it is too soon to observe their
+    lasting effects. Our findings show that crises can affect structural change
+    and support decarbonization but suggest that such effects depend on
+    pre-existing trends, the severity of the crisis and political manoeuvring
+    during the crisis. The short-term effects of the Global Financial and
+    COVID-19 crises on CO2 emission drivers were larger in Spain than in Germany
+    because of pre-existing trends and the crises´ magnitudeThe Global Financial
+    Crisis represented a tipping point for emissions in Spain, affecting the
+    structural drivers of emissions. However, renewable energy policy was
+    temporarily negatively affected by the crisis.Both countries’ policy
+    responses to the COVID-19 crisis sought to align short-term economic
+    recovery with long-term decarbonization goals, moving beyond the
+    ‘environment vs economic recovery’ dichotomy that prevailed during the
+    Global Financial Crisis.Green recovery packages should prioritize measures
+    with a higher potential to support structural change consistent with deep
+    decarbonization.It is crucial to adapt energy and climate policy ex-ante to
+    make them more resilient to political and fiscal pressures which may emerge
+    in the wake of crises.
+  accessed:
+    - year: 2024
+      month: 1
+      day: 11
+  author:
+    - family: Bersalli
+      given: Germán
+    - family: Tröndle
+      given: Tim
+    - family: Heckmann
+      given: Leon
+    - family: Lilliestam
+      given: Johan
+  citation-key: Bersalli:2024
+  container-title: Climate Policy
+  DOI: 10.1080/14693062.2024.2301750
+  ISSN: 1469-3062
+  issue: '0'
+  issued:
+    - year: 2024
+  page: 1-18
+  publisher: Taylor & Francis
+  source: Taylor and Francis+NEJM
+  title: >-
+    Economic crises as critical junctures for policy and structural changes
+    towards decarbonization – the cases of Spain and Germany
+  type: article-journal
+  URL: https://doi.org/10.1080/14693062.2024.2301750
+  volume: '0'
+
 - id: Bosch:2018
   abstract: >-
     Several influential energy systems models (ESMs) indicate that renewable
@@ -267,6 +385,73 @@ references:
   type: dataset
   URL: >-
     https://datacatalog.worldbank.org/search/dataset/0037580/Global-Shipping-Traffic-Density
+
+- id: Chepeliev:2023
+  abstract: >-
+    Dr. Maksym Chepeliev is a senior research economist at the Center for Global
+    Trade Analysis at Purdue University. Before joining Purdue, he was a
+    research associate at the Institute for Economics and Forecasting at the
+    National Academy of Sciences of Ukraine, where he received his PhD in 2016.
+    His work focuses on the analysis of a variety of global and regional
+    economic issues, including agricultural policies, climate change mitigation,
+    regional and multilateral trade agreements, and just energy transition. His
+    country-based work, with a particular focus on Ukraine, explores
+    interlinkages between energy transitions, emissions, and development. Dr.
+    Oleksandr Diachuk is a leading research officer at the Institute for
+    Economics and Forecasting in Ukraine with a PhD in engineering (2009) and an
+    MSc in mathematics and informatics (2005). Dr. Diachuk has over 15 years of
+    experience in modeling and strategic planning, policy advising, and
+    preparation of national strategic documents, including NEEAP, NDC, and LEDS.
+    As a national expert, he has contributed to various projects led by USAID,
+    EU, EBRD, UNDP, GIZ, and ECS. Dr. Diachuk is one of the TIMES-Ukraine energy
+    system model developers and a member of several working groups of the energy
+    community and Ukraine’s state institutions. Dr. Roman Podolets is an expert
+    based in Ukraine—the primary focus country for his expertise for more than
+    20 years. Roman leads the Energy Department at the Institute for Economics
+    and Forecasting, NASU, which combines fundamental research and consultancy
+    to the Ukrainian government and private agencies on various energy- and
+    environment-related issues. Also, Roman served for 2 years as a head of the
+    Department of Corporate Management and Modeling of Economic Development in
+    the Institute of Oil and Gas Industry “Naukanaftogaz” (an associated company
+    of JSC “Naftogaz of Ukraine”) and did an internship in DIW-Berlin on energy
+    modeling. Andrii Semeniuk is a PhD. student at the Institute for Economics
+    and Forecasting in Ukraine and has almost 4 years of experience in the area
+    of energy modeling, data analysis, and assessment of alternative sources of
+    energy supply. Andrii contributes to the development of the TIMES-Ukraine
+    energy system model and takes part in the analysis of the energy and climate
+    policies, as well as the assessment of the low-emission development pathways
+    for Ukraine. In addition, Andrii has co-led the development of the
+    TIMES-Ukraine model for the analysis of energy transition scenarios for
+    Zhytomyr city in Ukraine.
+  accessed:
+    - year: 2024
+      month: 2
+      day: 12
+  author:
+    - family: Chepeliev
+      given: Maksym
+    - family: Diachuk
+      given: Oleksandr
+    - family: Podolets
+      given: Roman
+    - family: Semeniuk
+      given: Andrii
+  citation-key: Chepeliev:2023
+  container-title: Joule
+  container-title-short: Joule
+  DOI: 10.1016/j.joule.2023.02.007
+  ISSN: 2542-4351
+  issue: '4'
+  issued:
+    - year: 2023
+      month: 4
+      day: 19
+  page: 606-611
+  source: ScienceDirect
+  title: Can Ukraine go “green” on the post-war recovery path?
+  type: article-journal
+  URL: https://www.sciencedirect.com/science/article/pii/S2542435123000776
+  volume: '7'
 
 - id: Demand.ninja:2023
   accessed:
