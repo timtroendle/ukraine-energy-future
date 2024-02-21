@@ -60,6 +60,7 @@ rule report:
         "build/results/capacities-energy-main.png",
         "build/results/capacities-energy.csv",
         "build/results/generation-main.png",
+        "build/results/time-series-main.png",
         "build/results/gsa/sensitivities-annotated.png",
     params: options = pandoc_options
     output: "build/report.{suffix}"
@@ -89,6 +90,8 @@ rule supplementary:
         "build/results/capacities-power-all.png",
         "build/results/capacities-energy-all.png",
         "build/results/generation-all.png",
+        "build/results/time-series-summer-zoom.png",
+        "build/results/time-series-winter-zoom.png",
         "data/transmission-grid.png",
         "data/availability-offwind-ac.png",
         "data/availability-offwind-dc.png",

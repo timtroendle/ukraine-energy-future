@@ -139,6 +139,16 @@ scenarios:
                 Generator: [solar, onwind, offwind-ac, offwind-dc, biomass, nuclear]
             BAU_mincapacities:
                 nuclear: 13900 # https://en.wikipedia.org/wiki/Nuclear_power_in_Ukraine
+    only-renewables-high-low-bio:
+        run:
+            name: "only-renewables-high-low-bio"
+
+        electricity:
+            conventional_carriers: [biomass]
+            extendable_carriers:
+                Generator: [solar, onwind, offwind-ac, offwind-dc, biomass]
+        biomass:
+            potential: 102600000 # 10% of default potential. For source, see default above.
 global-sensitivity-analysis:
     resolution:
         space: 2
@@ -207,6 +217,7 @@ report:
             nuclear-and-renewables-low: nuclear-and-renewables-low-demand
             only-renewables-low: only-renewables-low-demand
             pre-war: pre-war
+            only-renewables-high-low-bio: only-renewables-low-biomass
     scenario-sets:
         main:
             - pre-war
@@ -218,6 +229,23 @@ report:
             - nuclear-and-renewables-high
             - only-renewables-low
             - only-renewables-high
+        time-series:
+            - nuclear-and-renewables-high
+            - only-renewables-high
+            - only-renewables-high-low-bio
+    time-series-plots:
+        main:
+            start:
+            end:
+            resolution: M
+        summer-zoom:
+            start: 2012-06-18
+            end: 2012-06-24
+            resolution: H
+        winter-zoom:
+            start: 2011-01-03
+            end: 2011-01-09
+            resolution: H
     scenario-colors:
         pre-war: "#424242"
         nuclear-and-renewables-low: "#FCDC98"

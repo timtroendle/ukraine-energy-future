@@ -152,3 +152,20 @@ rule plot_lcoes:
         "build/results/lcoe-{scenario_set}.vega.json"
     conda: "../envs/default.yaml"
     script: "../scripts/vis/lcoe.py"
+
+
+rule plot_time_series:
+    message: "Plot generation time series."
+    input:
+        scenarios = all_scenarios
+    params:
+        scenarios = config["report"]["scenario-sets"]["time-series"],
+        start_date = lambda wildcards, output: config["report"]["time-series-plots"][wildcards.plot]["start"],
+        end_date = lambda wildcards, output: config["report"]["time-series-plots"][wildcards.plot]["end"],
+        resolution = lambda wildcards, output: config["report"]["time-series-plots"][wildcards.plot]["resolution"],
+        colors = config["report"]["components"]["colors"],
+        nice_scenario_names = config["report"]["nice-names"]["scenario"]
+    output:
+        "build/results/time-series-{plot}.vega.json"
+    conda: "../envs/default.yaml"
+    script: "../scripts/vis/time_series.py"
