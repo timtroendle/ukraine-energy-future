@@ -12,7 +12,7 @@ def plot_load_validation(df: pd.DataFrame) -> alt.Chart:
         alt
         .Chart(df.reset_index(), width=WIDTH)
         .encode(
-            x=alt.X("ENTSOE_Demand_GW").scale(zero=False).title("Measured daily demand (GW)"),
+            x=alt.X("ENTSOE_Demand_GW").scale(zero=False).title("Measured daily demand (GW)").axis(labelFlush=False),
             y=alt.Y("Demand_ninja_GW").scale(zero=False).title("Estimated daily demand (GW)"),
 
         )

@@ -12,6 +12,15 @@ COMPONENT_ORDER = {
     "Biomass": 2,
     "Nuclear": 3
 }
+X_AXIS_ANNUAL = {
+    "format": "%Y",
+    "tickCount": {"interval": "year", "step": 1},
+}
+X_AXIS_DAILY = {
+    "format": "%d %b %y",
+    "tickCount": {"interval": "day", "step": 1},
+    "labelExpr": "day(toDate(datum.value)) == 1 ? timeFormat(datum.value, '%d %b %Y') : null"
+}
 
 @dataclass
 class Scenario:
@@ -35,12 +44,12 @@ def plot_time_series(scenarios: list[Scenario], start_date: str, end_date: str, 
                      colors: dict[str: str]) -> alt.Chart:
     colors = {component: colors[component] for component in COMPONENT_ORDER.keys()}
     df = all_generation(scenarios, start_date, end_date, resolution)
-    time_format = "%Y" if resolution=="M" else "%d %b %y"
+    x_axis = X_AXIS_ANNUAL if resolution=="M" else X_AXIS_DAILY
     chart = (
         alt
         .Chart(df.reset_index(names="timestamp"), width=WIDTH, height=WIDTH)
         .encode(
-            x=alt.X('timestamp').title(None).axis(format=time_format),
+            x=alt.X('timestamp').title(None).axis(**x_axis, labelFlush=False),
             y=alt.Y('generation').title("Generation (GW)"),
             color=(
                 alt
@@ -96,7 +105,7 @@ def generation(n: pypsa.Network, start_date: str, end_date: str, resolution: str
         .rename(columns={"wws": "Wind, water, sun"})
         .rename(columns=lambda name: name.capitalize())
         .loc[start_date:end_date]
-        .resample(resolution)
+        .resample(resolution, label="left")
         .mean()
         .melt(var_name="tech", value_name="generation", ignore_index=False)
         .assign(order=lambda df: df.tech.map(COMPONENT_ORDER))

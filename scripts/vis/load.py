@@ -16,7 +16,8 @@ def plot_load(load: pd.DataFrame, colors: dict[str, str]) -> alt.Chart:
             x=alt.X("utc_timestamp:T").title(None).axis(
                 format="%Y",
                 tickCount={"interval": "month", "step": 3},
-                labelExpr="month(toDate(datum.value)) == 0 ? year(datum.value) : null"
+                labelExpr="month(toDate(datum.value)) == 0 ? year(datum.value) : null",
+                labelFlush=False
             ),
             y=alt.Y("load", title="Mean daily electricity demand (GW)"),
             color=(

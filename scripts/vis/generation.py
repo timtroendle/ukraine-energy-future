@@ -32,7 +32,7 @@ def plot_generation(generation: pd.DataFrame, pre_war_generation: dict,
                 .scale(domain=nice_generation_tech_order, range=TECH_COLORS)
                 .sort(nice_generation_tech_order)
             ),
-            x=alt.X("generation:Q").title("Generation").stack("normalize"),
+            x=alt.X("generation:Q").title("Generation").stack("normalize").axis(labelFlush=False),
             y=alt.Y("scenario:N").title("Scenario").sort(scenarios),
             order=alt.Order("color_carrier_sort_index:Q").sort("ascending")
         )

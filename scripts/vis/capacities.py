@@ -78,7 +78,7 @@ def plot_capacities(base: alt.Chart, techs: list[str], title: str, scenarios: li
         .transform_filter(alt.FieldOneOfPredicate(field='scenario', oneOf=scenarios))
         .encode(
             y=alt.Y("carrier:N").title(carrier_axis_label).sort(techs),
-            x=alt.X("capacity:Q").title(capacity_axis_label),
+            x=alt.X("capacity:Q").title(capacity_axis_label).axis(labelFlush=False),
             color=(
                 alt
                 .Color("scenario:N")

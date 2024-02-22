@@ -24,7 +24,7 @@ def plot_lcoes(lcoes: pd.DataFrame, component_map: dict[str, str], component_col
         .Chart(lcoes, width=WIDTH)
         .transform_filter(alt.FieldOneOfPredicate(field='scenario', oneOf=scenarios))
         .encode(
-            x=alt.X("LCOE").title("LCOE (€/MWh)"),
+            x=alt.X("LCOE").title("LCOE (€/MWh)").axis(labelFlush=False),
             y=alt.Y("scenario").title("Scenario"),
             color=(
                 alt
