@@ -5,56 +5,42 @@ import altair as alt
 DARK_GREY = "#424242"
 TWO_COLUMN_WIDTH_PER_DISPLAY = 163
 SINGLE_COLUMN_WIDTH = 473
+DEFAULT_STEP = 14
+SMALL_STEP = 10
 
 
-def plot_power_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
-                          nice_tech_names: dict[str: str], nice_scenario_names: dict[str, str],
-                          scenarios: list[str],
-                          scenario_colors: dict[str: str], generation_techs: list[str],
-                          storage_techs: list[str], demand_techs: list[str]) -> alt.Chart:
-    capacities = preprocess_capacities(capacities, pre_war_capacities, nice_tech_names, nice_scenario_names)
+def plot_all_capacities(power_capacities: pd.DataFrame, energy_capacities: pd.DataFrame, pre_war_capacities: dict,
+                        nice_tech_names: dict[str: str], nice_scenario_names: dict[str, str],
+                        scenarios: list[str], scenario_colors: dict[str: str],
+                        generation_techs: list[str], energy_techs: list[str],
+                        storage_techs: list[str], demand_techs: list[str]) -> alt.Chart:
+    power_capacities = preprocess_capacities(power_capacities, pre_war_capacities, nice_tech_names, nice_scenario_names)
+    energy_capacities = preprocess_capacities(energy_capacities, pre_war_capacities, nice_tech_names, nice_scenario_names).div(1000)
+    capacities = pd.concat([power_capacities, energy_capacities])
     scenarios = list(map(nice_scenario_names.get, scenarios))
     scenario_colors = {nice_scenario_names.get(s, s): c for s, c in scenario_colors.items()}
     generation_techs = list(map(nice_tech_names.get, generation_techs))
     storage_techs = list(map(nice_tech_names.get, storage_techs))
     demand_techs = list(map(nice_tech_names.get, demand_techs))
+    energy_techs = list(map(nice_tech_names.get, energy_techs))
+    step = DEFAULT_STEP if len(scenarios) <= 3 else SMALL_STEP
 
     base = (
         alt
         .Chart(capacities.reset_index(), width=TWO_COLUMN_WIDTH_PER_DISPLAY)
     )
 
-    panel_a = plot_capacities(base, generation_techs, "A", scenarios, scenario_colors)
-    panel_b = plot_capacities(base, storage_techs, "B", scenarios, scenario_colors)
+    panel_a = plot_capacities(base, generation_techs, "A", scenarios, scenario_colors, step=step)
+    panel_b = plot_capacities(base, storage_techs, "B", scenarios, scenario_colors, step=step)
     panel_c = plot_capacities(
-        base, demand_techs, "C", scenarios, scenario_colors,
+        base, energy_techs, "C", scenarios, scenario_colors, step,
+        capacity_axis_label="Capacity (TWh)"
+    )
+    panel_d = plot_capacities(
+        base, demand_techs, "D", scenarios, scenario_colors, step,
         carrier_axis_label=None, capacity_axis_label="Demand (GW)"
     )
-    chart = (panel_a | (panel_b & panel_c))
-    return configure_chart(chart)
-
-
-def plot_storage_capacities(capacities: pd.DataFrame, pre_war_capacities: dict,
-                           nice_tech_names: dict[str: str], nice_scenario_names: dict[str, str],
-                           scenarios: list[str],
-                           scenario_colors: dict[str: str], storage_techs: list[str]) -> alt.Chart:
-    capacities = preprocess_capacities(capacities, pre_war_capacities, nice_tech_names, nice_scenario_names).div(1000)
-    scenarios = list(map(nice_scenario_names.get, scenarios))
-    scenario_colors = {nice_scenario_names.get(s, s): c for s, c in scenario_colors.items()}
-    storage_techs = list(map(nice_tech_names.get, storage_techs))
-
-    base = (
-        alt
-        .Chart(capacities.reset_index(), width=SINGLE_COLUMN_WIDTH)
-    )
-
-    chart = plot_capacities(
-        base,
-        storage_techs,
-        "",
-        scenarios,
-        scenario_colors,
-        capacity_axis_label="Capacity (TWh)")
+    chart = (panel_a & panel_d) | (panel_b & panel_c)
     return configure_chart(chart)
 
 
@@ -65,12 +51,12 @@ def configure_chart(chart: alt.Chart) -> alt.Chart:
         .configure_title(anchor='start', fontSize=12, color=DARK_GREY)
         .configure_axis(titleColor=DARK_GREY, labelColor=DARK_GREY)
         .configure_header(titleColor=DARK_GREY, labelColor=DARK_GREY)
-        .configure_legend(titleColor=DARK_GREY, labelColor=DARK_GREY, orient="bottom", columns=3)
+        .configure_legend(titleColor=DARK_GREY, labelColor=DARK_GREY, orient="bottom", columns=3, labelLimit=180)
     )
 
 
 def plot_capacities(base: alt.Chart, techs: list[str], title: str, scenarios: list[str],
-                    scenario_colors: dict[str: str], capacity_axis_label="Capacity (GW)",
+                    scenario_colors: dict[str: str], step: int, capacity_axis_label="Capacity (GW)",
                     carrier_axis_label="Technology") -> alt.Chart:
     return (
         base
@@ -89,7 +75,7 @@ def plot_capacities(base: alt.Chart, techs: list[str], title: str, scenarios: li
             yOffset=alt.YOffset("scenario:N").sort(scenarios)
         )
         .mark_bar()
-        .properties(title=title, height=alt.Step(14))
+        .properties(title=title, height=alt.Step(step))
     )
 
 
@@ -132,29 +118,17 @@ def aggregate_offwind(df: pd.DataFrame) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    match snakemake.params.type:
-        case "power":
-            chart = plot_power_capacities(
-                capacities=pd.read_csv(snakemake.input.capacities, index_col=0),
-                pre_war_capacities=snakemake.params.pre_war,
-                nice_tech_names=snakemake.params.nice_tech_names,
-                nice_scenario_names=snakemake.params.nice_scenario_names,
-                scenarios=snakemake.params.scenarios,
-                scenario_colors=snakemake.params.scenario_colors,
-                generation_techs=snakemake.params.generation_techs,
-                storage_techs=snakemake.params.storage_techs,
-                demand_techs=snakemake.params.demand_techs
-            )
-        case "energy":
-            chart = plot_storage_capacities(
-                capacities=pd.read_csv(snakemake.input.capacities, index_col=0),
-                pre_war_capacities=snakemake.params.pre_war,
-                nice_tech_names=snakemake.params.nice_tech_names,
-                nice_scenario_names=snakemake.params.nice_scenario_names,
-                scenarios=snakemake.params.scenarios,
-                scenario_colors=snakemake.params.scenario_colors,
-                storage_techs=snakemake.params.storage_techs,
-            )
-        case _:
-            raise ValueError("Unknown chart type.")
+    chart = plot_all_capacities(
+        power_capacities=pd.read_csv(snakemake.input.power_capacities, index_col=0),
+        energy_capacities=pd.read_csv(snakemake.input.energy_capacities, index_col=0),
+        pre_war_capacities=snakemake.params.pre_war,
+        nice_tech_names=snakemake.params.nice_tech_names,
+        nice_scenario_names=snakemake.params.nice_scenario_names,
+        scenarios=snakemake.params.scenarios,
+        scenario_colors=snakemake.params.scenario_colors,
+        generation_techs=snakemake.params.generation_techs,
+        storage_techs=snakemake.params.storage_techs,
+        demand_techs=snakemake.params.demand_techs,
+        energy_techs=snakemake.params.energy_techs
+    )
     chart.save(snakemake.output[0])
