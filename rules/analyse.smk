@@ -39,7 +39,8 @@ rule generation:
 rule assumptions:
     message: "Generate table of assumptions."
     input:
-        cost = "pypsa-eur/resources/only-renewables-high/costs.csv"
+        cost = "pypsa-eur/resources/only-renewables-high/costs.csv",
+        sources = "data/sources-cost-data.csv"
     params:
         technologies = [
             "onwind", "offwind", "solar", "nuclear", "hydro", "PHS", "biomass",

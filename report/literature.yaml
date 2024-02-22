@@ -453,6 +453,27 @@ references:
   URL: https://www.sciencedirect.com/science/article/pii/S2542435123000776
   volume: '7'
 
+- id: DanishEnergyAgency:2016
+  abstract: >-
+    The Danish Energy Agency publishes catalogues of technology data for energy
+    technologies.
+  accessed:
+    - year: 2024
+      month: 2
+      day: 22
+  author:
+    - literal: Danish Energy Agency
+  citation-key: DanishEnergyAgency:2016
+  container-title: The Danish Energy Agency
+  issued:
+    - year: 2016
+      month: 8
+      day: 25
+  language: en
+  title: Technology Data
+  type: webpage
+  URL: https://ens.dk/en/our-services/projections-and-models/technology-data
+
 - id: Demand.ninja:2023
   accessed:
     - year: 2023
@@ -859,6 +880,24 @@ references:
   title: The cost of financing for renewable power
   type: report
 
+- id: JRC:2014
+  accessed:
+    - year: 2017
+      month: 10
+      day: 18
+  author:
+    - literal: JRC
+  citation-key: JRC:2014
+  issued:
+    - year: 2014
+  language: en
+  publisher: JRC
+  title: ETRI 2014 -- Energy Technology Reference Indicator projections for 2010-2050
+  title-short: ETRI 2014
+  type: report
+  URL: >-
+    https://setis.ec.europa.eu/related-jrc-activities/jrc-setis-reports/etri-2014
+
 - id: Koster:2012
   accessed:
     - year: 2019
@@ -946,6 +985,35 @@ references:
   type: article-journal
   URL: https://www.sciencedirect.com/science/article/pii/S0360319920336818
   volume: '46'
+
+- id: Lazard:2019
+  author:
+    - literal: Lazard
+  citation-key: Lazard:2019
+  issued:
+    - year: 2019
+  language: en
+  source: Zotero
+  title: Lazard’s Levelized Cost of Energy Analysis—Version 13.0
+  type: report
+  URL: >-
+    https://www.lazard.com/media/o3ln2wve/lazards-levelized-cost-of-energy-version-130-vf.pdf
+
+- id: Lazard:2023
+  accessed:
+    - year: 2024
+      month: 2
+      day: 22
+  author:
+    - literal: Lazard
+  citation-key: Lazard:2023
+  issued:
+    - year: 2023
+      month: 4
+  language: en
+  title: Lazard’s Levelized Cost of Energy Analysis—Version 16.0
+  type: report
+  URL: https://www.lazard.com/media/typdgxmm/lazards-lcoeplus-april-2023.pdf
 
 - id: Mehlig:2021
   abstract: >-
@@ -1286,6 +1354,35 @@ references:
   URL: >-
     https://background.tagesspiegel.de/energie-klima/windkraft-eldorado-der-ukraine-vor-der-offensive
 
+- id: Schroder:2013
+  accessed:
+    - year: 2017
+      month: 10
+      day: 12
+  author:
+    - family: Schröder
+      given: Andreas
+    - family: Kunz
+      given: Friedrich
+    - family: Meiss
+      given: Jan
+    - family: Mendelevitch
+      given: Roman
+    - family: Hirschhausen
+      given: Christian
+      non-dropping-particle: von
+  citation-key: Schroder:2013
+  event-place: Berlin
+  genre: Text
+  issued:
+    - year: 2013
+  language: en
+  publisher: DIW
+  publisher-place: Berlin
+  title: Current and Prospective Costs of Electricity Generation until 2050
+  type: report
+  URL: http://www.diw.de/sixcms/detail.php?id=diw_01.c.424588.de
+
 - id: Sin:2009
   abstract: >-
     The parameter importance ranking in the Morris method is based on elementary
@@ -1570,6 +1667,25 @@ references:
     for fully renewable electricity in Europe
   type: article-journal
   volume: '4'
+
+- id: U.S.EnergyInformationAdministration:2023
+  abstract: >-
+    Energy Information Administration - EIA - Official Energy Statistics from
+    the U.S. Government
+  accessed:
+    - year: 2024
+      month: 2
+      day: 22
+  author:
+    - literal: U.S. Energy Information Administration
+  citation-key: U.S.EnergyInformationAdministration:2023
+  issued:
+    - year: 2023
+      month: 3
+      day: 16
+  title: Annual Energy Outlook 2023 - U.S. Energy Information Administration (EIA)
+  type: webpage
+  URL: https://www.eia.gov/outlooks/aeo/index.php
 
 - id: Ukraine:2021
   accessed:
