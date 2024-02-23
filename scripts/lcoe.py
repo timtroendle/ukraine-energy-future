@@ -27,7 +27,7 @@ def lcoe_all(scenarios: list[Scenario]) -> pd.Series:
 def lcoe(scenario: Scenario) -> pd.Series:
     network = scenario.n
     system = pd.Series(
-        index=["System LCOE (€/MWh)"],
+        index=["System LCOE (EUR/MWh)"],
         data=total_cost_network(network) / demand_network(network)
     )
     components = components_lcoe(network)

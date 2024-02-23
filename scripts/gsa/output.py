@@ -5,7 +5,7 @@ from SALib.analyze.morris import analyze as morris_analyze
 
 
 def determine_sensitivities(parameters: dict[str: dict[str: float]], path_to_lcoe: str,
-                            x: pd.DataFrame, seed: int) -> (pd.DataFrame, pd.Series):
+                            x: pd.DataFrame, seed: int) -> tuple[pd.DataFrame, pd.Series]:
     problem = create_problem(parameters)
     lcoes = read_lcoe(path_to_lcoe)
     Y = y(x, lcoes)
@@ -37,7 +37,7 @@ def read_lcoe(path_to_file: str) -> xr.DataArray:
         .drop_duplicates(["scenario", "opts"])
         .set_index(["scenario", "opts"])
         .to_xarray()
-        ["System LCOE (€/MWh)"]
+        ["System LCOE (EUR/MWh)"]
     )
 
 
