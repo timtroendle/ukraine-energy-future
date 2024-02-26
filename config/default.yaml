@@ -248,11 +248,11 @@ report:
             resolution: H
     scenario-colors:
         pre-war: "#424242"
-        nuclear-and-renewables-low: "#FCDC98"
-        nuclear-and-renewables-high: "#FABC3C"
+        nuclear-and-renewables-low: "#EC6E69"
+        nuclear-and-renewables-high: "#A01914"
         nuclear-and-renewables-today: "#EEFA3C"
-        only-renewables-low: "#A0CB71"
-        only-renewables-high: "#679436"
+        only-renewables-low: "#FCDC98"
+        only-renewables-high: "#FABC3C"
         only-renewables-scaled: "#BFE90D"
     components:
         mapping:
