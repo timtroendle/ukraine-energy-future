@@ -46,15 +46,22 @@ $if(title)$
 $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
-$for(author)$
-<p class="author">$author$</p>
+<p class="author">
+    $for(author-institute)$
+    $author-institute.name$<sup>$author-institute.institute$</sup>$sep$, $endfor$
+</p>
+<div class="institute">
+$for(institute)$
+<p class="institute"><sup>$institute.id$</sup>$institute.name$</p>
 $endfor$
+<p class="institute">*Correspondence: $correspondence$</p>
+</div>
 $if(date)$
 <p class="date">$date$</p>
 $endif$
 $if(abstract)$
 <div class="abstract">
-<div class="abstract-title">$abstract-title$</div>
+<h1 class="abstract-title">$abstract-title$</h1>
 $abstract$
 </div>
 $endif$

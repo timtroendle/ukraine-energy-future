@@ -1,0 +1,18 @@
+h1.title {
+    line-height: 100%;
+}
+
+p.author {
+    line-height: 1em;
+    hyphens: none;
+    font-style: normal;
+}
+
+p.institute {
+    font-style: italic;
+    line-height: .3em;
+}
+div.institute {
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+}

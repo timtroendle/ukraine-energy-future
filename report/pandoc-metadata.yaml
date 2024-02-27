@@ -8,7 +8,29 @@ author:
     - Fabian Neumann
     - Iain Staffell
     - Anthony Patt
-institute: ETH Zürich
+correspondence: tim.troendle@usys.ethz.ch
+author-institute:
+    -   name: Tim Tröndle
+        institute: 1, *
+    -   name: Olena Melnyk
+        institute: 1
+    -   name: Olena Tutova
+        institute: 1
+    -   name: Vira Porieva
+        institute: 1
+    -   name: Fabian Neumann
+        institute: 2
+    -   name: Iain Staffell
+        institute: 3
+    -   name: Anthony Patt
+        institute: 1
+institute:
+    -   id: 1
+        name: Institute for Environmental Decisions, ETH Zurich, Switzerland
+    -   id: 2
+        name: Institute of Energy Technology, Technische Universität Berlin, Germany
+    -   id: 3
+        name: Centre for Environmental Policy, Imperial College London, UK
 keywords:
     - decarbonisation
     - energy system
@@ -16,6 +38,7 @@ keywords:
     - nuclear electricity
     - renewable electricity
     - crisis
+abstract-title: Summary
 abstract: |
     Since Russia’s 2022 invasion, Ukraine’s civilian energy infrastructure has faced systematic attack
     and requires urgent and strategic reconstruction. This study confronts the dual challenges of
@@ -34,6 +57,7 @@ link-citations: True
 css:
     - https://timtroendle.github.io/signature-layout/layout/reset.css
     - https://timtroendle.github.io/signature-layout/layout/article.css
+    - more.css
 lang: en-GB
 figureTemplate: <span>$$figureTitle$$ $$i$$$$titleDelim$$</span> $$t$$
 tableTemplate: <span>$$tableTitle$$ $$i$$$$titleDelim$$</span> $$t$$

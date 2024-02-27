@@ -34,9 +34,9 @@ rule all:
 def pandoc_options(wildcards):
     suffix = wildcards["suffix"]
     if suffix == "html":
-        return "--embed-resources --standalone --to html5"
+        return "--embed-resources --standalone --template template.html --to html5"
     elif suffix == "pdf":
-        return "--pdf-engine weasyprint"
+        return "--template template.html --pdf-engine weasyprint"
     elif suffix == "docx":
         return []
     else:
@@ -50,6 +50,8 @@ rule report:
         "report/report.md",
         "report/pandoc-metadata.yaml",
         "report/joule.csl",
+        "report/template.html",
+        "report/more.css",
         "build/assumptions.csv",
         "build/gsa-parameters.csv",
         "data/final-energy.csv",
@@ -85,6 +87,8 @@ rule supplementary:
         "report/pandoc-metadata.yaml",
         "report/joule.csl",
         "report/supplementary.css",
+        "report/template.html",
+        "report/more.css",
         "build/results/lcoe-all.png",
         "build/results/capacities-all.png",
         "build/results/generation-all.png",

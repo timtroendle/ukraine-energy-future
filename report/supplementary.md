@@ -4,6 +4,7 @@ abstract:
 css:
     - https://timtroendle.github.io/signature-layout/layout/reset.css
     - https://timtroendle.github.io/signature-layout/layout/article.css
+    - more.css
     - supplementary.css
 figLabels: [S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15]
 linkReferences: False
