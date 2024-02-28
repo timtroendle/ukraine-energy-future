@@ -6,6 +6,7 @@ import pypsa
 
 MW_TO_GW = 1e-3
 
+
 @dataclass
 class Scenario:
     n: pypsa.Network
@@ -47,12 +48,12 @@ def aggregated_energy_capacities(n: pypsa.Network) -> pd.Series:
 
 
 if __name__ == "__main__":
-    scenarios=(
+    scenarios = (
         Scenario(n=pypsa.Network(path_to_n), opt_in_name=snakemake.params.opts_out)
         for path_to_n in snakemake.input.scenarios
     )
     power = all_aggregated_capacities(scenarios, aggregated_power_capacities)
-    scenarios=(
+    scenarios = (
         Scenario(n=pypsa.Network(path_to_n), opt_in_name=snakemake.params.opts_out)
         for path_to_n in snakemake.input.scenarios
     )
