@@ -48,8 +48,9 @@ abstract: |
     comparable to those from fossil fuels and nuclear power. Contrary to previous reliance on
     high-carbon energy sources, we find a diversified renewable energy portfolio, including significant
     solar photovoltaic and wind contributions, can efficiently meet growing energy demands and position
-    Ukraine as an energy exporter, leveraging its geographical advantages. The implications of our study
-    extend beyond national borders, offering a model for post-conflict reconstruction that harmonizes
+    Ukraine as an energy exporter, leveraging its geographical advantages. The approach of our study,
+    based on open data and models,
+    extends beyond national borders and offers a model for post-conflict reconstruction that harmonizes
     immediate recovery with sustainable energy transition.
 bibliography: literature.yaml
 csl: cell.csl

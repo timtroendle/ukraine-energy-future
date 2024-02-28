@@ -363,7 +363,8 @@ rule gsa_output:
 rule gsa_vis:
     message: "Visualise sensitivities."
     input:
-        sensitivities = rules.gsa_output.output.sensitivities
+        sensitivities = rules.gsa_output.output.sensitivities,
+        lcoe = "build/results/lcoe.csv"
     output: "build/results/gsa/sensitivities.vega.json"
     conda: "../envs/default.yaml"
     script: "../scripts/vis/morris.py"

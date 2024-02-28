@@ -5,12 +5,13 @@ DARK_GREY = "#424242"
 WIDTH = 421
 
 
-def visualise_sensitivities(sensitivities: pd.DataFrame) -> alt.Chart:
+def visualise_sensitivities(sensitivities: pd.DataFrame, cost_penalty: float) -> alt.Chart:
     sensitivities = (
         sensitivities
         .assign(
             upper=lambda df: df.mu + df.sigma,
             lower=lambda df: df.mu - df.sigma,
+            baseline=-cost_penalty,
             names=lambda df: (
                 df
                 .names
@@ -46,9 +47,15 @@ def visualise_sensitivities(sensitivities: pd.DataFrame) -> alt.Chart:
             x2=alt.X2("upper", title=None)
         )
     )
+    baseline = (
+        alt
+        .Chart(sensitivities)
+        .mark_rule(color=DARK_GREY, strokeDash=[2], opacity=0.8)
+        .encode(x=alt.X("baseline:Q"))
+    )
 
     return (
-        (bar + errorbar)
+        (baseline + bar + errorbar)
         .configure(font="Lato")
         .configure_title(anchor='start', fontSize=12, color=DARK_GREY)
         .configure_axis(titleColor=DARK_GREY, labelColor=DARK_GREY)
@@ -58,7 +65,10 @@ def visualise_sensitivities(sensitivities: pd.DataFrame) -> alt.Chart:
 
 
 if __name__ == "__main__":
+    lcoe = pd.read_csv(snakemake.input.lcoe, index_col=0)["System LCOE (EUR/MWh)"]
+    cost_penalty = lcoe["nuclear-and-renewables-high"] - lcoe["only-renewables-high"]
     chart = visualise_sensitivities(
-        pd.read_csv(snakemake.input.sensitivities)
+        pd.read_csv(snakemake.input.sensitivities),
+        cost_penalty=cost_penalty
     )
     chart.save(snakemake.output[0])

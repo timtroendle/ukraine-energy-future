@@ -49,6 +49,39 @@ references:
   URL: >-
     https://uabio.org/wp-content/uploads/2020/05/Final_UA_Path_to_100_percent_renewables_Ukraine.pdf
 
+- id: Becker:2022
+  accessed:
+    - year: 2024
+      month: 2
+      day: 26
+  citation-key: Becker:2022
+  collection-editor:
+    - family: Becker
+      given: Torbjörn
+    - family: Eichengreen
+      given: Barry
+    - family: Gorodnichenko
+      given: Yuriy
+    - family: Guriev
+      given: Sergei
+    - family: Johnson
+      given: Simon
+    - family: Mylovanov
+      given: Tymofiy
+    - family: Rogoff
+      given: Kenneth
+    - family: Weder di Mauro
+      given: Beatrice
+  event-place: Paris & London
+  issued:
+    - year: 2022
+  publisher: CEPR Press
+  publisher-place: Paris & London
+  title: A Blueprint for the Reconstruction of Ukraine
+  type: report
+  URL: >-
+    https://cepr.org/publications/books-and-reports/blueprint-reconstruction-ukraine
+
 - id: Bersalli:2023
   abstract: >-
     As the climate targets tighten and countries are impacted by several crises,
@@ -544,6 +577,26 @@ references:
   type: report
   URL: https://www.energyinst.org/statistical-review
 
+- id: ENTSO-E:2022a
+  accessed:
+    - year: 2024
+      month: 2
+      day: 26
+  author:
+    - literal: ENTSO-E
+  citation-key: ENTSO-E:2022a
+  issued:
+    - year: 2022
+      month: 3
+      day: 16
+  language: en-us
+  title: >-
+    Continental Europe successful synchronisation with Ukraine and Moldova power
+    systems
+  type: webpage
+  URL: >-
+    https://www.entsoe.eu/news/2022/03/16/continental-europe-successful-synchronisation-with-ukraine-and-moldova-power-systems/
+
 - id: ENTSO-E:2023
   accessed:
     - year: 2023
@@ -626,6 +679,62 @@ references:
   type: article-journal
   URL: http://ihe.nas.gov.ua/index.php/journal/article/view/396
   volume: '42'
+
+- id: Gernaat:2017
+  accessed:
+    - year: 2020
+      month: 4
+      day: 2
+  author:
+    - family: Gernaat
+      given: David E. H. J.
+    - family: Bogaart
+      given: Patrick W.
+    - family: Vuuren
+      given: Detlef P.
+      dropping-particle: van
+    - family: Biemans
+      given: Hester
+    - family: Niessink
+      given: Robin
+  citation-key: Gernaat:2017
+  container-title: Nature Energy
+  container-title-short: Nat Energy
+  DOI: 10.1038/s41560-017-0006-y
+  ISSN: 2058-7546
+  issue: '10'
+  issued:
+    - year: 2017
+      month: 10
+  language: en
+  page: 821-828
+  source: DOI.org (Crossref)
+  title: >-
+    High-resolution assessment of global technical and economic hydropower
+    potential
+  type: article-journal
+  URL: http://www.nature.com/articles/s41560-017-0006-y
+  volume: '2'
+
+- id: GreenDealUkraine:2024
+  accessed:
+    - year: 2024
+      month: 2
+      day: 26
+  author:
+    - literal: Green Deal Ukraïne
+  citation-key: GreenDealUkraine:2024
+  event-place: Berlin / Warsaw / Kyiv
+  issued:
+    - year: 2024
+      month: 2
+  language: en
+  publisher: Green Deal Ukraïne
+  publisher-place: Berlin / Warsaw / Kyiv
+  title: Proposals for a green recovery in Ukraine
+  type: report
+  URL: >-
+    https://greendealukraina.org/products/analytical-reports/proposals-for-a-green-recovery-in-ukraine
 
 - id: Herman:2017
   accessed:
@@ -878,6 +987,25 @@ references:
   title: World Energy Balances
   type: dataset
   URL: https://www.iea.org/data-and-statistics/data-product/world-energy-balances
+
+- id: IKEM:2023
+  accessed:
+    - year: 2024
+      month: 2
+      day: 26
+  author:
+    - literal: IKEM
+  citation-key: IKEM:2023
+  event-place: Berlin
+  issued:
+    - year: 2023
+  publisher: IKEM
+  publisher-place: Berlin
+  title: >-
+    Renewable-Energy Generation: Roadmap for a climate-neutral, sustainable
+    Ukrainian energy sector and its role in an integrated EU energy market ​​
+  type: report
+  URL: https://www.ikem.de/en/europe-ukraine-energy-transition-hub/
 
 - id: IRENA:2023
   author:
@@ -1679,6 +1807,43 @@ references:
   type: article-journal
   volume: '4'
 
+- id: Trypolska:2021
+  accessed:
+    - year: 2024
+      month: 2
+      day: 28
+  author:
+    - family: Trypolska
+      given: Galyna
+    - family: Kryvda
+      given: Olena
+    - family: Kurbatova
+      given: Tetiana
+    - family: Andrushchenko
+      given: Olesya
+    - family: Suleymanov
+      given: Chingiz
+    - family: Brydun
+      given: Brydun
+  citation-key: Trypolska:2021
+  container-title: International Journal of Energy Economics and Policy
+  container-title-short: IJEEP
+  DOI: 10.32479/ijeep.11635
+  ISSN: '21464553'
+  issue: '6'
+  issued:
+    - year: 2021
+      month: 11
+      day: 5
+  page: 98-105
+  source: DOI.org (Crossref)
+  title: >-
+    Impact of new renewable electricity generating capacities on employment in
+    Ukraine in 2021-2030
+  type: article-journal
+  URL: https://econjournals.com/index.php/ijeep/article/view/11635
+  volume: '11'
+
 - id: U.S.EnergyInformationAdministration:2023
   abstract: >-
     Energy Information Administration - EIA - Official Energy Statistics from
@@ -1968,4 +2133,75 @@ references:
   title: Agriculture, forestry, and fishing, value added (% of GDP)
   type: dataset
   URL: https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS
+
+- id: Zachmann:2023
+  accessed:
+    - year: 2024
+      month: 2
+      day: 26
+  author:
+    - family: Zachmann
+      given: ''
+    - family: Iakovenko
+      given: ''
+    - family: Meissner
+      given: ''
+    - family: Naumenko
+      given: ''
+    - family: Naumenko
+      given: ''
+  citation-key: Zachmann:2023
+  event-place: Kyiv
+  issued:
+    - year: 2023
+      month: 10
+      day: 9
+  publisher: green deal Ukraina
+  publisher-place: Kyiv
+  title: Thinking about Ukraine's energy future
+  type: report
+  URL: https://greendealukraina.org/products/analytical-reports
+
+- id: Zuk:2022
+  abstract: >-
+    <p>Piotr Żuk—professor of sociology and president of the Institute for
+    Sustainable Development and Renewable Energy Foundation. His main research
+    interests are social movements (ecological, labor, climate), obstacles to
+    environmental policy in Eastern Europe, energy policy, and energy
+    transition. He analyzes the decarbonization process, the social aspects of
+    the mining industry and the development of the civil energy
+    sector.</p><p>Paweł Żuk—doctor of sociology and employee of the Department
+    of Sociology and Social Policy of The Wrocław University of Economics and
+    Business. His main research interests are social inequalities, energy
+    poverty, energy transition, and political sociology.</p>
+  accessed:
+    - year: 2024
+      month: 2
+      day: 26
+  author:
+    - family: Żuk
+      given: Piotr
+    - family: Żuk
+      given: Paweł
+  citation-key: Zuk:2022
+  container-title: Joule
+  container-title-short: Joule
+  DOI: 10.1016/j.joule.2022.03.009
+  ISSN: 2542-4785, 2542-4351
+  issue: '4'
+  issued:
+    - year: 2022
+      month: 4
+      day: 20
+  language: English
+  page: 709-712
+  publisher: Elsevier
+  source: www.cell.com
+  title: >-
+    National energy security or acceleration of transition? Energy policy after
+    the war in Ukraine
+  title-short: National energy security or acceleration of transition?
+  type: article-journal
+  URL: https://www.cell.com/joule/abstract/S2542-4351(22)00136-2
+  volume: '6'
 ...
