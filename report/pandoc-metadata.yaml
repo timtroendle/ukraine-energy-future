@@ -38,7 +38,7 @@ keywords:
     - nuclear electricity
     - renewable electricity
     - crisis
-abstract-title: Summary
+abstract-title: Abstract
 abstract: |
     Since Russia’s 2022 invasion, Ukraine’s civilian energy infrastructure has faced systematic attack
     and requires urgent and strategic reconstruction. This study confronts the dual challenges of
@@ -53,7 +53,7 @@ abstract: |
     extends beyond national borders and offers a model for post-conflict reconstruction that harmonizes
     immediate recovery with sustainable energy transition.
 bibliography: literature.yaml
-csl: cell.csl
+csl: environmental-research-letters.csl
 link-citations: True
 css:
     - https://timtroendle.github.io/signature-layout/layout/reset.css
@@ -75,5 +75,5 @@ secPrefix:
     - "Section"
     - "Sections"
 linkReferences: True
-date: 2024-02-29
+date: 2024-03-13
 ---
