@@ -279,6 +279,84 @@ references:
   URL: http://www.sciencedirect.com/science/article/pii/S0360544215008385
   volume: '90'
 
+- id: Breyer:2023
+  abstract: >-
+    Multiple energy-related crises require a fast transition towards a
+    sustainable energy system. The European Green Deal aims for zero CO2
+    emission by 2050, while accelerating climate change impacts obligate a
+    faster phase-out of fossil fuels. Energy transition studies for Europe at
+    and near 100% renewable energy are used as a benchmark for two newly
+    introduced scenarios for Europe reaching zero CO2 emissions by 2050 and
+    2040. A technology-rich energy system model was applied in hourly resolution
+    for Europe in 20 interconnected regions and in full sector coupling covering
+    all energy demands. The results reveal a cost-neutral energy transition
+    towards 2050 based on declining levelised cost of electricity and a pathway
+    with 9% higher energy costs leading to 17% lower total CO2 emissions with an
+    accelerated energy transition by 2040. The two scenarios find shares of
+    solar photovoltaic (PV) in total generation of 61%–63% by 2050, the highest
+    ever estimated for Europe, still below the highest global average shares
+    ranging between 75% and 77% form three independent studies. The central
+    energy system components are solar PV, wind power, batteries, electrolysers
+    and CO2 direct air capture for carbon capture and utilisation. The core
+    characteristic of the European energy future may be best described by a
+    power-to-X economy, which may evolve on the global scale to a solar-to-X
+    economy.
+  accessed:
+    - year: 2024
+      month: 5
+      day: 21
+  author:
+    - family: Breyer
+      given: Christian
+    - family: Bogdanov
+      given: Dmitrii
+    - family: Ram
+      given: Manish
+    - family: Khalili
+      given: Siavash
+    - family: Vartiainen
+      given: Eero
+    - family: Moser
+      given: David
+    - family: Román Medina
+      given: Eduardo
+    - family: Masson
+      given: Gaëtan
+    - family: Aghahosseini
+      given: Arman
+    - family: Mensah
+      given: Theophilus N. O.
+    - family: Lopez
+      given: Gabriel
+    - family: Schmela
+      given: Michael
+    - family: Rossi
+      given: Raffaele
+    - family: Hemetsberger
+      given: Walburga
+    - family: Jäger-Waldau
+      given: Arnulf
+  citation-key: Breyer:2023
+  container-title: 'Progress in Photovoltaics: Research and Applications'
+  DOI: 10.1002/pip.3659
+  ISSN: 1099-159X
+  issue: '12'
+  issued:
+    - year: 2023
+  language: en
+  license: >-
+    © 2022 The Authors. Progress in Photovoltaics: Research and Applications
+    published by John Wiley & Sons Ltd.
+  page: 1369-1395
+  source: Wiley Online Library
+  title: >-
+    Reflecting the energy transition from a European perspective and in the
+    global context—Relevance of solar photovoltaics benchmarking two ambitious
+    scenarios
+  type: article-journal
+  URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/pip.3659
+  volume: '31'
+
 - id: Brown:2021a
   abstract: >-
     Preventing global warming in excess of 1.5°C–2°C requires a transition to
@@ -485,6 +563,28 @@ references:
   type: article-journal
   URL: https://www.sciencedirect.com/science/article/pii/S2542435123000776
   volume: '7'
+
+- id: Child:2016
+  accessed:
+    - year: 2024
+      month: 5
+      day: 21
+  author:
+    - family: Child
+      given: Michael
+    - family: Bogdanov
+      given: Dmitrii
+    - family: Breyer
+      given: Christian
+  citation-key: Child:2016
+  DOI: 10.13140/RG.2.2.10731.54564
+  issued:
+    - year: 2016
+  publisher: Unpublished
+  source: DOI.org (Datacite)
+  title: Transition towards a 100% Renewable Energy System by 2050 for Ukraine
+  type: article
+  URL: http://rgdoi.net/10.13140/RG.2.2.10731.54564
 
 - id: DanishEnergyAgency:2016
   abstract: >-
@@ -1400,6 +1500,38 @@ references:
   type: article
   URL: https://papers.ssrn.com/abstract=4005084
 
+- id: Osadcha:2024
+  abstract: "The economy of Ukraine is partially destroyed and poses an energy threat to European countries. The article analyzes trends in the development of consumption in Ukraine, and assesses the prospects for development. Energy Ukraine's system depends on fossil fuels. The government sought to diversify risks and ensure sustainable development. The energy consumption market is characterized by a decline and an increase in the use of gas.  \nThe article develops cases for making decisions on the necessary investments in the energy system of Ukraine after the war. We analyze energy consumption trends and justify the need for investment in the nuclear industry, which occupies a large part of the country's energy consumption. A model for assessing and forecasting the energy consumption market has been developed. The model shows an upward trend in oil and gas consumption. Our approach allows us to quantify the net increase in energy consumption in the future.\_ \nKeywords: energy, energy supply, renewable energy, energy strategy, energy resources"
+  accessed:
+    - year: 2024
+      month: 5
+      day: 21
+  author:
+    - family: Osadcha
+      given: Natalia
+    - family: Zaverbnyj
+      given: Andrij
+  citation-key: Osadcha:2024
+  container-title: European Journal of Sustainable Development
+  container-title-short: EJSD
+  DOI: 10.14207/ejsd.2024.v13n1p185
+  ISSN: 2239-6101, 2239-5938
+  issue: '1'
+  issued:
+    - year: 2024
+      month: 2
+      day: 1
+  license: https://creativecommons.org/licenses/by-nc/4.0
+  page: '185'
+  source: DOI.org (Crossref)
+  title: >-
+    Assessment of the Energy System of Ukraine: Ways of Recovery, Cases of
+    Development
+  title-short: Assessment of the Energy System of Ukraine
+  type: article-journal
+  URL: http://ecsdev.org/ojs/index.php/ejsd/article/view/1506
+  volume: '13'
+
 - id: Penn:2023
   abstract: >-
     The project that NuScale Power and Western energy companies had developed
@@ -2034,33 +2166,6 @@ references:
   title: 'Protected Planet: The World Database on Protected Areas (WDPA)'
   type: webpage
   URL: https://www.protectedplanet.net/
-
-- id: UnitedNations:2022
-  accessed:
-    - year: 2024
-      month: 5
-      day: 21
-  author:
-    - literal: United Nations
-  citation-key: UnitedNations:2022
-  collection-title: >-
-    Statistical Papers - United Nations (Ser. A), Population and Vital
-    Statistics Report
-  DOI: 10.18356/9789210014380
-  ISBN: 978-92-1-001438-0
-  issued:
-    - year: 2022
-      month: 8
-      day: 23
-  language: en
-  publisher: United Nations
-  source: DOI.org (Crossref)
-  title: >-
-    World Population Prospects 2022: Methodology of the United Nations
-    population estimates and projections
-  title-short: World Population Prospects 2022
-  type: book
-  URL: https://www.un-ilibrary.org/content/books/9789210014380
 
 - id: UnitedNationsDepartmentofEconomicandSocialAffairsPopulationDivision:2022
   author:
