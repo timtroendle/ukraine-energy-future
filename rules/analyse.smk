@@ -87,6 +87,16 @@ rule plot_load_validation:
     script: "../scripts/vis/validation.py"
 
 
+rule plot_population:
+    message: "Plot population."
+    input:
+        population = "build/data/population.feather",
+    output:
+        "build/results/population.vega.json"
+    conda: "../envs/default.yaml"
+    script: "../scripts/vis/population.py"
+
+
 rule plot_capacities:
     message: "Plot capacities."
     input:

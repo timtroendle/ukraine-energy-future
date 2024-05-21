@@ -1,6 +1,7 @@
 # generated files
 build/
 report/build
+data/automatic
 
 notebooks
 

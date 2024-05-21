@@ -10,6 +10,10 @@ figLabels: [S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15]
 linkReferences: False
 ---
 
+# @fig:population: Population projection
+
+![**Projection of Ukraine's population.** Source: UN World Population Prospects 2022 [@UnitedNationsDepartmentofEconomicandSocialAffairsPopulationDivision:2022]](build/results/population.png){#fig:population}
+
 # @fig:lcoe: Levelised system cost of electricity for both economic growth scenarios
 
 ![**Cost breakdown of levelised system cost of electricity.** Cost for scenarios with fully-electrified heat and transport sectors, average cost assumptions, and medium-low and medium-high economic growth assumptions. Storage includes hydrogen, battery, and pumped-hydro storage.](build/results/lcoe-all.png){#fig:lcoe}

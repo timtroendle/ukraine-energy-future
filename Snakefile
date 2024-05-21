@@ -3,6 +3,7 @@ PANDOC = "pandoc --filter pantable --filter pandoc-crossref --citeproc"
 
 configfile: "config/default.yaml"
 include: "./rules/sync.smk"
+include: "./rules/preprocess.smk"
 include: "./rules/pypsa.smk"
 include: "./rules/analyse.smk"
 include: "./rules/utils.smk"
@@ -89,6 +90,7 @@ rule supplementary:
         "report/supplementary.css",
         "report/template.html",
         "report/more.css",
+        "build/results/population.png",
         "build/results/lcoe-all.png",
         "build/results/capacities-all.png",
         "build/results/generation-all.png",
