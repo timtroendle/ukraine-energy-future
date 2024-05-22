@@ -48,7 +48,8 @@ rule assumptions:
         ],
         parameters = ["FOM", "VOM", "investment", "lifetime"],
         parameter_to_format_string = {"FOM": ".1f", "investment": ".0f", "lifetime": ".0f"},
-        biomass_parameters = config["pypsa-eur"]["biomass"]
+        biomass_parameters = config["pypsa-eur"]["biomass"],
+        solar_investment = 388 # value provided by Fabian as this is calculated in code
     output:
         "build/assumptions.csv"
     conda: "../envs/default.yaml"

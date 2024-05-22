@@ -1,19 +1,27 @@
+import contextlib
+
 import pandas as pd
 
 
-def assumption_table(costs: pd.DataFrame, sources: pd.DataFrame, technologies: list[str], parameters: list[str],
-                     biomass_params: dict[str, str], parameter_to_format_string: dict[str, str]) -> pd.DataFrame:
+def assumption_table(
+    costs: pd.DataFrame,
+    sources: pd.DataFrame,
+    technologies: list[str],
+    parameters: list[str],
+    biomass_params: dict[str, str],
+    solar_investment: float,
+    parameter_to_format_string: dict[str, str],
+) -> pd.DataFrame:
     for parameter, value in biomass_params.items():
-        try:
+        with contextlib.suppress(
+            KeyError
+        ):  # This means the parameter is not in the costs df and that's fine.
             costs.loc[("biomass", parameter), "value"] = value
-        except KeyError:
-            pass # This means the parameter is not in the costs df and that's fine.
+    costs.loc[("solar", "investment"), "value"] = solar_investment
     return (
-        costs
-        .to_xarray()
+        costs.to_xarray()
         .sel(technology=technologies, parameter=parameters)
-        .value
-        .to_dataframe()
+        .value.to_dataframe()
         .unstack("parameter")["value"]
         .assign(**{
             col_name: format_float_col(col_name, fmt_str)
@@ -27,13 +35,13 @@ def assumption_table(costs: pd.DataFrame, sources: pd.DataFrame, technologies: l
 def format_float_col(col: str, fmt_str: str):
     def format_col(df: pd.DataFrame):
         return df[col].map(lambda cell: f"{cell:{fmt_str}}")
+
     return format_col
 
 
 def nice_name(name: str) -> str:
     return (
-        name
-        .replace("onwind", "onshore wind")
+        name.replace("onwind", "onshore wind")
         .replace("offwind", "offshore wind")
         .replace("PHS", "pumped-hydro storage")
         .capitalize()
@@ -49,6 +57,7 @@ if __name__ == "__main__":
         technologies=snakemake.params.technologies,
         parameters=snakemake.params.parameters,
         parameter_to_format_string=snakemake.params.parameter_to_format_string,
-        biomass_params=snakemake.params.biomass_parameters
+        biomass_params=snakemake.params.biomass_parameters,
+        solar_investment=snakemake.params.solar_investment,
     )
     table.to_csv(snakemake.output[0], index=True, header=True)

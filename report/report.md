@@ -86,10 +86,11 @@ Furthermore, dense shipping lanes are excluded based on the World Bank's Global 
 Wind parks further out than 30\ km from shore are assumed to be DC-connected, whereas near-shore wind parks are assumed to be AC-connected (Supplementary Figures\ S10 and S11).
 For each renewable technology and region, the available area is multiplied with allowed deployment densities, approximating the socio-technical potential.
 These densities are 3\ MW/km^2^ for onshore wind, 2\ MW/km^2^ for offshore wind, 1.7\ MW/km^2^ for solar.
+The densities are based on purely technical estimations reported by @Scholz:2012, and our own assumption that only 30%, 20%, and 1% of eligible areas are available for onshore wind, offshore wind, and solar power.
 
 Second, based on the eligible areas per region, capacity factor time series for wind and solar generation are calculated using *atlite*.
 For this step, historical weather data for the years 2010--2014 from ECMWF's ERA5 reanalysis dataset [@Hersbach:2020] is used to convert wind speed and solar irradiance data to hourly capacity factors using models for typical wind turbines and solar panels.
-The solar generation is calculated based on the incidence angle of solar irradiation, the panel tilt angle and the conversion efficiency of CdTe panel.
+The solar generation is calculated based on the incidence angle of solar irradiation, the panel tilt angle and the conversion efficiency of Crystalline Silicon (CSi) solar panels.
 Power curves for a Vestas V112 3\ MW (onshore) and NREL 5\ MW (offshore) turbine are employed to map wind speeds scaled to hub height to power outputs.
 The capacity factors of offshore wind generation are multiplied with a correction factor of 88.55% to approximately account for wake effects [@Bosch:2018].
 Finally, the gridded dataset (0.25°x0.25°) is mapped onto the geographical shape of each region, using the available area as weighting.
@@ -98,7 +99,7 @@ We assume the future bioenergy potential to be 513\ TWh/yr (438\ TWh/yr solid bi
 
 ```table
 ---
-caption: '**Main technology assumptions of the model using projections for 2030.** Fixed operation and maintenance cost (FOM) is given in %/year. Variable operation and maintenance cost (VOM) is given in EUR~2015~/MWh. Investment cost are given in EUR~2015~/kW. Technology lifetime is given in years. See Supplementary Note S1 for more details on the cost of nuclear power. All values are given on the AC side. Cost of solar assumes a share of 50% rooftop and 50% utility-scale solar power. {#tbl:technology-cost}'
+caption: '**Main technology assumptions of the model using projections for 2030.** Fixed operation and maintenance cost (FOM) is given in %/year. Variable operation and maintenance cost (VOM) is given in EUR~2015~/MWh. Investment cost are given in EUR~2015~/kW. Technology lifetime is given in years. See Supplementary Note S1 for more details on the cost of nuclear power. All values are given on the AC side. Cost of solar assumes a share of 14% rooftop and 86% utility-scale solar power. {#tbl:technology-cost}'
 alignment: LRRRRR
 include: build/assumptions.csv
 include-encoding: UTF-8
@@ -191,7 +192,10 @@ Requests for further information, resources, and materials should be directed to
 
 The datasets generated during this study are available on Zenodo with DOI ==(after peer-review)==.
 
-The model code and all analysis steps are publicly available as a reproducible Snakemake [@Koster:2012] workflow on Zenodo with DOI ==(after peer-review)==.
+We also refer to the documentation of the PyPSA energy system modelling framework (https://pypsa.readthedocs.io) and of the European energy system model PyPSA-Eur (pypsa-eur.readthedocs.io) for technical instructions on how to
+install, modify and run the model as well as more detailed explanations of the model structure.
+
+The code of the specific version used, the configuration to reproduce the results and all analysis steps are publicly available as a reproducible Snakemake [@Koster:2012] workflow on Zenodo with DOI ==(after peer-review)==.
 
 # CRediT author statement
 **Conceptualisation**, T.T., and A.P.; **Methodology**, T.T., F.N., and I.S.; **Investigation**, T.T.; **Data curation**, T.T., O.M, O.T., F.N., and I.S.; **Formal analysis**, T.T., F.N., I.S.; **Software**, T.T., F.N., I.S.; **Visualisation**, T.T., and F.N.; **Writing -- original draft**, T.T., O.M, F.N., and I.S.; **Writing -- review & editing**, O.T., V.P., and A.P.; **Funding acquisition**: A.P.
