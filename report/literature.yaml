@@ -49,6 +49,37 @@ references:
   URL: >-
     https://uabio.org/wp-content/uploads/2020/05/Final_UA_Path_to_100_percent_renewables_Ukraine.pdf
 
+- id: Bauknecht:2020
+  accessed:
+    - year: 2019
+      month: 12
+      day: 18
+  author:
+    - family: Bauknecht
+      given: Dierk
+    - family: Funcke
+      given: Simon
+    - family: Vogel
+      given: Moritz
+  citation-key: Bauknecht:2020
+  container-title: Renewable and Sustainable Energy Reviews
+  container-title-short: Renewable and Sustainable Energy Reviews
+  DOI: 10.1016/j.rser.2019.109543
+  ISSN: '13640321'
+  issued:
+    - year: 2020
+      month: 2
+  language: en
+  page: '109543'
+  source: DOI.org (Crossref)
+  title: >-
+    Is small beautiful? A framework for assessing decentralised electricity
+    systems
+  title-short: Is small beautiful?
+  type: article-journal
+  URL: https://linkinghub.elsevier.com/retrieve/pii/S1364032119307518
+  volume: '118'
+
 - id: Becker:2022
   accessed:
     - year: 2024
@@ -497,6 +528,52 @@ references:
   URL: >-
     https://datacatalog.worldbank.org/search/dataset/0037580/Global-Shipping-Traffic-Density
 
+- id: Chepeliev:2021
+  abstract: >-
+    The development of renewable energy sources (RES) is considered to be a key
+    instrument in addressing climate change. However, different RES have
+    different potential and economic feasibility depending on country-specific
+    conditions and mitigation ambitions. Understanding the relative importance
+    of each RES could help policymakers focus their efforts on the most
+    promising options. In this paper, we focus on Ukraine and explore the
+    potential of biomass use under two mitigation scenarios – with 68% and 83%
+    of greenhouse gas emissions reduction in 2050 relative to the 2010 level.
+    First, using the TIMES-Ukraine energy system model, we show that biomass
+    would play a major role in the future climate mitigation. If constrained at
+    the baseline scenario level (due to political or other reasons), mitigation
+    costs would be substantially higher – by 14.0–19.6 B € or 10.8–14.3
+    €/tCO2-eq., over the 2020–2050 time frame. Second, we quantify the
+    importance of each biomass source. We show that woody biomass and bioliquids
+    are the most important biofuels under the high-ambition climate scenario,
+    while biowaste and bioliquids play a key role in the lower ambition pathway.
+    Finally, we analyse the current policy environment in the context of future
+    biomass development and conclude with a set of policy recommendations toward
+    the realization of the biomass potential in Ukraine. We believe that
+    findings presented in the paper would be relevant not only for supporting
+    the decision-making process in Ukraine, but could also provide useful
+    insights for other countries with similar conditions. © 2021
+  archive: Scopus
+  author:
+    - family: Chepeliev
+      given: M.
+    - family: Diachuk
+      given: O.
+    - family: Podolets
+      given: R.
+    - family: Trypolska
+      given: G.
+  citation-key: Chepeliev:2021
+  container-title: Renewable and Sustainable Energy Reviews
+  DOI: 10.1016/j.rser.2021.111714
+  ISSN: 1364-0321
+  issued:
+    - year: 2021
+  language: English
+  source: Scopus
+  title: The role of bioenergy in Ukraine's climate mitigation policy by 2050
+  type: article-journal
+  volume: '152'
+
 - id: Chepeliev:2023
   abstract: >-
     Dr. Maksym Chepeliev is a senior research economist at the Center for Global
@@ -586,6 +663,62 @@ references:
   type: article
   URL: http://rgdoi.net/10.13140/RG.2.2.10731.54564
 
+- id: Child:2017a
+  abstract: >-
+    A transition towards a 100% renewable energy (RE) power sector by 2050 is
+    investigated for Ukraine. Simulations using an hourly resolved model define
+    the roles of storage technologies in a least cost system configuration.
+    Results indicate that the levelised cost of electricity will fall from a
+    current level of 82 €/MWhe to 60 €/MWhe in 2050 through the adoption of low
+    cost RE power generation and improvements in efficiency. If the capacity in
+    2050 would have been invested for the cost assumptions of 2050, the cost
+    would be 54 €/MWhe, which can be expected for the time beyond 2050. In
+    addition, flexibility of and stability in the power system are provided by
+    increasing shares of energy storage solutions over time, in parallel with
+    expected price decreases in these technologies. Total storage requirements
+    include 0-139 GWhe of batteries, 9 GWhe of pumped hydro storage, and
+    0-18,840 GWhgas of gas storage for the time period. Outputs of power-to-gas
+    begin in 2035 when renewable energy production reaches a share of 86% in the
+    power system, increasing to a total of 13 TWhgas in 2050. A 100% RE system
+    can be a more economical and efficient solution for Ukraine, one that is
+    also compatible with climate change mitigation targets set out at COP21.
+    Achieving a sustainable energy system can aid in achieving other political,
+    economic and social goals for Ukraine, but this will require overcoming
+    several barriers through proper planning and supportive policies.
+  accessed:
+    - year: 2024
+      month: 5
+      day: 21
+  author:
+    - family: Child
+      given: Michael
+    - family: Breyer
+      given: Christian
+    - family: Bogdanov
+      given: Dmitrii
+    - family: Fell
+      given: Hans-Josef
+  citation-key: Child:2017a
+  collection-title: >-
+    11th International Renewable Energy Storage Conference, IRES 2017, 14-16
+    March 2017, Düsseldorf, Germany
+  container-title: Energy Procedia
+  container-title-short: Energy Procedia
+  DOI: 10.1016/j.egypro.2017.09.513
+  ISSN: 1876-6102
+  issued:
+    - year: 2017
+      month: 10
+      day: 1
+  page: 410-423
+  source: ScienceDirect
+  title: >-
+    The role of storage technologies for the transition to a 100% renewable
+    energy system in Ukraine
+  type: article-journal
+  URL: https://www.sciencedirect.com/science/article/pii/S1876610217346180
+  volume: '135'
+
 - id: DanishEnergyAgency:2016
   abstract: >-
     The Danish Energy Agency publishes catalogues of technology data for energy
@@ -602,6 +735,26 @@ references:
     - year: 2016
       month: 8
       day: 25
+  language: en
+  title: Technology Data
+  type: webpage
+  URL: https://ens.dk/en/our-services/projections-and-models/technology-data
+
+- id: DanishEnergyAgency:2022
+  abstract: >-
+    The Danish Energy Agency publishes catalogues of technology data for energy
+    technologies.
+  accessed:
+    - year: 2024
+      month: 2
+      day: 22
+  author:
+    - literal: Danish Energy Agency
+  citation-key: DanishEnergyAgency:2022
+  container-title: The Danish Energy Agency
+  issued:
+    - year: 2022
+      month: 3
   language: en
   title: Technology Data
   type: webpage
@@ -711,6 +864,44 @@ references:
   type: dataset
   URL: https://transparency.entsoe.eu/
 
+- id: Funcke:2016
+  abstract: >-
+    Scientific and public controversies about the design of future electricity
+    systems can be observed, including differences around centralised and
+    decentralised approaches. Taking the German case as an example, we develop a
+    typology of (de)centralisation that distinguishes between (1) infrastructure
+    location (connectivity and proximity), and (2) infrastructure operation
+    (flexibility and controllability). This typology is applied to two competing
+    visions for the future of electricity infrastructure. A differentiated view
+    of the various dimensions can contribute to the current debate, clarify
+    visions for development paths, and inform infrastructure governance.
+  accessed:
+    - year: 2018
+      month: 8
+      day: 2
+  author:
+    - family: Funcke
+      given: Simon
+    - family: Bauknecht
+      given: Dierk
+  citation-key: Funcke:2016
+  container-title: Utilities Policy
+  container-title-short: Utilities Policy
+  DOI: 10.1016/j.jup.2016.03.005
+  ISSN: 0957-1787
+  issued:
+    - year: 2016
+      month: 6
+      day: 1
+  page: 67-74
+  source: ScienceDirect
+  title: >-
+    Typology of centralised and decentralised visions for electricity
+    infrastructure
+  type: article-journal
+  URL: http://www.sciencedirect.com/science/article/pii/S0957178716300819
+  volume: '40'
+
 - id: GEBCO:2015
   accessed:
     - year: 2023
@@ -780,6 +971,63 @@ references:
   URL: http://ihe.nas.gov.ua/index.php/journal/article/view/396
   volume: '42'
 
+- id: Geletukha:2022
+  abstract: >-
+    Purpose of the article is to identify and analyse ten most important actions
+    for Ukraine to completely reject Russian natural gas. The analysis was
+    performed taking into account the following basic provisions: territorial
+    integrity of Ukraine is within its state as of February 23, 2022; total
+    energy consumption is at the level of 2021. Under current conditions,
+    Ukraine urgently needs to elaborate and implement an effective and ambitious
+    program to refuse Russian natural gas and other fossil fuels imported from
+    Russia within several years. Such a program will be much required
+    immediately after the end of the military operations at Ukraine’s territory
+    and should be a solid basis for energy recovery of the country at the
+    post-war period. Taking into account Ukraine’s potential of renewable energy
+    sources and other relevant factors, the program must include such important
+    actions as replacement of natural gas with biomass and solid biofuels for
+    heat production, further construction of wind and solar power plants,
+    production of biomethane, introduction of heat pumps, improving energy
+    efficiency in district heating (DH) systems, buildings and industry and some
+    others. Implementation of these actions will give Ukraine the opportunity to
+    reduce the consumption of natural gas and completely replace its imports in
+    the amount of up to 10 billion m3/ yr by 2030. Realization of each action
+    requires some specific organizational and legislative measures. To a high
+    extent, these measures coincide with ones needed to overcome barriers to
+    bioenergy development and expansion of district heating in Ukraine.
+    Representative examples of the measures are introducing an electronic trade
+    system for solid biofuels through electronic auctions; starting auctions for
+    the state support of renewable electricity projects; starting auctions for
+    load following units and energy storage systems; adopting the National
+    Renewable Energy Action Plan until 2030; creating a Register for biomethane;
+    introducing competitive heat market in DH systems; introducing incentive
+    tariffs for electricity for heat pumps, including the “night” tariffs. ©
+    2022, Polskie Towarzystwo Inzynierii Ekologicznej (PTIE). All rights
+    reserved.
+  archive: Scopus
+  author:
+    - family: Geletukha
+      given: G.
+    - family: Zheliezna
+      given: T.
+    - family: Drahniev
+      given: S.
+    - family: Haidai
+      given: O.
+  citation-key: Geletukha:2022
+  container-title: Ecological Engineering and Environmental Technology
+  DOI: 10.12912/27197050/149458
+  ISSN: 2719-7050
+  issue: '4'
+  issued:
+    - year: 2022
+  language: English
+  page: 1-9
+  source: Scopus
+  title: Analysis of Actions for Ukraine to Replace Russian Natural Gas
+  type: article-journal
+  volume: '23'
+
 - id: Gernaat:2017
   accessed:
     - year: 2020
@@ -835,6 +1083,75 @@ references:
   type: report
   URL: >-
     https://greendealukraina.org/products/analytical-reports/proposals-for-a-green-recovery-in-ukraine
+
+- id: Hatton:2024
+  abstract: >-
+    Power sector and energy systems models are widely used to explore the
+    impacts of demographic, socio-economic or policy changes on the cost and
+    emissions of electricity generation. Technology cost and performance data
+    are essential inputs to such models. Despite the ubiquity and importance of
+    these parameters, there is no standardised database which collates the
+    variety of values from across the literature, so modellers must collect them
+    independently each time they populate or update model inputs, leading to
+    duplicated efforts and inconsistencies which can profoundly influence model
+    results. Technology cost and performance varies between countries, regions
+    and over time, meaning that data must be country- or region-specific and
+    frequently updated. Values also vary widely between sources, so obtaining a
+    broad consensus view is critical. Here, we present a database which collates
+    historical, current, and future cost and performance data and assumptions
+    for the six most prominent electricity generation technologies; coal, gas,
+    hydroelectric, nuclear, solar photovoltaic (PV) and wind power, which
+    together accounted for over 92% of installed generation capacity in 2022. In
+    addition, we provide the same data for utility-scale battery energy storage
+    systems (BESS), regarded as critical to the integration of variable
+    renewables such as wind and solar PV. The data are global in scope but with
+    regional and national specificity, covers the years 2015 through to 2050,
+    and span 5510 datapoints from 56 sources. The database enables modellers to
+    select and justify model input data and provides a benchmark for comparing
+    assumptions and projections to other sources across the literature to
+    validate model inputs and outputs. It is designed to be easily updated with
+    new sources of data, ensuring its utility, comprehensiveness, and broad
+    applicability in future.
+  accessed:
+    - year: 2024
+      month: 5
+      day: 22
+  author:
+    - family: Hatton
+      given: Luke
+    - family: Johnson
+      given: Nathan
+    - family: Dixon
+      given: Lara
+    - family: Mosongo
+      given: Bosi
+    - family: De Kock
+      given: Savanha
+    - family: Marquard
+      given: Andrew
+    - family: Howells
+      given: Mark
+    - family: Staffell
+      given: Iain
+  citation-key: Hatton:2024
+  DOI: 10.2139/ssrn.4822807
+  event-place: Rochester, NY
+  genre: SSRN Scholarly Paper
+  issued:
+    - year: 2024
+      month: 5
+      day: 9
+  language: en
+  number: '4822807'
+  publisher-place: Rochester, NY
+  source: Social Science Research Network
+  title: >-
+    The Global and National Energy Systems Techno-Economic (Gneste) Database:
+    Cost and Performance Data for Electricity Generation and Storage
+    Technologies
+  title-short: The Global and National Energy Systems Techno-Economic (Gneste) Database
+  type: article
+  URL: https://papers.ssrn.com/abstract=4822807
 
 - id: Herman:2017
   accessed:
@@ -1119,6 +1436,32 @@ references:
   title: The cost of financing for renewable power
   type: report
 
+- id: IRENA:2023a
+  abstract: >-
+    IRENA’s global renewable power generation costs study shows that the
+    competitiveness of renewables continued to improve despite rising materials
+    and equipment costs in 2022.
+  accessed:
+    - year: 2024
+      month: 5
+      day: 21
+  author:
+    - literal: IRENA
+  citation-key: IRENA:2023a
+  event-place: Abu Dhabi
+  ISBN: 978-92-9260-544-5
+  issued:
+    - year: 2023
+      month: 8
+      day: 29
+  language: en
+  publisher: International Renewable Energy Agency
+  publisher-place: Abu Dhabi
+  title: Renewable Power Generation Costs in 2022
+  type: book
+  URL: >-
+    https://www.irena.org/Publications/2023/Aug/Renewable-Power-Generation-Costs-in-2022
+
 - id: Jenkins:2018a
   accessed:
     - year: 2021
@@ -1304,6 +1647,55 @@ references:
   URL: https://www.sciencedirect.com/science/article/pii/S0360319920336818
   volume: '46'
 
+- id: Kurbatova:2023
+  abstract: >-
+    The paper investigates trends in bioenergy development in Ukraine and its
+    role in accelerating the green energy transition in the post-war period. The
+    focus of the article is on the use of bioenergy resources for electricity
+    generation, heat energy and liquid biofuel production. In this context, the
+    potential of biomass, state support mechanisms, the results of their
+    influence on bioenergy capacities deployment and the barriers restraining
+    this sector development are considered. The study’s results proved that the
+    inconsistency of the state policy and the failure to consider the specifics
+    of energy production based on various bioenergy resources caused a
+    significant lag in its development compared to other renewable energy
+    technologies. With this in mind, the article systematizes strengths and
+    weaknesses, opportunities and threats, and based on them, strategic
+    recommendations for bioenergy development in Ukraine in the post-war period
+    are developed. © 2023, Econjournals. All rights reserved.
+  archive: Scopus
+  author:
+    - family: Kurbatova
+      given: T.
+    - family: Sotnyk
+      given: I.
+    - family: Trypolska
+      given: G.
+    - family: Gerlitz
+      given: L.
+    - family: Skibina
+      given: T.
+    - family: Prokopenko
+      given: O.
+    - family: Kubatko
+      given: O.
+  citation-key: Kurbatova:2023
+  container-title: International Journal of Energy Economics and Policy
+  DOI: 10.32479/ijeep.14633
+  ISSN: 2146-4553
+  issue: '5'
+  issued:
+    - year: 2023
+  language: English
+  page: 515-532
+  source: Scopus
+  title: >-
+    Ukraine`s Bioenergy Sector: Trends and Perspectives for the Post-war Green
+    Energy Transition
+  title-short: Ukraine`s Bioenergy Sector
+  type: article-journal
+  volume: '13'
+
 - id: Lazard:2019
   author:
     - literal: Lazard
@@ -1332,6 +1724,54 @@ references:
   title: Lazard’s Levelized Cost of Energy Analysis—Version 16.0
   type: report
   URL: https://www.lazard.com/media/typdgxmm/lazards-lcoeplus-april-2023.pdf
+
+- id: Mangoyana:2011
+  abstract: >-
+    Decentralised bioenergy systems are receiving increasing attention due to
+    the potential ability to support local development, create local employment,
+    and contribute to climate change mitigation. These issues, along with other
+    bioenergy sustainability issues, are reviewed through eighteen international
+    case studies with the objective of identifying opportunities and threats to
+    decentralised bioenergy systems. The case studies were selected based on
+    feedstock type, bioenergy type, production capacity, synergistic alliances,
+    ownership structure and physical locations. This variation was used to
+    provide a basis for evaluating opportunities and threats from different
+    contexts. Commercial viability remains the primary concern for the
+    sustainability of decentralised bioenergy systems. There are, however,
+    opportunities for compounding benefits through integrating small scale
+    decentralised bioenergy systems with other production systems. Integrated
+    production, including closed loop models, allow waste materials from one
+    process to be used as inputs in other production processes, and thereby
+    increasing economic, social and environmental outcomes. Synergistic
+    opportunities along the bioenergy production chain, which include feedstock
+    production, bioenergy marketing and distribution could also be exploited by
+    communities and other investors to minimise decentralised production risk.
+  accessed:
+    - year: 2024
+      month: 5
+      day: 22
+  author:
+    - family: Mangoyana
+      given: Robert B.
+    - family: Smith
+      given: Timothy F.
+  citation-key: Mangoyana:2011
+  container-title: Energy Policy
+  container-title-short: Energy Policy
+  DOI: 10.1016/j.enpol.2010.11.057
+  ISSN: 0301-4215
+  issue: '3'
+  issued:
+    - year: 2011
+      month: 3
+      day: 1
+  page: 1286-1295
+  source: ScienceDirect
+  title: 'Decentralised bioenergy systems: A review of opportunities and threats'
+  title-short: Decentralised bioenergy systems
+  type: article-journal
+  URL: https://www.sciencedirect.com/science/article/pii/S0301421510008815
+  volume: '39'
 
 - id: Mehlig:2021
   abstract: >-
@@ -1673,6 +2113,50 @@ references:
   type: article-newspaper
   URL: >-
     https://www.nytimes.com/interactive/2023/11/12/climate/nuclear-reactors-clean-energy.html
+
+- id: Reznik:2024
+  abstract: >-
+    The article highlights the key issues of bioenergy development in Ukraine.
+    The study found that the role of bioenergy is particularly important, as
+    biomass and biofuels can replace traditional fuels and energy sources. For
+    Ukraine, bioenergy is one of the strategic directions of development, given
+    the country's high dependence on imported energy, primarily natural gas, as
+    well as the great potential of biomass available for energy production.
+    However, it should be noted that the pace of bioenergy development in
+    Ukraine still lags significantly behind European ones. The paper analyzes
+    biomass’s place in Ukraine’s energy balance. The potential of biomass for
+    energy in Ukraine is assessed and analyzed. The main prospects for the
+    development of the bioenergy sector of Ukraine are substantiated. © The
+    Author(s), under exclusive license to Springer Nature Switzerland AG 2024.
+  archive: Scopus
+  author:
+    - family: Reznik
+      given: N.P.
+    - family: Havryliuk
+      given: Y.G.
+    - family: Yakymovska
+      given: A.V.
+    - family: Predun
+      given: K.M.
+    - family: Leszczynski
+      given: V.P.
+    - family: Shpakov
+      given: A.V.
+  citation-key: Reznik:2024
+  container-title: Studies in Systems, Decision and Control
+  DOI: 10.1007/978-3-031-36895-0_71
+  ISSN: 2198-4182
+  issued:
+    - year: 2024
+  language: English
+  page: 837-846
+  source: Scopus
+  title: >-
+    Strategic Priorities for the Safe Development of Bioenergy in Ukraine:
+    Barriers and Prospects
+  title-short: Strategic Priorities for the Safe Development of Bioenergy in Ukraine
+  type: article-journal
+  volume: '489'
 
 - id: Sandbu:2023
   accessed:
