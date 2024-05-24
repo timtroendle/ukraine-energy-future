@@ -80,7 +80,7 @@ pypsa-eur:
 
     conventional:
         nuclear:
-            p_max_pu: 1 # TODO update
+            p_max_pu: 1
 
     solving:
         options:

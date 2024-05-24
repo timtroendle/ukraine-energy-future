@@ -190,12 +190,12 @@ Requests for further information, resources, and materials should be directed to
 
 # Data and Code Availability
 
-The datasets generated during this study are available on Zenodo with DOI ==(after peer-review)==.
+The datasets generated during this study are available on Zenodo with DOI\ [10.5281/zenodo.10814894](https://doi.org/10.5281/zenodo.10814894).
 
 We also refer to the documentation of the PyPSA energy system modelling framework (https://pypsa.readthedocs.io) and of the European energy system model PyPSA-Eur (pypsa-eur.readthedocs.io) for technical instructions on how to
 install, modify and run the model as well as more detailed explanations of the model structure.
 
-The code of the specific version used, the configuration to reproduce the results and all analysis steps are publicly available as a reproducible Snakemake [@Koster:2012] workflow on Zenodo with DOI ==(after peer-review)==.
+The code of the specific version used, the configuration to reproduce the results and all analysis steps are publicly available as a reproducible Snakemake [@Koster:2012] workflow on Zenodo with DOI [10.5281/zenodo.11276962](https://doi.org/10.5281/zenodo.11276962).
 
 # CRediT author statement
 **Conceptualisation**, T.T., and A.P.; **Methodology**, T.T., F.N., and I.S.; **Investigation**, T.T.; **Data curation**, T.T., O.M, O.T., F.N., and I.S.; **Formal analysis**, T.T., F.N., I.S.; **Software**, T.T., F.N., I.S.; **Visualisation**, T.T., and F.N.; **Writing -- original draft**, T.T., O.M, F.N., and I.S.; **Writing -- review & editing**, O.T., V.P., and A.P.; **Funding acquisition**: A.P.
