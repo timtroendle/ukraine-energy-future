@@ -1516,8 +1516,7 @@ references:
   title: ETRI 2014 -- Energy Technology Reference Indicator projections for 2010-2050
   title-short: ETRI 2014
   type: report
-  URL: >-
-    https://setis.ec.europa.eu/related-jrc-activities/jrc-setis-reports/etri-2014
+  URL: https://setis.ec.europa.eu/etri-2014_en
 
 - id: Kolosok:2020
   abstract: >-
@@ -2313,7 +2312,8 @@ references:
   publisher-place: Berlin
   title: Current and Prospective Costs of Electricity Generation until 2050
   type: report
-  URL: http://www.diw.de/sixcms/detail.php?id=diw_01.c.424588.de
+  URL: >-
+    https://www.diw.de/de/diw_01.c.457880.de/publikationen/data_documentation/2013_0068/current_and_prospective_costs_of_electricity_generation_until_2050.html
 
 - id: Sin:2009
   abstract: >-
