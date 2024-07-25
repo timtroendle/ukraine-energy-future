@@ -4,6 +4,10 @@ Analysing options for Ukraine's future energy supply.
 
 This repository contains the entire scientific project, including code and report. The philosophy behind this repository is that no intermediary results are included, but all results are computed from raw data and code.
 
+[![article DOI](https://img.shields.io/badge/article-10.1088/2634--4505/ad6738-blue)](https://doi.org/10.1088/2634-4505/ad6738)
+[![data DOI](https://img.shields.io/badge/data-10.5281/zenodo.10814894-blue)](https://doi.org/10.5281/zenodo.10814894)
+[![code DOI](https://img.shields.io/badge/code-10.5281/zenodo.11276962-blue)](https://doi.org/10.5281/zenodo.11276962)
+
 ## Getting ready
 
 1. Clone the repo. Because [PyPSA-Eur](https://github.com/PyPSA/pypsa-eur) is added as a git submodule, you may want to clone in a way that initialises the submodule:
